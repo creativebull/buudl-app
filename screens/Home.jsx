@@ -1,18 +1,42 @@
-import { ScrollView } from "react-native";
+import { ScrollView, View } from "react-native";
 import React from 'react';
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets  } from "react-native-safe-area-context";
 import AppBar from "../navigation/AppBarNavigation";
-import { LandingPage } from "../components";
-import { HomeCarousel } from "../components";
+import { 
+    LandingPage, 
+    HomeCarousel, 
+    NewArrivalHeading, 
+    ExploreStylesHeading, 
+    HomeHeroBanner, 
+    NewArrivalRow, 
+    ExploreStylesRow, 
+    HomeStaggeredView, 
+    CategoryHeading,
+    OurPicksHeading,
+    OurPicksRow,
+    ShopSpotLightHeading,
+    ShopSpotLightRow,
+} from "../components";
 
 const Home = () => {
-
+    const insets = useSafeAreaInsets();
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1}}>
             <AppBar/>
-            <ScrollView>
+            <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}>
                 <LandingPage/>
+                <HomeHeroBanner/>
                 <HomeCarousel/>
+                <ExploreStylesHeading/>
+                <ExploreStylesRow/>
+                <CategoryHeading/>
+                <HomeStaggeredView/>
+                <NewArrivalHeading/>
+                <NewArrivalRow/>
+                <OurPicksHeading/>
+                <OurPicksRow/>
+                <ShopSpotLightHeading/>
+                <ShopSpotLightRow/>
             </ScrollView>
         </SafeAreaView>
     )

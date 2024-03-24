@@ -9,18 +9,16 @@ const LandingPage = () => {
     const navigation = useNavigation();
 
     return (
-        <View>
+        <View style={{ flex: 1 }}>
             <View style={globalStyles.container}>
                 <Text style={globalStyles.welcomeText}>Welcome to your Feed, Paul</Text>
                 <Text style={globalStyles.welcomeSubText}>We curated this base on what you are into lately</Text>
             </View>
 
             <View style={globalStyles.searchContainer}>
-                <View>
-                    <TouchableOpacity style={globalStyles.searchBtn}>
-                        <Ionicons name="camera-outline" size={SIZES.xLarge} color={COLORS.offWhite}/>
-                    </TouchableOpacity>
-                </View>
+                <TouchableOpacity>
+                    <Feather name="search" size={24} style={globalStyles.searchIcon}/>
+                </TouchableOpacity>
                 <View style={globalStyles.searchWrapper}>
                     <TextInput
                         style={globalStyles.searchInput}
@@ -29,9 +27,6 @@ const LandingPage = () => {
                         placeholder="What do you fancy for today?"
                     />
                 </View>
-                <TouchableOpacity>
-                    <Feather name="search" size={24} style={globalStyles.searchIcon}/>
-                </TouchableOpacity>
             </View>
         </View>
     )

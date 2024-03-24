@@ -14,6 +14,8 @@ const COLORS = {
     red: "#e81e4d",
     green: "#00C135",
     lightWhite: "#FAFAFC",
+    lightYellow: "#F5EDD0",
+    lightBrown: "#701D00",
 };
 
 const SIZES = {
