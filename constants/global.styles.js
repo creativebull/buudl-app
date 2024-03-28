@@ -210,7 +210,7 @@ const globalStyles = StyleSheet.create({
         color: COLORS.secondary,
         fontFamily: "nunitoregular",
         fontWeight: "bold",
-        fontSize: SIZES.meduim,
+        fontSize: 18,
     },
     newArrivalsListed: {
         marginTop: SIZES.meduim,
@@ -258,7 +258,9 @@ const globalStyles = StyleSheet.create({
         fontWeight: "bold"
     },
     exploreStylesListed: {
+        marginBottom: 35,
         marginTop: SIZES.meduim,
+        flex: 1
     },
     exploreStylesProductContainer: {
         width: 182,
@@ -297,7 +299,7 @@ const globalStyles = StyleSheet.create({
         fontWeight: "bold",
     },
     productDetailsContainer: {
-        flex: 1
+        flex: 1,
     },
     productUpperRow: {
         marginHorizontal: 20,
@@ -633,16 +635,17 @@ const globalStyles = StyleSheet.create({
     },
     ourPicksListed: {
         marginTop: SIZES.meduim,
-        marginHorizontal: 12
+        marginHorizontal: 12,
+        width: "100%"
     },
     ourPicksContainer: {
-        width: 160,
-        height: 180,
+        width: 180,
+        height: 280,
         marginEnd: 5,
     },
     ourPicksImageWrapper: {
         flex: 1,
-        width: 150,
+        width: 170,
         marginLeft: SIZES.small/2,
         marginTop: SIZES.small/2,
         overflow: "hidden"
@@ -733,6 +736,53 @@ const globalStyles = StyleSheet.create({
     relatedProductImage: {
         flex: 1,
         width: "100%",
+    },
+    buudlStarSticker: {
+        position: "absolute",
+        right: 10,
+        bottom: -25,
+        marginBottom: 10,
+    },
+    buudl20Sticker: {
+        position: "absolute",
+        right: 10,
+        bottom: -70,
+    },
+    productDetailHeader: {
+        fontSize: SIZES.xLarge,
+        fontWeight: "bold",
+        color: COLORS.secondary
+    },
+    popularItemsListed: {
+        marginTop: SIZES.meduim,
+        marginHorizontal: 12,
+        width: "100%"
+    },
+    popularItemsContainer: {
+        width: 180,
+        height: 280,
+        marginEnd: 5,
+    },
+    popularItemsImageWrapper: {
+        flex: 1,
+        width: 170,
+        marginLeft: SIZES.small/2,
+        marginTop: SIZES.small/2,
+        overflow: "hidden"
+    },
+    popularItemsBtnActive: {
+        backgroundColor: COLORS.primary,
+        padding: 10,
+        paddingHorizontal: 15,
+        alignItems: "center"
+    },
+    popularItemsCtaWrapper: {
+        marginHorizontal: "30%"
+    },
+    popularItemsCtaText: {
+        color: COLORS.white,
+        fontFamily: "regular",
+        fontWeight: "bold"
     },
 });
 

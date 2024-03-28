@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text, View,TouchableOpacity, TextInput } from "react-native";
+import { Text, View,TouchableOpacity, TextInput, Image } from "react-native";
 import globalStyles from "../../constants/global.styles";
-import { Feather, Ionicons } from "@expo/vector-icons";
-import { COLORS, SIZES } from "../../constants/index";
+import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import BuudlStartSticker from "../../assets/images/icons/purplestar.png";
 
 const LandingPage = () => {
     const navigation = useNavigation();
@@ -13,6 +13,7 @@ const LandingPage = () => {
             <View style={globalStyles.container}>
                 <Text style={globalStyles.welcomeText}>Welcome to your Feed, Paul</Text>
                 <Text style={globalStyles.welcomeSubText}>We curated this base on what you are into lately</Text>
+                <Image source={BuudlStartSticker} style={globalStyles.buudlStarSticker}/>
             </View>
 
             <View style={globalStyles.searchContainer}>

@@ -1,4 +1,4 @@
-import { View, Image, Animated, Dimensions } from "react-native";
+import { View, Image } from "react-native";
 import React from "react";
 import globalStyles from "../../constants/global.styles";
 import Cat1 from "../../assets/images/category/cat_1.png";

@@ -16,6 +16,9 @@ import {
     OurPicksRow,
     ShopSpotLightHeading,
     ShopSpotLightRow,
+    PopularItemsHeading,
+    PopularItemsRow,
+    ShopsToWatchHeading
 } from "../components";
 
 const Home = () => {
@@ -37,6 +40,9 @@ const Home = () => {
                 <OurPicksRow/>
                 <ShopSpotLightHeading/>
                 <ShopSpotLightRow/>
+                <PopularItemsHeading/>
+                <PopularItemsRow/>
+                <ShopsToWatchHeading/>
             </ScrollView>
         </SafeAreaView>
     )

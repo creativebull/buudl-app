@@ -26,11 +26,11 @@ const ProductDetails = ({navigation}) => {
         <SafeAreaView>
             <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}>
                 <View style={globalStyles.productDetailsContainer}>
-                    <View style={globalStyles.productUpperRow}>
+                    <View style={globalStyles.productUpperRow}> 
                         <TouchableOpacity onPress={()=>navigation.goBack()}>
                             <Ionicons name="chevron-back" size={30} color={COLORS.secondary}/>
                         </TouchableOpacity>
-
+                        <Text style={globalStyles.productDetailHeader}>Product Details</Text>
                         <TouchableOpacity onPress={()=>{}}>
                             <Ionicons name="share-outline" size={30} color={COLORS.secondary}/>
                         </TouchableOpacity>

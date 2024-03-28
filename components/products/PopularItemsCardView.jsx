@@ -1,7 +1,7 @@
 import { Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import globalStyles from "../../constants/global.styles";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, Fontisto } from "@expo/vector-icons";
 import { COLORS } from "../../constants";
 import { useNavigation } from "@react-navigation/native";
 import ImagePlaceholder from "../../assets/images/product_placeholder.png";
@@ -10,12 +10,16 @@ const OurPicksCardView = () => {
     const navigation = useNavigation();
     return (
         <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
-            <View style={globalStyles.ourPicksContainer}>
-                <View style={globalStyles.ourPicksImageWrapper}>
+            <View style={globalStyles.popularItemsContainer}>
+                <View style={globalStyles.popularItemsImageWrapper}>
                     <Image
                         source={ImagePlaceholder}
                         style={globalStyles.arrivalImage}
                     />
+                    <TouchableOpacity style={globalStyles.addToCartBtn}>
+                        <Fontisto name='shopping-bag' size={10} color={COLORS.secondary} />
+                        <Text style={globalStyles.addToCartCounter}>4</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={globalStyles.arrivalProductDetails}>
                     <Text style={globalStyles.arrivalProductDetailsTitle} numberOfLines={1}>Title</Text>
