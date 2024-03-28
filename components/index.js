@@ -9,12 +9,15 @@ import OurPicksHeading from "./home/OurPicksHeading";
 import PopularItemsHeading from "./home/PopularItemsHeading";
 import ShopSpotLightHeading from "./home/ShopSpotLightHeading";
 import ShopsToWatchHeading from "./home/ShopsToWatchHeading";
+import MoreItemsForYouHeading from "./home/MoreItemsForYouHeading";
 import ExploreStylesRow from "./products/ExploreStylesRow";
 import MoreFromSellerRow from "./products/MoreFromSellerRow";
 import RelatedProductRow from "./products/RelatedProductRow";
 import PopularItemsRow from "./products/PopularItemsRow";
 import OurPicksRow from "./products/OurPicksRow";
+import ShopsToWatchRow from "./products/ShopsToWatchRow";
 import ShopSpotLightRow from "./products/ShopSpotLightRow";
+import MoreItemsForYouRow from "./products/MoreItemsForYouRow";
 import HomeHeroBanner from "./home/HomeHeroBanner";
 import HomeCarousel from "./home/HomeCarousel";
 import HomeStaggeredView from "./home/HomeStaggeredView";
@@ -42,4 +45,7 @@ export {
     PopularItemsHeading,
     PopularItemsRow,
     ShopsToWatchHeading,
+    ShopsToWatchRow,
+    MoreItemsForYouHeading,
+    MoreItemsForYouRow
 }

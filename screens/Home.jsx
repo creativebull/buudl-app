@@ -18,7 +18,10 @@ import {
     ShopSpotLightRow,
     PopularItemsHeading,
     PopularItemsRow,
-    ShopsToWatchHeading
+    ShopsToWatchHeading,
+    ShopsToWatchRow,
+    MoreItemsForYouHeading,
+    MoreItemsForYouRow
 } from "../components";
 
 const Home = () => {
@@ -43,6 +46,9 @@ const Home = () => {
                 <PopularItemsHeading/>
                 <PopularItemsRow/>
                 <ShopsToWatchHeading/>
+                <ShopsToWatchRow/>
+                <MoreItemsForYouHeading/>
+                <MoreItemsForYouRow/>
             </ScrollView>
         </SafeAreaView>
     )

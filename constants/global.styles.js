@@ -784,6 +784,64 @@ const globalStyles = StyleSheet.create({
         fontFamily: "regular",
         fontWeight: "bold"
     },
+    shopToWatchContainer: {
+        flex: 1,
+        marginTop: 35,
+        marginHorizontal: 12,
+    },
+    shopToWatchStarImage: {
+        position: "absolute",
+        right: 0,
+        bottom: 2,
+    },
+    shopsToWatchListed: {
+        marginHorizontal: 12,
+        marginBottom: 35,
+        marginTop: SIZES.meduim,
+        flex: 1
+    },
+    shopsToWatchContainer: {
+        width: 250,
+        height: 180,
+    },
+    shopsToWatchWrapper: {
+        flex: 1,
+        width: "100%",
+        overflow: "hidden",
+    },
+    shopsToWatchImage: {
+        flex: 1,
+        width: "100%",
+    },
+    shopsToWatchCardFooter: {
+        position: "absolute",
+        bottom: 0,
+        width: "100%",
+        height: 30,
+        borderRadius: 20,
+    },
+    shopsToWatchFooterContent: {
+        flex: 1,
+        flexWrap: "wrap",
+        flexDirection: "row"
+    },
+    shopsToWatchFooterText: {
+        position: "absolute",
+        top: -10,
+        left: 70,
+        fontSize: 25,
+        fontWeight: "bold",
+        color: COLORS.lightBrown 
+    },
+    shopsToWatchLearnMoreWrapper: {
+        marginTop: 12,
+        flex: 1,
+        flexDirection: "row"
+    },
+    textUnderline: {
+        textDecorationLine: "underline",
+        paddingLeft: 5
+    },
 });
 
 export default globalStyles;
