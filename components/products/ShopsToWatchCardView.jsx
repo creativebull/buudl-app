@@ -1,10 +1,7 @@
 import { View, TouchableOpacity, Image, Text } from "react-native";
 import React from "react";
 import globalStyles from "../../constants/global.styles";
-
-import { Ionicons } from "@expo/vector-icons";
 import ImagePlaceholder from "../../assets/images/product_placeholder.png";
-import { COLORS } from "../../constants";
 
 const ShopsToWatchCardView = () => {
     return (

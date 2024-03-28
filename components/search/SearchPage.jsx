@@ -1,15 +1,15 @@
 import React from 'react';
-import { Text, View, TouchableOpacity,  TextInput } from "react-native";
+import { View, TouchableOpacity,  TextInput } from "react-native";
 import globalStyles from "../../constants/global.styles";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { COLORS, SIZES } from "../../constants/index";
 
-const SearchPage = () => {
+const SearchPage = ({navigation}) => {
 
     return (
-        <View>
+        <View style={globalStyles.mainSearchContainer}>
             <View style={globalStyles.searchContainer}>
-                <View>
+                <View >
                     <TouchableOpacity style={globalStyles.searchBtn}>
                         <Ionicons name="camera-outline" size={SIZES.xLarge} color={COLORS.offWhite}/>
                     </TouchableOpacity>

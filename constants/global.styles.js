@@ -145,6 +145,9 @@ const globalStyles = StyleSheet.create({
     navIcon: {
         width: 20,
     },
+    mainSearchContainer: {
+        flex: 1,
+    },
     searchContainer: {
         flexDirection: "row",
         justifyContent: "center",
@@ -153,7 +156,12 @@ const globalStyles = StyleSheet.create({
         backgroundColor: COLORS.gray2,
         borderRadius: SIZES.meduim,
         marginVertical: SIZES.meduim,
-        height: 40
+        height: 40,
+        zIndex: 999
+    },
+    searchBack: {
+        zIndex: 1,
+        backgroundColor: COLORS.offWhite
     },
     heroBannerContainer: {
         flex: 1,

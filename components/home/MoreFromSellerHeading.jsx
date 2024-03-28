@@ -4,7 +4,7 @@ import globalStyles from "../../constants/global.styles";
 import { useNavigation } from "@react-navigation/native";
 
 const MoreFromSellerHeading = () => {
-    const navigation = useNavigation()
+    const navigation = useNavigation();
     return (
         <View style={globalStyles.headingContainer}>
             <View style={globalStyles.headingWrapper}>

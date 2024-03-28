@@ -1,4 +1,4 @@
-import { FlatList, View, Image, ActivityIndicator  } from "react-native";
+import { FlatList, View, Image  } from "react-native";
 import React from "react";
 import { SIZES } from '../../constants';
 import globalStyles from "../../constants/global.styles";
