@@ -7,7 +7,7 @@ const Profile = () => {
     return (
         <SafeAreaView>
             <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}>
-                <Text>User Profile</Text>
+                <Text>User Profile </Text>
             </ScrollView>
         </SafeAreaView>
     )

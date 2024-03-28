@@ -15,7 +15,7 @@ const ShopsToWatchRow = () => {
                 contentContainerStyle={{columnGap: SIZES.meduim}}
             />
             <View style={globalStyles.shopsToWatchLearnMoreWrapper}>
-                <Text>Be one of them!</Text>
+                <Text style={globalStyles.shopsToWatchInitialText}>Be one of them!</Text>
                 <TouchableOpacity>
                     <Text style={globalStyles.textUnderline}>Learn how to sell</Text>
                 </TouchableOpacity>

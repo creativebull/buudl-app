@@ -602,6 +602,7 @@ const globalStyles = StyleSheet.create({
     categoryContainer: {
         height: 360,
         marginTop: 10,
+        marginHorizontal: 12
     },
     firstCategoryImageWrapper: {
         flexDirection: "row",
@@ -632,6 +633,62 @@ const globalStyles = StyleSheet.create({
         top: 8,
         width: "47%",
         height: 92,
+    },
+    categoryImageBackground: {
+        width: "100%",
+        height: "100%"
+    },
+    categoryText1: {
+        position: "absolute",
+        bottom: 0,
+        fontSize: 25,
+        fontWeight: "bold",
+        color: COLORS.pink
+    },
+    categoryText2: {
+        position: "absolute",
+        bottom: 0,
+        fontSize: 25,
+        fontWeight: "bold",
+        left: 50,
+        bottom: 30,
+        width: 150,
+        color: COLORS.primary
+    },
+    categoryText3: {
+        position: "absolute",
+        bottom: 0,
+        fontSize: 25,
+        fontWeight: "bold",
+        left: -40,
+        color: COLORS.secondary
+    },
+    categoryText4: {
+        position: "absolute",
+        bottom: 0,
+        fontSize: 25,
+        fontWeight: "bold",
+        left: -22,
+        color: COLORS.violet
+    },
+    catImage1: {
+        height: 200,
+        width: 170
+    },
+    catImage2: {
+        height: 230,
+        width: 180
+    },
+    catImage3: {
+        left: -93,
+        height: 150,
+        width: 170
+    },
+    catImage4: {
+        left: -89,
+        top: -30,
+        height: 123,
+        width: 181
     },
     ourPicksListed: {
         marginTop: SIZES.meduim,
@@ -838,7 +895,11 @@ const globalStyles = StyleSheet.create({
         flex: 1,
         flexDirection: "row"
     },
+    shopsToWatchInitialText: {
+        fontSize: 16
+    },
     textUnderline: {
+        fontSize: 16,
         textDecorationLine: "underline",
         paddingLeft: 5
     },
