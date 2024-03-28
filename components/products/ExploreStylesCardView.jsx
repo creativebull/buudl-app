@@ -7,7 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 const ExploreStylesCardView = () => {
     const navigation = useNavigation();
     return (
-        <TouchableOpacity onPress={() => navigation.navigate("Shop")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Store")}>
             <View style={globalStyles.exploreStylesProductContainer}>
                 <View style={globalStyles.exploreImageWrapper}>
                     <Image

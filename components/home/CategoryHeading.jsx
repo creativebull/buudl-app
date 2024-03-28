@@ -9,7 +9,7 @@ const CategoryHeading = () => {
         <View style={globalStyles.headingContainer}>
             <View style={globalStyles.headingWrapper}>
                 <Text style={globalStyles.headingTitle}>Shop by Category</Text>
-                <TouchableOpacity onPress={() => navigation.navigate("Shop")}>
+                <TouchableOpacity onPress={() => navigation.navigate("Store")}>
                     <Text style={globalStyles.headingUnderline}>more</Text>
                 </TouchableOpacity>
             </View>

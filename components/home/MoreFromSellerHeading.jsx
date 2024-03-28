@@ -9,7 +9,7 @@ const MoreFromSellerHeading = () => {
         <View style={globalStyles.headingContainer}>
             <View style={globalStyles.headingWrapper}>
                 <Text style={globalStyles.headingTitle}>More from this Seller</Text>
-                <TouchableOpacity onPress={() => navigation.navigate("Shop")}>
+                <TouchableOpacity onPress={() => navigation.navigate("Store")}>
                     <Text style={globalStyles.headingUnderline}>see more</Text>
                 </TouchableOpacity>
             </View>

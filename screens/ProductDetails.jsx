@@ -11,9 +11,11 @@ import SlideThree from "../assets/images/hero_carousel/slide_3.png";
 import SlideFour from "../assets/images/hero_carousel/slide_4.png";
 import SlideFive from "../assets/images/hero_carousel/slide_5.png";
 import { MoreFromSellerRow, MoreFromSellerHeading, RelatedProductsHeading, RelatedProductRow } from "../components";
+import { useNavigation } from "@react-navigation/native";
 
 
-const ProductDetails = ({navigation}) => {
+const ProductDetails = () => {
+    const navigation = useNavigation();
     const insets = useSafeAreaInsets();
     const slides = [
         SlideOne,
@@ -90,16 +92,16 @@ const ProductDetails = ({navigation}) => {
                     <Text style={globalStyles.descText3}>Please check all my pics</Text>
                     <Text style={globalStyles.descText4}>Follow my account for more items!</Text>
                     <View style={globalStyles.productDescriptionTagWrapper}>
-                        <TouchableOpacity style={globalStyles.tagDescCta}>
+                        <TouchableOpacity style={globalStyles.tagDescCta} onPress={() => navigation.navigate("Store")}>
                             <Text style={globalStyles.productDescTagText}>#Vintage</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={globalStyles.tagDescCta}>
+                        <TouchableOpacity style={globalStyles.tagDescCta} onPress={() => navigation.navigate("Store")}>
                             <Text style={globalStyles.productDescTagText}>#Nylon</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={globalStyles.tagDescCta}>
+                        <TouchableOpacity style={globalStyles.tagDescCta} onPress={() => navigation.navigate("Store")}>
                             <Text style={globalStyles.productDescTagText}>#RETRO</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={globalStyles.tagDescCta}>
+                        <TouchableOpacity style={globalStyles.tagDescCta} onPress={() => navigation.navigate("Store")}>
                             <Text style={globalStyles.productDescTagText}>#H&M</Text>
                         </TouchableOpacity>
                     </View>
@@ -139,7 +141,7 @@ const ProductDetails = ({navigation}) => {
                     <View style={globalStyles.shopCtaWrapper}>
                         <Text style={globalStyles.reviewCta}>See Reviews</Text>
                         <View style={globalStyles.ctaBtnWrapper}>
-                            <TouchableOpacity style={globalStyles.visitShopBtn}>
+                            <TouchableOpacity style={globalStyles.visitShopBtn} onPress={() => navigation.navigate("SellerShops")}>
                                 <Text style={globalStyles.visitShopBtnText}>Visit Shop</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={globalStyles.followBtn}>

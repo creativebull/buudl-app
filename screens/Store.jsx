@@ -5,7 +5,7 @@ import globalStyles from "../constants/global.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../constants";
 
-const Shop = ({navigation}) => {
+const Store = ({navigation}) => {
     const insets = useSafeAreaInsets();
     return (
         <SafeAreaView>
@@ -15,7 +15,7 @@ const Shop = ({navigation}) => {
                         <TouchableOpacity onPress={()=>navigation.goBack()}>
                             <Ionicons name="chevron-back" size={30} color={COLORS.secondary}/>
                         </TouchableOpacity>
-                        <Text style={globalStyles.productDetailHeader}>Shop</Text>
+                        <Text style={globalStyles.productDetailHeader}>Store</Text>
                     </View>
                 </View>
                 
@@ -24,6 +24,6 @@ const Shop = ({navigation}) => {
     )
 }
 
-export default Shop
+export default Store
 
 const styles = StyleSheet.create({})

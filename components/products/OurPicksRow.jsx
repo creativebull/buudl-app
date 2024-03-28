@@ -17,7 +17,7 @@ const OurPicksRow = () => {
                 contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column"}}
             />
             <View style={globalStyles.ourPickCtaWrapper}>
-                <TouchableOpacity style={globalStyles.ourPickBtnActive} onPress={() => navigation.navigate("Shop")}>
+                <TouchableOpacity style={globalStyles.ourPickBtnActive} onPress={() => navigation.navigate("Store")}>
                     <Text style={globalStyles.ourPickCtaText}>See All</Text>
                 </TouchableOpacity>
             </View>

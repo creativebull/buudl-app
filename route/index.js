@@ -5,7 +5,8 @@ import Notification from "../screens/Notification";
 import AccountManagement from "../screens/AccountManagement";
 import ProductDetails from "../screens/ProductDetails";
 import Cart from "../screens/Cart";
-import Shop from "../screens/Shop";
+import Store from "../screens/Store";
+import SellerShops from "../screens/SellerShops";
 
 export {
     Home,
@@ -15,5 +16,6 @@ export {
     AccountManagement,
     Cart,
     ProductDetails,
-    Shop
+    Store,
+    SellerShops
 }

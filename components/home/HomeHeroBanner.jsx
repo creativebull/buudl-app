@@ -22,8 +22,8 @@ const HomeHeroBanner = () => {
                     <View style={globalStyles.overlay}>
                         <Text style={globalStyles.overlayTitleText}>Find Your Style</Text>
                         <Text style={globalStyles.overlaySubText}>Be part of our community. Thrift. Shop. Circular fashion. Save earth.</Text>
-                        <TouchableOpacity style={globalStyles.overlayButton} onPress={() => navigation.navigate("Shop")}>
-                            <Text style={globalStyles.overlayButtonText}>Shop</Text>
+                        <TouchableOpacity style={globalStyles.overlayButton} onPress={() => navigation.navigate("Store")}>
+                            <Text style={globalStyles.overlayButtonText}>Visit the Store</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
