@@ -10,8 +10,8 @@ const SellerShops = ({navigation}) => {
     return (
         <SafeAreaView>
             <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}>
-                <View style={globalStyles.goBackContainer}>
-                    <View style={globalStyles.goBackRow}> 
+                <View style={globalStyles.sellerGoBackContainer}>
+                    <View style={globalStyles.sellerGoBackRow}> 
                         <TouchableOpacity onPress={()=>navigation.goBack()}>
                             <Ionicons name="chevron-back" size={30} color={COLORS.secondary}/>
                         </TouchableOpacity>

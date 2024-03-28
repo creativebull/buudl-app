@@ -1,14 +1,15 @@
 import { View, TouchableOpacity, Image, Text } from "react-native";
 import React from "react";
 import globalStyles from "../../constants/global.styles";
-
+import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import ImagePlaceholder from "../../assets/images/product_placeholder.png";
 import { COLORS } from "../../constants";
 
 const ShopSpotLightCardView = () => {
+    const navigation = useNavigation();
     return (
-        <TouchableOpacity onPress={()=>{}}>
+        <TouchableOpacity onPress={() => navigation.navigate("SellerShops")}>
             <View style={globalStyles.shopSpotLightContainer}>
                 <View style={globalStyles.shopSpotLightWrapper}>
                     <Image

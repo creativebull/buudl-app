@@ -632,14 +632,14 @@ const globalStyles = StyleSheet.create({
         position: "absolute",
         left: 5,
         top: -50,
-        width: "47%",
+        width: "50%",
         height: 150,
     },
     categoryImage4: {
         position: "absolute",
         right: 5,
         top: 8,
-        width: "47%",
+        width: "50%",
         height: 92,
     },
     categoryImageBackground: {
@@ -648,6 +648,7 @@ const globalStyles = StyleSheet.create({
     },
     categoryText1: {
         position: "absolute",
+        left: 80,
         bottom: 0,
         fontSize: 25,
         fontWeight: "bold",
@@ -681,22 +682,22 @@ const globalStyles = StyleSheet.create({
     },
     catImage1: {
         height: 200,
-        width: 170
+        width: 220
     },
     catImage2: {
         height: 230,
-        width: 180
+        width: 190
     },
     catImage3: {
-        left: -93,
+        left: -108,
         height: 150,
-        width: 170
+        width: 220
     },
     catImage4: {
-        left: -89,
+        left: -82,
         top: -30,
         height: 123,
-        width: 181
+        width: 190
     },
     ourPicksListed: {
         marginTop: SIZES.meduim,
@@ -704,13 +705,13 @@ const globalStyles = StyleSheet.create({
         width: "100%"
     },
     ourPicksContainer: {
-        width: 180,
+        width: 210,
         height: 280,
         marginEnd: 5,
     },
     ourPicksImageWrapper: {
         flex: 1,
-        width: 170,
+        width: 195,
         marginLeft: SIZES.small/2,
         marginTop: SIZES.small/2,
         overflow: "hidden"
@@ -788,7 +789,7 @@ const globalStyles = StyleSheet.create({
         color: COLORS.lightBrown 
     },
     relatedProductContainer: {
-        width: 175,
+        width: 203,
         height: 240,
         backgroundColor: COLORS.gray2,
         margin: 10,
@@ -824,13 +825,13 @@ const globalStyles = StyleSheet.create({
         width: "100%"
     },
     popularItemsContainer: {
-        width: 180,
+        width: 210,
         height: 280,
         marginEnd: 5,
     },
     popularItemsImageWrapper: {
         flex: 1,
-        width: 170,
+        width: 195,
         marginLeft: SIZES.small/2,
         marginTop: SIZES.small/2,
         overflow: "hidden"
@@ -918,6 +919,7 @@ const globalStyles = StyleSheet.create({
     },
     goBackContainer: {
         flex: 1,
+        marginTop: 20
     },
     goBackRow: {
         marginHorizontal: 20,
@@ -928,6 +930,40 @@ const globalStyles = StyleSheet.create({
         width: SIZES.width -44,
         zIndex: 999
     },
+    sceneContainer: {
+        flex: 1,
+    },
+    storeViewContainer: {
+        flex: 1,
+    },
+    storeTabView: {
+        flex: 1,
+        position: "relative",
+        marginTop: -800
+    },
+    sellerGoBackContainer: {
+        flex: 1,
+    },
+    sellerGoBackRow: {
+        marginHorizontal: 20,
+        flexDirection: "row",
+        alignItems: "center",
+        position: "absolute",
+        top: SIZES.xLarge,
+        width: SIZES.width -44,
+        zIndex: 999
+    },
+    tabDesign: {
+        backgroundColor: COLORS.offWhite
+    },
+    tabTextColor : {
+        color: COLORS.primary,
+        fontSize: 14,
+        fontWeight: "bold"
+    },
+    tabIndicatorColor: {
+        backgroundColor: COLORS.primary
+    }
 });
 
 export default globalStyles;
