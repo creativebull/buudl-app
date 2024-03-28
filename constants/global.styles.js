@@ -779,8 +779,8 @@ const globalStyles = StyleSheet.create({
         fontSize: 18,
         color: COLORS.lightBrown 
     },
-    relatedProducContainer: {
-        width: 150,
+    relatedProductContainer: {
+        width: 175,
         height: 240,
         backgroundColor: COLORS.gray2,
         margin: 10,
@@ -902,6 +902,23 @@ const globalStyles = StyleSheet.create({
         fontSize: 16,
         textDecorationLine: "underline",
         paddingLeft: 5
+    },
+    relatedProoductsListed: {
+        marginBottom: 35,
+        marginTop: SIZES.meduim,
+        flex: 1
+    },
+    goBackContainer: {
+        flex: 1,
+    },
+    goBackRow: {
+        marginHorizontal: 20,
+        flexDirection: "row",
+        alignItems: "center",
+        position: "absolute",
+        top: SIZES.xLarge,
+        width: SIZES.width -44,
+        zIndex: 999
     },
 });
 

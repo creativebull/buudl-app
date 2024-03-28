@@ -5,18 +5,20 @@ import Cat1 from "../../assets/images/category/cat_1.png";
 import Cat2 from "../../assets/images/category/cat_2.png";
 import Cat3 from "../../assets/images/category/cat_3.png";
 import Cat4 from "../../assets/images/category/cat_4.png";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeStaggeredView = item => {
+    const navigation = useNavigation();
     return (
         <View style={globalStyles.categoryContainer}>
             <View style={globalStyles.firstCategoryImageWrapper}>
-                <TouchableOpacity activeOpacity={0.7} onPress={() => {}}>
+                <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Shop")}>
                     <View style={globalStyles.categoryImage1}>
                         <Image source={Cat1} style={globalStyles.catImage1}/>
                         <Text style={globalStyles.categoryText1}>Tops</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.7} onPress={() => {}}>
+                <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Shop")}>
                     <View style={globalStyles.categoryImage2}>
                         <Image source={Cat2} style={globalStyles.catImage2}/>
                         <Text style={globalStyles.categoryText2}>Bottoms</Text>
@@ -24,13 +26,13 @@ const HomeStaggeredView = item => {
                 </TouchableOpacity>
             </View>
             <View style={globalStyles.secondCategoryImageWrapper}>
-                <TouchableOpacity activeOpacity={0.7} onPress={() => {}}>
+                <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Shop")}>
                     <View style={globalStyles.categoryImage3}>
                         <Image source={Cat3} style={globalStyles.catImage3}/>
                         <Text style={globalStyles.categoryText3}>Shoes</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.7} onPress={() => {}}>
+                <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Shop")}>
                     <View style={globalStyles.categoryImage4}>
                         <Image source={Cat4} style={globalStyles.catImage4}/>
                         <Text style={globalStyles.categoryText4}>Shorts</Text>

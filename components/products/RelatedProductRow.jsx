@@ -7,7 +7,7 @@ import RelatedProductCardView from "./RelatedProductCardView";
 const RelatedProductRow = () => {
     const products = [1,2,3,4];
     return (
-        <View style={globalStyles.exploreStylesListed}>
+        <View style={globalStyles.relatedProoductsListed}>
             <FlatList
                 data={products}
                 renderItem={({item}) => <RelatedProductCardView/>}

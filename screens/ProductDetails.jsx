@@ -24,7 +24,7 @@ const ProductDetails = ({navigation}) => {
     ];
     return (
         <SafeAreaView>
-            <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}>
+            <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 10 }}>
                 <View style={globalStyles.productDetailsContainer}>
                     <View style={globalStyles.productUpperRow}> 
                         <TouchableOpacity onPress={()=>navigation.goBack()}>
@@ -124,11 +124,13 @@ const ProductDetails = ({navigation}) => {
                         <View style={globalStyles.shopSellerInfo}>
                             <Text style={globalStyles.shopTitle}>Beautiful Shop</Text>
                             <View style={globalStyles.ratingWrapper}>
-                                <Ionicons name="star" color={COLORS.primary} size={12}/>
-                                <Ionicons name="star" color={COLORS.primary} size={12}/>
-                                <Ionicons name="star" color={COLORS.primary} size={12}/>
-                                <Ionicons name="star" color={COLORS.primary} size={12}/>
-                                <Ionicons name="star-outline" color={COLORS.primary} size={12}/>
+                                {[1,2,3,4,5].map((index) => (
+                                    <Ionicons 
+                                        key={index}
+                                        name="star"
+                                        color={COLORS.primary}
+                                        size={12}/>
+                                ))}
                                 <Text style={globalStyles.ratingText}>(32)</Text>
                             </View>
                             <Text style={globalStyles.shopLocationText}>Cebu City</Text>
@@ -155,7 +157,6 @@ const ProductDetails = ({navigation}) => {
                 <View style={globalStyles.relatedProductWrapper}>
                     <RelatedProductsHeading/>
                     <RelatedProductRow/>
-                    {/* <RelatedProductRow/> */}
                 </View>
             </ScrollView>
         </SafeAreaView>

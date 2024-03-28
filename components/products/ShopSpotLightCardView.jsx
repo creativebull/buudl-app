@@ -25,11 +25,14 @@ const ShopSpotLightCardView = () => {
             </View>
             <View style={globalStyles.shopSpotRatingWrapper}>
                 <View style={globalStyles.ratingWrapper}>
-                    <Ionicons name="star" color={COLORS.primary} size={12}/>
-                    <Ionicons name="star" color={COLORS.primary} size={12}/>
-                    <Ionicons name="star" color={COLORS.primary} size={12}/>
-                    <Ionicons name="star" color={COLORS.primary} size={12}/>
-                    <Ionicons name="star-outline" color={COLORS.primary} size={12}/>
+                    {[1,2,3,4,5].map((index) => (
+                        <Ionicons 
+                            key={index}
+                            name="star"
+                            color={COLORS.primary}
+                            size={12}/>
+                    ))}
+                    
                     <Text style={globalStyles.ratingText}>(32)</Text>
                 </View>
             </View>
