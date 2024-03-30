@@ -1,10 +1,6 @@
 import { View, Image, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import globalStyles from "../../constants/global.styles";
-import Cat1 from "../../assets/images/category/cat_1.png";
-import Cat2 from "../../assets/images/category/cat_2.png";
-import Cat3 from "../../assets/images/category/cat_3.png";
-import Cat4 from "../../assets/images/category/cat_4.png";
 import { useNavigation } from "@react-navigation/native";
 import getLandingCategory from "../../hook/getLandingCategory";
 
