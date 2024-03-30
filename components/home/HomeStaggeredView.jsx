@@ -13,7 +13,7 @@ const HomeStaggeredView = item => {
     const {data, isLoading, error} = getLandingCategory();
     return (
         <View style={globalStyles.categoryContainer}>
-            {/* <View style={globalStyles.firstCategoryImageWrapper}>
+            <View style={globalStyles.firstCategoryImageWrapper}>
                 <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Store")}>
                     <View style={globalStyles.categoryImage1}>
                         <Image source={{ uri: 'http://192.168.254.107' + data[0].image_url}} style={globalStyles.catImage1}/>
@@ -40,7 +40,7 @@ const HomeStaggeredView = item => {
                         <Text style={globalStyles.categoryText4}>{data[3].name}</Text>
                     </View>
                 </TouchableOpacity>
-            </View> */}
+            </View>
         </View>
     );
 }
