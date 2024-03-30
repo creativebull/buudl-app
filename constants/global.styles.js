@@ -771,10 +771,10 @@ const globalStyles = StyleSheet.create({
     shopSpotImagePlaceholder: {
         width: 50,
         height: 50,
-        backgroundColor: COLORS.secondary,
+        // backgroundColor: COLORS.secondary,
         borderRadius: 50,
         position: "absolute",
-        bottom: 0,
+        bottom: -20,
         left: 10
     },
     shopSpotRatingWrapper: {

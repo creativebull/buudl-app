@@ -4,18 +4,26 @@ import { SIZES } from '../../constants';
 import globalStyles from "../../constants/global.styles";
 import PopularItemsCardView from "./PopularItemsCardView";
 import { useNavigation } from "@react-navigation/native";
+import getLandingPopularItems from "../../hook/getLandingPopularItems";
 
 const OurPicksRow = () => {
-    const products = [1,2,3,4];
+    const {data, isLoading, error} = getLandingPopularItems();
     const navigation = useNavigation();
     return (
         <View style={globalStyles.popularItemsListed}>
-            <FlatList
-                data={products}
-                numColumns={2}
-                renderItem={({item}) => <PopularItemsCardView/>}
-                contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column"}}
-            />
+            {isLoading ? (
+                <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary}/>
+            ) : error ? (
+                <Text>Something went wrong</Text>
+            ) : (
+                <FlatList
+                    data={data}
+                    keyExtractor={(item) => item.id}
+                    numColumns={2}
+                    renderItem={({item}) => <PopularItemsCardView item={item}/>}
+                    contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column"}}
+                />
+            )}
             <View style={globalStyles.popularItemsCtaWrapper}>
                 <TouchableOpacity style={globalStyles.popularItemsBtnActive} onPress={() => navigation.navigate("Store")}>
                     <Text style={globalStyles.popularItemsCtaText}>See All</Text>

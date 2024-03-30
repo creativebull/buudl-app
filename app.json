@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "sample-project",
-    "slug": "sample-project",
+    "name": "buudl_app",
+    "slug": "buudl_app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      ["expo-build-properties", {
+        "android": {
+          "usesCleartextTraffic": true
+        },
+        "ios": {}
+      }]
+    ]
   }
 }

@@ -3,17 +3,25 @@ import React from "react";
 import { SIZES } from '../../constants';
 import globalStyles from "../../constants/global.styles";
 import MoreItemsForYouCardView from "./MoreItemsForYouCardView";
+import getLandingMoreItemsForYou from "../../hook/getLandingMoreItemsForYou";
 
 const MoreItemsForYouRow = () => {
-    const products = [1,2,3,4,5,6,7,8];
+    const {data, isLoading, error} = getLandingMoreItemsForYou();
     return (
         <View style={globalStyles.popularItemsListed}>
-            <FlatList
-                data={products}
-                numColumns={2}
-                renderItem={({item}) => <MoreItemsForYouCardView/>}
-                contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column"}}
-            />
+            {isLoading ? (
+                <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary}/>
+            ) : error ? (
+                <Text>Something went wrong</Text>
+            ) : (
+                <FlatList
+                    data={data}
+                    keyExtractor={(item) => item.id}
+                    numColumns={2}
+                    renderItem={({item}) => <MoreItemsForYouCardView item={item}/>}
+                    contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column"}}
+                />
+            )}
         </View>
     );
 }

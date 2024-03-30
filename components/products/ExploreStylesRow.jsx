@@ -1,20 +1,28 @@
-import { FlatList, View, Image  } from "react-native";
+import { FlatList, View, Image, ActivityIndicator, Text  } from "react-native";
 import React from "react";
-import { SIZES } from '../../constants';
+import { COLORS, SIZES } from '../../constants';
 import globalStyles from "../../constants/global.styles";
 import ExploreStylesCardView from "./ExploreStylesCardView";
 import Buudl20PecentSticker from "../../assets/images/icons/20percentSticker.png";
+import getExploreStyles from "../../hook/getExploreStyles";
 
 const ExploreStylesRow = () => {
-    const products = [1,2,3,4];
+    const {data, isLoading, error} = getExploreStyles();
     return (
         <View style={globalStyles.exploreStylesListed}>
-            <FlatList
-                data={products}
-                renderItem={({item}) => <ExploreStylesCardView/>}
-                horizontal
-                contentContainerStyle={{columnGap: SIZES.meduim}}
-            />
+            {isLoading ? (
+                <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary}/>
+            ) : error ? (
+                <Text>Something went wrong</Text>
+            ) : (
+                <FlatList
+                    data={data}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({item}) => <ExploreStylesCardView item={item}/>}
+                    horizontal
+                    contentContainerStyle={{columnGap: SIZES.meduim}}
+                />
+            )}
             <Image source={Buudl20PecentSticker} style={globalStyles.buudl20Sticker}/>
         </View>
     );

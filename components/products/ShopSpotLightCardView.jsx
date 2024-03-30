@@ -6,21 +6,26 @@ import { Ionicons } from "@expo/vector-icons";
 import ImagePlaceholder from "../../assets/images/product_placeholder.png";
 import { COLORS } from "../../constants";
 
-const ShopSpotLightCardView = () => {
+const ShopSpotLightCardView = ({item}) => {
     const navigation = useNavigation();
     return (
         <TouchableOpacity onPress={() => navigation.navigate("SellerShops")}>
             <View style={globalStyles.shopSpotLightContainer}>
                 <View style={globalStyles.shopSpotLightWrapper}>
                     <Image
-                        source={ImagePlaceholder}
+                        source={{ uri: 'http://192.168.254.107' + item.shop_image }}
                         style={globalStyles.shopSpotLightImage}
                     />
                 </View>
                 <View style={globalStyles.shopSpotLightCardFooter}>
                     <View style={globalStyles.shopSpotLightContent}>
-                        <View style={globalStyles.shopSpotImagePlaceholder}></View>
-                        <Text style={globalStyles.shopFooterText}>Retro Style</Text>
+                        <View>
+                            <Image
+                                source={{ uri: 'http://192.168.254.107' + item.user.profile_picture }}
+                                style={globalStyles.shopSpotImagePlaceholder}
+                            />
+                        </View>
+                        <Text style={globalStyles.shopFooterText}>{item.shop_name}</Text>
                     </View>
                 </View>
             </View>
@@ -34,7 +39,7 @@ const ShopSpotLightCardView = () => {
                             size={12}/>
                     ))}
                     
-                    <Text style={globalStyles.ratingText}>(32)</Text>
+                    <Text style={globalStyles.ratingText}> ({item.rating})</Text>
                 </View>
             </View>
         </TouchableOpacity>
