@@ -9,7 +9,7 @@ import ImagePlaceholder from "../../assets/images/product_placeholder.png";
 const MoreItemsForYouCardView = ({item}) => {
     const navigation = useNavigation();
     return (
-        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
+        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", {item})}>
             <View style={globalStyles.ourPicksContainer}>
                 <View style={globalStyles.ourPicksImageWrapper}>
                     <Image

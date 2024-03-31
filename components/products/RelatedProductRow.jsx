@@ -1,19 +1,27 @@
-import { FlatList, View } from "react-native";
+import { FlatList, View, Text, ActivityIndicator } from "react-native";
 import React from "react";
 import { SIZES } from '../../constants';
 import globalStyles from "../../constants/global.styles";
 import RelatedProductCardView from "./RelatedProductCardView";
+import getRelatedItems from "../../hook/getRelatedItems";
 
-const RelatedProductRow = () => {
-    const products = [1,2,3,4];
+const RelatedProductRow = (item) => {
+    const {data, isLoading, error} = getRelatedItems(item);
     return (
         <View style={globalStyles.relatedProoductsListed}>
-            <FlatList
-                data={products}
-                renderItem={({item}) => <RelatedProductCardView/>}
-                numColumns={2}
-                contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column", justifyContent: "space-between"}}
-            />
+            {isLoading ? (
+                <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary}/>
+            ) : error ? (
+                <Text>Something went wrong</Text>
+            ) : (
+                <FlatList
+                    data={data}
+                    keyExtractor={(dataItem) => dataItem.id}
+                    renderItem={({renderDataItem}) => <RelatedProductCardView item={renderDataItem}/>}
+                    numColumns={2}
+                    contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column", justifyContent: "space-between"}}
+                />
+            )}
         </View>
     );
 }

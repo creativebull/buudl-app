@@ -4,6 +4,9 @@ import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context"
 import globalStyles from "../constants/global.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../constants";
+import {
+    SellerShopRow
+} from "../components";
 
 const SellerShops = ({navigation}) => {
     const insets = useSafeAreaInsets();
@@ -18,7 +21,6 @@ const SellerShops = ({navigation}) => {
                         <Text style={globalStyles.productDetailHeader}>Seller Shop</Text>
                     </View>
                 </View>
-                
             </ScrollView>
         </SafeAreaView>
     )

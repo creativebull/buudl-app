@@ -5,11 +5,10 @@ import { Ionicons, Fontisto } from "@expo/vector-icons";
 import { COLORS } from "../../constants";
 import { useNavigation } from "@react-navigation/native";
 
-
 const NewArrivalCardView = ({item}) => {
     const navigation = useNavigation();
     return (
-        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
+        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", {item})}>
             <View style={globalStyles.newArrivalProductContainer}>
                 <View style={globalStyles.newArrivalImageWrapper}>
                     <Image

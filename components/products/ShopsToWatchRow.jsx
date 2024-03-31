@@ -3,17 +3,25 @@ import React from "react";
 import { SIZES } from '../../constants';
 import globalStyles from "../../constants/global.styles";
 import ShopsToWatchCardView from "./ShopsToWatchCardView";
+import getLandingShopSpotlight from "../../hook/getLandingShopSpotlight";
 
 const ShopsToWatchRow = () => {
-    const products = [1,2,3,4];
+    const {data, isLoading, error} = getLandingShopSpotlight();
     return (
         <View style={globalStyles.shopsToWatchListed}>
-            <FlatList
-                data={products}
-                renderItem={({item}) => <ShopsToWatchCardView/>}
-                horizontal
-                contentContainerStyle={{columnGap: SIZES.meduim}}
-            />
+            {isLoading ? (
+                <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary}/>
+            ) : error ? (
+                <Text>Something went wrong</Text>
+            ) : (
+                <FlatList
+                    data={data}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({item}) => <ShopsToWatchCardView item={item}/>}
+                    horizontal
+                    contentContainerStyle={{columnGap: SIZES.meduim}}
+                />
+            )}
             <View style={globalStyles.shopsToWatchLearnMoreWrapper}>
                 <Text style={globalStyles.shopsToWatchInitialText}>Be one of them!</Text>
                 <TouchableOpacity>

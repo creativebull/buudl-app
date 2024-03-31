@@ -31,7 +31,7 @@ const Home = () => {
             <AppBar/>
             <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}>
                 <LandingPage/>
-                {/* <HomeHeroBanner/> */}
+                <HomeHeroBanner/>
                 <HomeCarousel/>
                 <ExploreStylesHeading/>
                 <ExploreStylesRow/>

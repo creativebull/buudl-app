@@ -8,7 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 const OurPicksCardView = ({item}) => {
     const navigation = useNavigation();
     return (
-        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
+        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", {item})}>
             <View style={globalStyles.ourPicksContainer}>
                 <View style={globalStyles.ourPicksImageWrapper}>
                     <Image

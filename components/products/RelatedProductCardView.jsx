@@ -6,10 +6,10 @@ import { COLORS } from "../../constants";
 import ImagePlaceholder from "../../assets/images/product_placeholder.png";
 import { useNavigation } from "@react-navigation/native";
 
-const RelatedProductCardView = () => {
+const RelatedProductCardView = (item) => {
     const navigation = useNavigation();
     return (
-        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
+        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", {item})}>
             <View style={globalStyles.relatedProductContainer}>
                 <View style={globalStyles.relatedProductImageWrapper}>
                     <Image
