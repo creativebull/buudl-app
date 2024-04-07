@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 const getMoreFromSeller = (item) => {
     const [ data, setData ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(false);
     const [ error, setError ] = useState(null);
-    const apiUrl = process.env.API_URL_LANDING_PAGE
+    const apiUrl = process.env.API_URL
 
     const getExploreData = async () => {
         try {
-            const response = await fetch('http://192.168.254.107/api/v1/product-details/moreFromSeller/' + item.user.id);
-            const json = await response.json();
-            setData(json.data[0].products);
+            const response = await axios.get(apiUrl + 'product-details/moreFromSeller/' + item.user.id);
+            setData(response.data.data[0].products);
         } catch (error) {
              setError(error);
         } finally {

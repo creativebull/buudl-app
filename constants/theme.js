@@ -19,6 +19,8 @@ const COLORS = {
 
     pink: "#FB9EBB",
     violet: "#CBB3F8",
+
+    black: "#000000"
 };
 
 const SIZES = {

@@ -7,6 +7,8 @@ import ProductDetails from "../screens/ProductDetails";
 import Cart from "../screens/Cart";
 import Store from "../screens/Store";
 import SellerShops from "../screens/SellerShops";
+import Login from "../screens/Login";
+import Register from "../screens/Register";
 
 export {
     Home,
@@ -17,5 +19,7 @@ export {
     Cart,
     ProductDetails,
     Store,
-    SellerShops
+    SellerShops,
+    Login,
+    Register,
 }

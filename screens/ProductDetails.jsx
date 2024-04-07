@@ -1,5 +1,5 @@
 import { Text, ScrollView, View, TouchableOpacity, Image } from "react-native";
-import React from 'react';
+import React, { useState } from 'react';
 import globalStyles from "../constants/global.styles";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons, Entypo, AntDesign } from "@expo/vector-icons";
@@ -7,20 +7,74 @@ import { COLORS } from "../constants";
 import { SliderBox } from "react-native-image-slider-box";
 import { MoreFromSellerRow, MoreFromSellerHeading, RelatedProductsHeading, RelatedProductRow } from "../components";
 import { useNavigation, useRoute } from "@react-navigation/native";
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import CenteredAlert from '../partials/CenteredAlert';
+import axios from "axios";
+const hostUrl = process.env.HOST_URL
+const apiUrl = process.env.API_URL
 
 const ProductDetails = () => {
     const route = useRoute();
     const {item} = route.params;
     const navigation = useNavigation();
     const insets = useSafeAreaInsets();
+    const [showAlert, setShowAlert] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
+    const [buttonLabel, setButtonLabel] = useState('');
+    const [onPressAction, setOnPressAction] = useState(() => {});
     //change this slider image to map to loop all images
     const slides = [
-        'http://192.168.254.107' + item.image,
+        hostUrl + item.image,
     ];
+
+    const data = {
+        quantity: 1,
+        price: item.price
+    }
+
+    const addToBag = async() => {
+        try {
+            const token = await AsyncStorage.getItem('token');
+            if (!token) {
+                // If not logged in, redirect to Login page
+                navigation.navigate('Login');
+                return; // Exit the function
+            }
+            const response = await axios.post(
+                apiUrl + `cart/${item.id}`,
+                data,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                }
+            );
+            if (response.data.data) {
+                errorMessage = response.data.message;
+            }
+            setShowAlert(true);
+            setButtonLabel('View Cart');
+            setOnPressAction(() => () => {
+                setShowAlert(false);
+                navigation.navigate('Cart')
+            });
+            setAlertMessage(errorMessage);
+        } catch (error) {
+            console.log("Failed to add to bag due to : ", error);
+        }
+    }
+
     return (
         <SafeAreaView>
             <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 10 }}>
+                {showAlert && (
+                    <CenteredAlert
+                    message={alertMessage}
+                    onClose={() => setShowAlert(false)}
+                    buttonOnPress={onPressAction}
+                    buttonLabel={buttonLabel}
+                    />
+                )}
                 <View style={globalStyles.productDetailsContainer}>
                     <View style={globalStyles.productUpperRow}> 
                         <TouchableOpacity onPress={()=>navigation.goBack()}>
@@ -56,7 +110,7 @@ const ProductDetails = () => {
                 </View>
 
                 <View style={globalStyles.ctaWrapper}>
-                    <TouchableOpacity onPress={()=>{}}>
+                    <TouchableOpacity onPress={()=>addToBag()}>
                         <Text style={globalStyles.ctaBtn}>Add to bag</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={globalStyles.ctaBtn}>
@@ -70,8 +124,10 @@ const ProductDetails = () => {
                 <View style={globalStyles.measurementWrapper}>
                     {item.size ? (
                         <View style={globalStyles.productDescriptionTagWrapper}>
-                            {item.size.map((size, index) => (
-                                <Text key={index} style={globalStyles.tagDescCta}>{size}</Text>
+                            {item.size.map((size, sizeIndex) => (
+                                <TouchableOpacity>
+                                    <Text key={sizeIndex} style={globalStyles.tagDescCta}>{size}</Text>
+                                </TouchableOpacity>
                             ))}
                         </View>
                     ) : (
@@ -121,14 +177,14 @@ const ProductDetails = () => {
                     <View style={globalStyles.shopInfoWrapper}>
                         <View style={globalStyles.shopImagePlaceholder}>
                             <Image
-                                source={{ uri: 'http://192.168.254.107' + item.user.profile_picture }}
+                                source={{ uri: hostUrl + item.user.profile_picture }}
                                 style={globalStyles.arrivalImage}
                             />
                         </View>
                         <View style={globalStyles.shopSellerInfo}>
                             {item.shop ? (
                                 <View>
-                                    {/* <Text style={globalStyles.shopTitle}>{item.shop.name}</Text>
+                                    <Text style={globalStyles.shopTitle}>{item.shop.name}</Text>
                                     <View style={globalStyles.ratingWrapper}>
                                         {[1,2,3,4,5].map((index) => (
                                             <Ionicons 
@@ -139,7 +195,7 @@ const ProductDetails = () => {
                                         ))}
                                         <Text style={globalStyles.ratingText}>(item.shop.rating)</Text>
                                     </View>
-                                    <Text style={globalStyles.shopLocationText}>{item.shop.address}</Text> */}
+                                    <Text style={globalStyles.shopLocationText}>{item.shop.address}</Text>
                                 </View>
                             ) : (
                                 <View>
@@ -181,10 +237,10 @@ const ProductDetails = () => {
                     <MoreFromSellerRow item={item}/>
                 </View>
 
-                {/* <View style={globalStyles.relatedProductWrapper}>
+                <View style={globalStyles.relatedProductWrapper}>
                     <RelatedProductsHeading/>
                     <RelatedProductRow item={item.product_code}/>
-                </View> */}
+                </View>
             </ScrollView>
         </SafeAreaView>
     )

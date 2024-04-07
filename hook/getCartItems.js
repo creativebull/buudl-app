@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const getLandingShopSpotlight = () => {
+const getCartItems = () => {
     const [ data, setData ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(false);
     const [ error, setError ] = useState(null);
@@ -9,9 +10,19 @@ const getLandingShopSpotlight = () => {
 
     const getExploreData = async () => {
         try {
-            const response = await axios.get(apiUrl + 'landing-page/shopSpotlight');
-            setData(response.data.data);
+            const token = await AsyncStorage.getItem('token');
+            const response = await axios.post(
+                apiUrl + 'auth/cart',
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+            console.log(response.data);
+            setData(response.data.cartItems);
         } catch (error) {
+            console.log("Failed to load bag data due to : ", error);
              setError(error);
         } finally {
             setIsLoading(false);
@@ -30,4 +41,4 @@ const getLandingShopSpotlight = () => {
     return {data, isLoading, error, refetch}
 }
 
-export default getLandingShopSpotlight;
+export default getCartItems;

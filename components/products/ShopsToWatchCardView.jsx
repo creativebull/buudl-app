@@ -5,12 +5,13 @@ import { useNavigation } from "@react-navigation/native"
 
 const ShopsToWatchCardView = ({item}) => {
     const navigation = useNavigation();
+    const hostUrl = process.env.HOST_URL
     return (
         <TouchableOpacity onPress={()=>navigation.navigate("SellerShops")}>
             <View style={globalStyles.shopsToWatchContainer}>
                 <View style={globalStyles.shopsToWatchWrapper}>
                     <Image
-                        source={{ uri: 'http://192.168.254.107' + item.shop_image }}
+                        source={{ uri: hostUrl + item.shop_image }}
                         style={globalStyles.shopsToWatchImage}
                     />
                 </View>

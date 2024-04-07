@@ -1,4 +1,4 @@
-import { FlatList, View } from "react-native";
+import { FlatList, View, Text } from "react-native";
 import React from "react";
 import { SIZES } from '../../constants';
 import globalStyles from "../../constants/global.styles";
@@ -7,6 +7,7 @@ import getLandingMoreItemsForYou from "../../hook/getLandingMoreItemsForYou";
 
 const MoreItemsForYouRow = () => {
     const {data, isLoading, error} = getLandingMoreItemsForYou();
+    
     return (
         <View style={globalStyles.popularItemsListed}>
             {isLoading ? (

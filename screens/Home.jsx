@@ -35,8 +35,8 @@ const Home = () => {
                 <HomeCarousel/>
                 <ExploreStylesHeading/>
                 <ExploreStylesRow/>
-                <CategoryHeading/>
-                <HomeStaggeredView/>
+                {/* <CategoryHeading/> */}
+                {/* <HomeStaggeredView/> */}
                 <NewArrivalHeading/>
                 <NewArrivalRow/>
                 <OurPicksHeading/>

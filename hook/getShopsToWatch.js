@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 const getShopsToWatch = () => {
     const [ data, setData ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(false);
     const [ error, setError ] = useState(null);
-    // const apiUrl = process.env.API_URL_LANDING_PAGE
+    const apiUrl = process.env.API_URL
 
     const getExploreData = async () => {
         try {
-            const response = await fetch('http://192.168.254.107/api/v1/landing-page/shopsToWatch');
-            const json = await response.json();
-            setData(json.data);
+            const response = await axios.get(apiUrl + 'landing-page/shopsToWatch');
+            setData(response.data.data);
         } catch (error) {
              setError(error);
         } finally {

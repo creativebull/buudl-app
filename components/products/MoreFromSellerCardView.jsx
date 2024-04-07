@@ -8,12 +8,13 @@ import { useNavigation } from "@react-navigation/native";
 
 const MoreFromSellerCardView = ({item}) => {
     const navigation = useNavigation();
+    const hostUrl = process.env.HOST_URL
     return (
         <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", {item})}>
             <View style={globalStyles.exploreStylesProductContainer}>
                 <View style={globalStyles.exploreImageWrapper}>
                     <Image
-                        source={{ uri: 'http://192.168.254.107' + item.image }}
+                        source={{ uri: hostUrl + item.image }}
                         style={globalStyles.exploreImage}
                     />
                     <TouchableOpacity>

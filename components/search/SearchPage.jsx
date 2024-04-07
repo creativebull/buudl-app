@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
-import { View, TouchableOpacity,  TextInput, Flatlist } from "react-native";
+import { View, TouchableOpacity, FlatList, TextInput, Text, SafeAreaView } from "react-native";
 import globalStyles from "../../constants/global.styles";
-import { Feather, Ionicons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import { COLORS, SIZES } from "../../constants/index";
+import SearchResults from "./SearchResults";
+import axios from "axios";
+const apiUrl = process.env.API_URL
 
 const SearchPage = ({navigation}) => {
     const [searchKey, setSearchKey] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const [searchMessage, setSearchMessage] = useState([]);
 
     const handleSearch = async() => {
         try {
-            const response = await fetch('http://192.168.254.107/api/v1/search/searchHandle');
-            setSearchResults(response.data);
+            const response = await axios.get(apiUrl + `search/searchHandle/${searchKey}`);
+            setSearchResults(response.data.data);
+            setSearchMessage(response.data.message);
         } catch (error) {
-            
+            console.log("Failed to fetch products", error)
         }
     }
 
     return (
-        <View>
+        <SafeAreaView>
             <View style={globalStyles.mainSearchContainer}>
                 <View style={globalStyles.searchContainer}>
-                    <View >
-                        <TouchableOpacity style={globalStyles.searchBtn}>
-                            <Ionicons name="camera-outline" size={SIZES.xLarge} color={COLORS.offWhite}/>
-                        </TouchableOpacity>
-                    </View>
                     <View style={globalStyles.searchWrapper}>
                         <TextInput
                             style={globalStyles.searchInput}
@@ -34,17 +34,26 @@ const SearchPage = ({navigation}) => {
                             placeholder="What do you fancy for today?"
                         />
                     </View>
-                    <TouchableOpacity onPress={()=>handleSearch()}>
-                        <Feather name="search" size={24} style={globalStyles.searchIcon}/>
+                    <TouchableOpacity onPress={()=>handleSearch()} style={globalStyles.searchBtn}>
+                        <Feather name="search" size={SIZES.xLarge} color={COLORS.white}/>
                     </TouchableOpacity>
                 </View>
             </View>
             {searchResults.length === 0 ? (
-                <View></View>
+                <View style={globalStyles.noSearchContainer}>
+                    <Feather name="search" size={200} color={COLORS.secondary}/>
+                    <Text style={globalStyles.noSearchText}>{searchMessage}</Text>
+                </View>
             ) : (
-                <Flatlist/>
+                <FlatList
+                    data={searchResults}
+                    keyExtractor={(item) => item.id}
+                    numColumns={2}
+                    renderItem={({item}) => <SearchResults item={item}/>}
+                    contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column"}}
+                />
             )}
-        </View>
+        </SafeAreaView>
     )
 }
 

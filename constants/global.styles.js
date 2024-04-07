@@ -21,7 +21,7 @@ const globalStyles = StyleSheet.create({
         alignItems: 'center',
     },
     searchIcon: {
-        marginRight: 12, // Add some spacing between search and cart icons
+        marginRight: 12,
     },
     TitleLabel: {
         fontFamily: "regular",
@@ -963,7 +963,104 @@ const globalStyles = StyleSheet.create({
     },
     tabIndicatorColor: {
         backgroundColor: COLORS.primary
-    }
+    },
+    noSearchContainer: {
+        flex: 1,
+        marginTop: "50%",
+        flexDirection: "column",
+        alignItems: "center"
+    },
+    noResultsImage: {
+        width: "100%",
+    },
+    noSearchText: {
+        fontSize: 24,
+        marginTop: 40,
+        color: COLORS.secondary,
+        fontFamily: "regular",
+        fontWeight: "bold"
+    },
+    goBackLoginContainer: {
+        flex: 1,
+    },
+    goBackLoginRow: {
+        marginHorizontal: 20,
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        position: "absolute",
+        top: -SIZES.xLarge,
+        width: SIZES.width -44,
+        zIndex: 999
+    },
+    loginContainer: {
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    loginCard: {
+        width: "80%",
+        marginVertical: "20%",
+        marginHorizontal: 12
+    },
+    loginInput: {
+        backgroundColor: COLORS.gray2,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: COLORS.black,
+        borderRadius: 20,
+        marginBottom: 20,
+    },
+    loginBtn: {
+        flex: 1,
+        alignItems: "center",
+        borderRadius: 20,
+        borderWidth: 1,
+        padding: 10,
+        borderColor: COLORS.black,
+        backgroundColor: COLORS.primary,
+    },
+    loginBtnText: {
+        color: COLORS.white,
+        fontFamily: "nunitoregular",
+        fontSize: 16,
+        fontWeight: "bold"
+    },
+    loginSubText: {
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center",
+        marginVertical: 20,
+    },
+    loginRegisterRedirectText: {
+        color: COLORS.primary
+    },
+    cartItemsContainer: {
+        flex: 1,
+        marginTop: 20,
+        marginHorizontal: 10
+    },
+    cartList: {
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "space-around",
+        width: "100%",
+        height: 80,
+        backgroundColor: COLORS.primary,
+        borderBottomWidth: 1,
+        borderColor: COLORS.black
+    },
+    cartListImageWrapper: {
+        flex: 1,
+        width: "20%",
+        overflow: "hidden",
+    },
+    cartListImage: {
+        flex: 1,
+        width: 90,
+        backgroundColor: COLORS.gray2
+    },
 });
 
 export default globalStyles;

@@ -3,10 +3,10 @@ import React from "react";
 import { SIZES } from '../../constants';
 import globalStyles from "../../constants/global.styles";
 import ShopsToWatchCardView from "./ShopsToWatchCardView";
-import getLandingShopSpotlight from "../../hook/getLandingShopSpotlight";
+import getShopsToWatch from "../../hook/getShopsToWatch";
 
 const ShopsToWatchRow = () => {
-    const {data, isLoading, error} = getLandingShopSpotlight();
+    const {data, isLoading, error} = getShopsToWatch();
     return (
         <View style={globalStyles.shopsToWatchListed}>
             {isLoading ? (

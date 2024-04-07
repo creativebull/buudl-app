@@ -8,12 +8,13 @@ import ImagePlaceholder from "../../assets/images/product_placeholder.png";
 
 const MoreItemsForYouCardView = ({item}) => {
     const navigation = useNavigation();
+    const hostUrl = process.env.HOST_URL
     return (
         <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", {item})}>
             <View style={globalStyles.ourPicksContainer}>
                 <View style={globalStyles.ourPicksImageWrapper}>
                     <Image
-                        source={{ uri: 'http://192.168.254.107' + item.image }}
+                        source={{ uri: hostUrl + item.image }}
                         style={globalStyles.arrivalImage}
                     />
                 </View>

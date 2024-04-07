@@ -7,12 +7,13 @@ import { useNavigation } from "@react-navigation/native";
 
 const OurPicksCardView = ({item}) => {
     const navigation = useNavigation();
+    const hostUrl = process.env.HOST_URL
     return (
         <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", {item})}>
             <View style={globalStyles.popularItemsContainer}>
                 <View style={globalStyles.popularItemsImageWrapper}>
                     <Image
-                        source={{ uri: 'http://192.168.254.107' + item.image }}
+                        source={{ uri: hostUrl + item.image }}
                         style={globalStyles.arrivalImage}
                     />
                     <TouchableOpacity style={globalStyles.addToCartBtn}>

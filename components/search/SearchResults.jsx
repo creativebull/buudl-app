@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants";
 import { useNavigation } from "@react-navigation/native";
 
-const OurPicksCardView = ({item}) => {
+const SearchResults = ({item}) => {
     const navigation = useNavigation();
     const hostUrl = process.env.HOST_URL
     return (
@@ -29,4 +29,4 @@ const OurPicksCardView = ({item}) => {
     );
 }
 
-export default OurPicksCardView
+export default SearchResults

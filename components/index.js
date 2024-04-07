@@ -22,6 +22,10 @@ import HomeHeroBanner from "./home/HomeHeroBanner";
 import HomeCarousel from "./home/HomeCarousel";
 import HomeStaggeredView from "./home/HomeStaggeredView";
 import SearchPage from "./search/SearchPage";
+import LoginPage from "./auth/LoginPage";
+import RegisterPage from "./auth/RegisterPage";
+import UserProfilePage from "./user/UserProfilePage";
+import CartPage from "./cart/CartPage";
 
 export { 
     LandingPage,
@@ -47,5 +51,9 @@ export {
     ShopsToWatchHeading,
     ShopsToWatchRow,
     MoreItemsForYouHeading,
-    MoreItemsForYouRow
+    MoreItemsForYouRow,
+    LoginPage,
+    RegisterPage,
+    UserProfilePage,
+    CartPage
 }

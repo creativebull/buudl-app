@@ -3,6 +3,7 @@ import React from "react";
 import globalStyles from "../../constants/global.styles";
 import { useNavigation } from "@react-navigation/native";
 import getLandingCategory from "../../hook/getLandingCategory";
+const hostURL = process.env.HOST_URL
 
 const HomeStaggeredView = item => {
     const navigation = useNavigation();
@@ -10,7 +11,7 @@ const HomeStaggeredView = item => {
     
     return (
         <View style={globalStyles.categoryContainer}>
-            {/* {isLoading ? (
+            {isLoading ? (
                 <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary}/>
             ) : error ? (
                 <Text>Something went wrong</Text>
@@ -19,13 +20,13 @@ const HomeStaggeredView = item => {
                     <View style={globalStyles.firstCategoryImageWrapper}>
                         <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Store")}>
                             <View style={globalStyles.categoryImage1} key={data[0].id}>
-                                <Image source={{ uri: 'http://192.168.254.107' + data[0].image_url}} style={globalStyles.catImage1}/>
+                                <Image source={{ uri: hostURL + data[0].image_url}} style={globalStyles.catImage1}/>
                                 <Text style={globalStyles.categoryText1}>{data[0].name}</Text>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Store")}>
                             <View style={globalStyles.categoryImage2} key={data[1].id}>
-                                <Image source={{ uri: 'http://192.168.254.107' + data[1].image_url}} style={globalStyles.catImage2}/>
+                                <Image source={{ uri: hostURL + data[1].image_url}} style={globalStyles.catImage2}/>
                                 <Text style={globalStyles.categoryText2}>{data[1].name}</Text>
                             </View>
                         </TouchableOpacity>
@@ -33,47 +34,19 @@ const HomeStaggeredView = item => {
                     <View style={globalStyles.secondCategoryImageWrapper}>
                         <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Store")}>
                             <View style={globalStyles.categoryImage3} key={data[2].id}>
-                                <Image source={{ uri: 'http://192.168.254.107' + data[2].image_url}} style={globalStyles.catImage3}/>
+                                <Image source={{ uri: hostURL + data[2].image_url}} style={globalStyles.catImage3}/>
                                 <Text style={globalStyles.categoryText3}>{data[2].name}</Text>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Store")}>
                             <View style={globalStyles.categoryImage4} key={data[3].id}>
-                                <Image source={{ uri: 'http://192.168.254.107' + data[3].image_url}} style={globalStyles.catImage4}/>
+                                <Image source={{ uri: hostURL + data[3].image_url}} style={globalStyles.catImage4}/>
                                 <Text style={globalStyles.categoryText4}>{data[3].name}</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
                 </View>
-            )} */}
-            <View style={globalStyles.firstCategoryImageWrapper}>
-                <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Store")}>
-                    <View style={globalStyles.categoryImage1} key={data[0].id}>
-                        <Image source={{ uri: 'http://192.168.254.107' + data[0].image_url}} style={globalStyles.catImage1}/>
-                        <Text style={globalStyles.categoryText1}>{data[0].name}</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Store")}>
-                    <View style={globalStyles.categoryImage2} key={data[1].id}>
-                        <Image source={{ uri: 'http://192.168.254.107' + data[1].image_url}} style={globalStyles.catImage2}/>
-                        <Text style={globalStyles.categoryText2}>{data[1].name}</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-            <View style={globalStyles.secondCategoryImageWrapper}>
-                <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Store")}>
-                    <View style={globalStyles.categoryImage3} key={data[2].id}>
-                        <Image source={{ uri: 'http://192.168.254.107' + data[2].image_url}} style={globalStyles.catImage3}/>
-                        <Text style={globalStyles.categoryText3}>{data[2].name}</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate("Store")}>
-                    <View style={globalStyles.categoryImage4} key={data[3].id}>
-                        <Image source={{ uri: 'http://192.168.254.107' + data[3].image_url}} style={globalStyles.catImage4}/>
-                        <Text style={globalStyles.categoryText4}>{data[3].name}</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
+            )}
         </View>
     );
 }

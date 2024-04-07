@@ -8,12 +8,13 @@ import { COLORS } from "../../constants";
 
 const ShopSpotLightCardView = ({item}) => {
     const navigation = useNavigation();
+    const hostUrl = process.env.HOST_URL
     return (
         <TouchableOpacity onPress={() => navigation.navigate("SellerShops")}>
             <View style={globalStyles.shopSpotLightContainer}>
                 <View style={globalStyles.shopSpotLightWrapper}>
                     <Image
-                        source={{ uri: 'http://192.168.254.107' + item.shop_image }}
+                        source={{ uri: hostUrl + item.shop_image }}
                         style={globalStyles.shopSpotLightImage}
                     />
                 </View>
@@ -21,7 +22,7 @@ const ShopSpotLightCardView = ({item}) => {
                     <View style={globalStyles.shopSpotLightContent}>
                         <View>
                             <Image
-                                source={{ uri: 'http://192.168.254.107' + item.user.profile_picture }}
+                                source={{ uri: hostUrl + item.user.profile_picture }}
                                 style={globalStyles.shopSpotImagePlaceholder}
                             />
                         </View>
