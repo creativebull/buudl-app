@@ -36,11 +36,6 @@ export default function App() {
             options={{headerShown:false}}
           />
           <Stack.Screen
-            name='Cart'
-            component={Cart}
-            options={{headerShown:false}}
-          />
-          <Stack.Screen
             name='ProductDetails'
             component={ProductDetails}
             options={{headerShown:false}}
@@ -63,6 +58,11 @@ export default function App() {
           <Stack.Screen
             name='Register'
             component={Register}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='Cart'
+            component={Cart}
             options={{headerShown:false}}
           />
         </Stack.Navigator>

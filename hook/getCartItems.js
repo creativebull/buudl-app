@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from "axios";
 
 const getCartItems = () => {
     const [ data, setData ] = useState([]);
@@ -11,16 +11,15 @@ const getCartItems = () => {
     const getExploreData = async () => {
         try {
             const token = await AsyncStorage.getItem('token');
-            const response = await axios.post(
-                apiUrl + 'auth/cart',
-                {},
-                {
+            if (token) {
+                // Fetch cart count from backend API
+                const response = await axios.post(apiUrl + 'cart/cartData', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
                 });
-            console.log(response.data);
-            setData(response.data.cartItems);
+                setData(response.data.data);
+            }
         } catch (error) {
             console.log("Failed to load bag data due to : ", error);
              setError(error);

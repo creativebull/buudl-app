@@ -1061,6 +1061,66 @@ const globalStyles = StyleSheet.create({
         width: 90,
         backgroundColor: COLORS.gray2
     },
+    signupHeaderContainer: {
+        flex: 1,
+        marginBottom: 70,
+    },
+    signupHeader: {
+        flexDirection: "row",
+        alignContent: "center",
+        justifyContent: "center",
+        marginBottom: 10
+    },
+    signupHeaderText: {
+        fontSize: 20,
+        fontFamily: "nunitoregular",
+        fontWeight: "bold",
+        color: COLORS.secondary
+    },
+    signupSubText: {
+        flexDirection: "row",
+        alignContent: "center",
+        justifyContent: "center"
+    },
+    signupSubTextText: {
+        fontSize: 18,
+        fontFamily: "nunitoregular",
+        color: COLORS.secondary
+    },
+    signupGprLink: {
+        color: COLORS.primary,
+        textDecorationLine: "underline",
+        fontSize: 12
+    },
+    signupGeneralText: {
+        fontSize: 12
+    },
+    registerCtaBtnWrapper: {
+        flex: 1,
+        flexDirection: "row",
+        alignContent: "space-between"
+    },
+    registerFirstNameInput: {
+        width: "50%",
+        backgroundColor: COLORS.gray2,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: COLORS.black,
+        borderRadius: 20,
+        marginBottom: 20,
+    },
+    registerLastNameInput: {
+        width: "50%",
+        backgroundColor: COLORS.gray2,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: COLORS.black,
+        borderRadius: 20,
+        marginBottom: 20,
+    },
+    spinner: {
+        marginTop: 20,
+    },
 });
 
 export default globalStyles;
