@@ -47,7 +47,7 @@ const LoginPage = () => {
             });
 
             await AsyncStorage.setItem('token', response.data.access_token);
-            if (response.data.data) {
+            if (response.data.message) {
                 errorMessage = response.data.message;
             }
             setShowAlert(true);
@@ -57,7 +57,7 @@ const LoginPage = () => {
                 // navigation.navigate('Cart')
                 navigation.navigate('Profile');
             });
-            setAlertMessage(errorMessage);
+            // setAlertMessage(errorMessage);
         } catch (error) {
             console.log("Failed to fetch products", error)
         } finally {
@@ -104,14 +104,14 @@ const LoginPage = () => {
                     </View>
                 </View>
             </View>
-            {/* {showAlert && (
-                <CenteredAlert
-                message={alertMessage}
-                onClose={() => setShowAlert(false)}
-                buttonOnPress={onPressAction}
-                buttonLabel={buttonLabel}
-                />
-            )} */}
+            {showAlert && (
+                    <CenteredAlert
+                    message={alertMessage}
+                    onClose={() => setShowAlert(false)}
+                    buttonOnPress={onPressAction}
+                    buttonLabel={buttonLabel}
+                    />
+                )}
         </SafeAreaView>
     )
 }

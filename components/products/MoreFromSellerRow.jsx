@@ -9,20 +9,13 @@ const MoreFromSellerRow = ({item}) => {
     const {data, isLoading, error} = getMoreFromSeller(item);
     return (
         <View style={globalStyles.exploreStylesListed}>
-            {isLoading ? (
-                <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary}/>
-            ) : error ? (
-                <Text>Something went wrong</Text>
-            ) : (
-                <FlatList
-                    data={data}
-                    keyExtractor={(item) => item.id}
-                    renderItem={({item}) => <MoreFromSellerCardView item={item}/>}
-                    horizontal
-                    contentContainerStyle={{columnGap: SIZES.meduim}}
-                />
-            )}
-            
+            <FlatList
+                data={data}
+                keyExtractor={(item) => item.id}
+                renderItem={({item}) => <MoreFromSellerCardView item={item}/>}
+                horizontal
+                contentContainerStyle={{columnGap: SIZES.meduim}}
+            />
         </View>
     );
 }

@@ -10,6 +10,7 @@ const getLandingCategory = () => {
     const getExploreData = async () => {
         try {
             const response = await axios.get(apiUrl + 'landing-page/shopCategory');
+            console.log(response.data.data);
             setData(response.data.data);
         } catch (error) {
              setError(error);

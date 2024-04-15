@@ -77,7 +77,7 @@ const BottomTabNavigation = () => {
                 component={AccountManagement}
                 options={{
                     tabBarIcon: ({focused})=> {
-                        return <Ionicons name={focused ? "ios-grid" : "ios-grid-outline"} 
+                        return <Ionicons name={focused ? "apps" : "apps-outline"}
                                         size={24}
                                         color={focused ? COLORS.primary : COLORS.grey2}
                                         />

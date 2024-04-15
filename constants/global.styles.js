@@ -1121,6 +1121,265 @@ const globalStyles = StyleSheet.create({
     spinner: {
         marginTop: 20,
     },
+    userTabView: {
+        flex: 1,
+        marginTop: 50
+    },
+    userSceneContainer: {
+        flex: 1,
+        marginTop: 200,
+        backgroundColor: COLORS.primary
+    },
+    userInfoContainer: {
+        flex: 1,
+        marginHorizontal: 25,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginRight: 60,
+    },
+    profilePic: {
+        backgroundColor: COLORS.gray2,
+        width: 100,
+        height: 100,
+        borderRadius: 100
+    },
+    userName: {
+        marginTop: 20,
+        marginLeft: 10
+    },
+    userTextName: {
+        fontFamily: "nunitoregular",
+        fontSize: 20,
+        fontWeight: "bold",
+        color: COLORS.secondary
+    },
+    userFollowing: {
+        alignItems: "center"
+    },
+    userFollowers: {
+        alignItems: "center"
+    },
+    userFollowingCounter: {
+        color: COLORS.secondary,
+        fontSize: 20,
+        fontWeight: "500",
+        marginBottom: 5
+    },
+    followingSubtext: {
+        color: COLORS.gray,
+        marginBottom: 20,
+    },
+    editProfileButton: {
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: COLORS.primary,
+        padding: 13
+    },
+    editProfileText: {
+        color: COLORS.primary
+    },
+    userFollowersCounter: {
+        color: COLORS.secondary,
+        fontSize: 20,
+        fontWeight: "500",
+        marginBottom: 5
+    },
+    followersSubtext: {
+        color: COLORS.gray,
+        marginBottom: 20,
+    },
+    shareProfileButton: {
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: COLORS.primary,
+        padding: 13
+    },
+    shareProfileText: {
+        color: COLORS.primary
+    },
+    hubTabView: {
+        flex: 1,
+        marginTop: 20
+    },
+    hubViewContainer: {
+        flex: 1,
+    },
+    hubInfoContainer: {
+        flex: 1,
+        marginHorizontal: 25,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginRight: 60,
+    },
+    hubTextContainer: {
+        width: "100%",
+        alignItems: "center"
+    },
+    hubText: {
+        color: COLORS.secondary,
+        fontSize: 30
+    },
+    hubSceneContainer: {
+        flex: 1,
+    },
+    accountTabContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 25,
+    },
+    accountTab: {
+        paddingHorizontal: 47,
+        paddingVertical: 10,
+    },
+    accountTabText: {
+        fontSize: 16,
+        opacity: 0.5
+    },
+    accountActiveText: {
+        fontSize: 16,
+        opacity: 1,
+        color: COLORS.primary
+    },
+    accountActiveTab: {
+        borderBottomWidth: 2,
+        borderBottomColor: COLORS.primary,
+    },
+    accountTabContent: {
+        padding: 20,
+    },
+    accountSellerContainer: {
+        flex: 1,
+    },
+    buudlShopIcon: {  
+        width: 80,
+        height: 80,
+        marginBottom: 40,
+    },
+    sellerHeader: {
+        alignItems: "center"
+    },
+    accountSellingSubText: {
+        textAlign: "center",
+        marginBottom: 50
+    },
+    sellNowButton: {
+        backgroundColor: COLORS.primary,
+        padding: 20,
+        borderRadius: 20,
+        width: "80%"
+    },
+    sellNowButtonText: {
+        color: COLORS.white,
+        textAlign: "center",
+        fontFamily: "nunitoregular"
+    },
+    sellerRegistrationContainer: {
+        flex: 1,
+        marginBottom: 0
+    },
+    sellerRegistrationBackgorundImage: {
+        flex: 1,
+        resizeMode: 'cover',
+        width: "100%",
+    },
+    sellerImageOverlay: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(0,0,0,0.3)'
+    },
+    sellerContextContainer: {
+        position: "absolute",
+        bottom: "30%",
+        left: 20
+    },
+    sellerRegistrationHeader: {
+        fontFamily: "nunitoregular",
+        fontSize: 40,
+        color: COLORS.white,
+        fontWeight: "700",
+        marginBottom: -35
+    },
+    sellerRegistrationCompName: {
+        fontFamily: "nunitoregular",
+        fontSize: 110,
+        color: COLORS.white,
+        fontWeight: "700",
+        marginBottom: -30
+    },
+    sellerRegistrationTagLine: {
+        fontFamily: "nunitoregular",
+        fontSize: 18,
+        fontWeight: "700",
+        color: COLORS.primary,
+    },
+    sellerBottomContextContainer: {
+        position: "absolute",
+        bottom: "10%",
+        left: 20
+    },
+    sellerRegistrationBottomHeader: {
+        fontSize: 14,
+        color: COLORS.white
+    },
+    closeSellerRegistration: {
+        zIndex: 999,
+        position: "absolute",
+        right: 10,
+        top: 10
+    },
+    closeText: {
+        fontFamily: "nunitoregular",
+        color: COLORS.white,
+        fontSize: 30,
+        fontWeight: "bold"
+    },
+    sellerRegistrationPageContainer: {
+        flex: 1,
+        flexDirection: "column"
+    },
+    sellerRegistrationTitle: {
+        fontSize: SIZES.xLarge,
+        fontWeight: "bold",
+        color: COLORS.secondary
+    },
+    sellerRegistrationSubTitle: {
+        fontSize: 14,
+        color: COLORS.secondary
+    },
+    sellerGoBackContainer: {
+        flex: 1,
+        marginTop: 20
+    },
+    sellerGoBackRow: {
+        marginHorizontal: 20,
+        flexDirection: "row",
+        alignItems: "center",
+        zIndex: 999
+    },
+    sellerHeading: {
+        alignItems: "center",
+        marginTop: -30
+    },
+    sellerRadioContainer: {
+        flexDirection: "column",
+        top: 70,
+    },
+    sellerRadioText: {
+        marginHorizontal: 20,
+        fontFamily: "regular",
+        fontSize: 15,
+        fontWeight: "bold",
+        marginBottom: 15
+    },
+    radioContatiner: {
+        marginLeft: -300
+    },
+    sellerTypeContainer: {
+        marginTop: 100
+    },
 });
 
 export default globalStyles;

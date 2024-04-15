@@ -5,33 +5,31 @@ import globalStyles from "../constants/global.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../constants";
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
-import {
-  MoreItemsForYouRow
-} from "../components";
+import { MoreItemsForYouRow } from "../components";
 
 const Relevance = () => (
-    <View style={globalStyles.sceneContainer}>
-        <MoreItemsForYouRow/>
-    </View>
-  );
-  
-  const Latest = () => (
-    <View style={globalStyles.sceneContainer}>
+  <View style={globalStyles.sceneContainer}>
       <MoreItemsForYouRow/>
-    </View>
-  );
-  
-  const TopSales = () => (
-    <View style={globalStyles.sceneContainer}>
-      <MoreItemsForYouRow/>
-    </View>
-  );
-  
-  const Price = () => (
-    <View style={globalStyles.sceneContainer}>
-      <MoreItemsForYouRow/>
-    </View>
-  );
+  </View>
+);
+
+const Latest = () => (
+  <View style={globalStyles.sceneContainer}>
+    <MoreItemsForYouRow/>
+  </View>
+);
+
+const TopSales = () => (
+  <View style={globalStyles.sceneContainer}>
+    <MoreItemsForYouRow/>
+  </View>
+);
+
+const Price = () => (
+  <View style={globalStyles.sceneContainer}>
+    <MoreItemsForYouRow/>
+  </View>
+);
 
 const Store = ({navigation}) => {
     const insets = useSafeAreaInsets();

@@ -9,19 +9,13 @@ const RelatedProductRow = (item) => {
     const {data, isLoading, error} = getRelatedItems(item);
     return (
         <View style={globalStyles.relatedProoductsListed}>
-            {isLoading ? (
-                <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary}/>
-            ) : error ? (
-                <Text>Something went wrong</Text>
-            ) : (
-                <FlatList
-                    data={data}
-                    keyExtractor={(dataItem) => dataItem.id}
-                    renderItem={({renderDataItem}) => <RelatedProductCardView item={renderDataItem}/>}
-                    numColumns={2}
-                    contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column", justifyContent: "space-between"}}
-                />
-            )}
+            <FlatList
+                data={data}
+                keyExtractor={(dataItem) => dataItem.id}
+                renderItem={({renderDataItem}) => <RelatedProductCardView item={renderDataItem}/>}
+                numColumns={2}
+                contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column", justifyContent: "space-between"}}
+            />
         </View>
     );
 }

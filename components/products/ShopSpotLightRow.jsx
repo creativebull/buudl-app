@@ -9,19 +9,13 @@ const ShopSpotLightRow = () => {
     const {data, isLoading, error} = getLandingShopSpotlight();
     return (
         <View style={globalStyles.shopSpotLightListed}>
-            {isLoading ? (
-                <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary}/>
-            ) : error ? (
-                <Text>Something went wrong</Text>
-            ) : (
-                <FlatList
-                    data={data}
-                    keyExtractor={(item) => item.id}
-                    horizontal
-                    renderItem={({item}) => <ShopSpotLightCardView item={item}/>}
-                    contentContainerStyle={{columnGap: SIZES.meduim, }}
-                />
-            )}
+            <FlatList
+                data={data}
+                keyExtractor={(item) => item.id}
+                horizontal
+                renderItem={({item}) => <ShopSpotLightCardView item={item}/>}
+                contentContainerStyle={{columnGap: SIZES.meduim, }}
+            />
         </View>
     );
 }

@@ -10,19 +10,13 @@ const ExploreStylesRow = () => {
     const {data, isLoading, error} = getExploreStyles();
     return (
         <View style={globalStyles.exploreStylesListed}>
-            {isLoading ? (
-                <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary}/>
-            ) : error ? (
-                <Text>Something went wrong</Text>
-            ) : (
-                <FlatList
-                    data={data}
-                    keyExtractor={(item) => item.id}
-                    renderItem={({item}) => <ExploreStylesCardView item={item}/>}
-                    horizontal
-                    contentContainerStyle={{columnGap: SIZES.meduim}}
-                />
-            )}
+            <FlatList
+                data={data}
+                keyExtractor={(item) => item.id}
+                renderItem={({item}) => <ExploreStylesCardView item={item}/>}
+                horizontal
+                contentContainerStyle={{columnGap: SIZES.meduim}}
+            />
             <Image source={Buudl20PecentSticker} style={globalStyles.buudl20Sticker}/>
         </View>
     );

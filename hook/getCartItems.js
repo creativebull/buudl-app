@@ -18,6 +18,7 @@ const getCartItems = () => {
                         Authorization: `Bearer ${token}`
                     }
                 });
+                console.log(response.data.data);
                 setData(response.data.data);
             }
         } catch (error) {

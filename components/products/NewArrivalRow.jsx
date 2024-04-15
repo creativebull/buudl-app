@@ -9,20 +9,13 @@ const NewArrivalRow = () => {
     const {data, isLoading, error} = getLandingNewArrivals();
     return (
         <View style={globalStyles.newArrivalsListed}>
-            {isLoading ? (
-                <ActivityIndicator size={SIZES.xLarge} color={COLORS.primary}/>
-            ) : error ? (
-                <Text>Something went wrong</Text>
-            ) : (
-                <FlatList
-                    data={data}
-                    keyExtractor={(item) => item.id}
-                    renderItem={({item}) => <NewArrivalCardView item={item}/>}
-                    horizontal
-                    contentContainerStyle={{columnGap: SIZES.meduim}}
-                />
-            )}
-            
+            <FlatList
+                data={data}
+                keyExtractor={(item) => item.id}
+                renderItem={({item}) => <NewArrivalCardView item={item}/>}
+                horizontal
+                contentContainerStyle={{columnGap: SIZES.meduim}}
+            />
         </View>
     );
 }

@@ -1,17 +1,17 @@
 import { Text, ScrollView } from "react-native";
 import React from 'react';
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
-import { AccountManagementPage } from "../components";
+import { SellerRegistrationInfoPage } from '../components';
 
-const AccountManagement = () => {
+const SellerRegistrationShopInformation = () => {
     const insets = useSafeAreaInsets();
     return (
         <SafeAreaView>
             <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}>
-                <AccountManagementPage/>
+                <SellerRegistrationInfoPage/>
             </ScrollView>
         </SafeAreaView>
     )
 }
 
-export default AccountManagement
+export default SellerRegistrationShopInformation

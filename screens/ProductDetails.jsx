@@ -10,10 +10,10 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CenteredAlert from '../partials/CenteredAlert';
 import axios from "axios";
-const hostUrl = process.env.HOST_URL
-const apiUrl = process.env.API_URL
 
 const ProductDetails = () => {
+    const hostUrl = process.env.HOST_URL
+    const apiUrl = process.env.API_URL
     const route = useRoute();
     const {item} = route.params;
     const navigation = useNavigation();
@@ -22,6 +22,7 @@ const ProductDetails = () => {
     const [alertMessage, setAlertMessage] = useState('');
     const [buttonLabel, setButtonLabel] = useState('');
     const [onPressAction, setOnPressAction] = useState(() => {});
+    console.log(hostUrl);
     //change this slider image to map to loop all images
     const slides = [
         hostUrl + item.image,

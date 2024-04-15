@@ -9,7 +9,8 @@ const getSearchData = () => {
 
     const getExploreData = async () => {
         try {
-            const response = await axios.get('http://192.168.254.116/api/v1/search/searchHandle');
+            const response = await axios.get(apiUrl + 'search/searchHandle');
+            console.log(response.data.data);
             const json = await response.json();
             setData(json.data);
         } catch (error) {

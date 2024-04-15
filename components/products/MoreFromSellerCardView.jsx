@@ -9,6 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 const MoreFromSellerCardView = ({item}) => {
     const navigation = useNavigation();
     const hostUrl = process.env.HOST_URL
+    console.log(hostUrl);
     return (
         <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", {item})}>
             <View style={globalStyles.exploreStylesProductContainer}>

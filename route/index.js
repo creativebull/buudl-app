@@ -9,6 +9,8 @@ import Store from "../screens/Store";
 import SellerShops from "../screens/SellerShops";
 import Login from "../screens/Login";
 import Register from "../screens/Register";
+import SellerRegistration from "../screens/SellerRegistration";
+import SellerRegistrationShopInformation from "../screens/SellerRegistrationShopInformation";
 
 export {
     Home,
@@ -22,4 +24,6 @@ export {
     SellerShops,
     Login,
     Register,
+    SellerRegistration,
+    SellerRegistrationShopInformation,
 }

@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native"
 const ShopsToWatchCardView = ({item}) => {
     const navigation = useNavigation();
     const hostUrl = process.env.HOST_URL
+    console.log(hostUrl);
     return (
         <TouchableOpacity onPress={()=>navigation.navigate("SellerShops")}>
             <View style={globalStyles.shopsToWatchContainer}>

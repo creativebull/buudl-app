@@ -26,6 +26,9 @@ import LoginPage from "./auth/LoginPage";
 import RegisterPage from "./auth/RegisterPage";
 import UserProfilePage from "./user/UserProfilePage";
 import CartPage from "./cart/CartPage";
+import AccountManagementPage from "./account-management/AccountManagementPage";
+import SellerRegisterPage from "./seller/SellerRegisterPage";
+import SellerRegistrationInfoPage from "./seller/SellerRegistrationInfoPage";
 
 export { 
     LandingPage,
@@ -55,5 +58,8 @@ export {
     LoginPage,
     RegisterPage,
     UserProfilePage,
-    CartPage
+    CartPage,
+    AccountManagementPage,
+    SellerRegisterPage,
+    SellerRegistrationInfoPage,
 }

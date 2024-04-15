@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "buudl_app",
-    "slug": "buudl_app",
+    "slug": "buudlapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,24 +15,41 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nyorpablo.buudl"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.nyorpablo.buudl"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      ["expo-build-properties", {
-        "android": {
-          "usesCleartextTraffic": true
-        },
-        "ios": {}
-      }]
-    ]
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          },
+          "ios": {}
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "0a4fb2da-0993-4bd4-ae81-bb13fe471856"
+      }
+    },
+    "owner": "buudl_team",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/0a4fb2da-0993-4bd4-ae81-bb13fe471856"
+    }
   }
 }

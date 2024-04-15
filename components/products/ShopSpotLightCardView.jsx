@@ -9,6 +9,7 @@ import { COLORS } from "../../constants";
 const ShopSpotLightCardView = ({item}) => {
     const navigation = useNavigation();
     const hostUrl = process.env.HOST_URL
+    console.log(hostUrl);
     return (
         <TouchableOpacity onPress={() => navigation.navigate("SellerShops")}>
             <View style={globalStyles.shopSpotLightContainer}>
