@@ -1380,6 +1380,24 @@ const globalStyles = StyleSheet.create({
     sellerTypeContainer: {
         marginTop: 100
     },
+    sellerInputContainer: {
+        marginHorizontal: 20
+    },
+    sellerInfoText: {
+        fontFamily: "regular",
+        fontSize: 20,
+        color: COLORS.gray
+    },
+    sellerShopNameInput: {
+        fontFamily: "nunitoregular",
+        paddingHorizontal: SIZES.small,
+    },
+    sellerGroupInput: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        borderBottomWidth: 1,
+        borderColor: COLORS.gray
+    },
 });
 
 export default globalStyles;

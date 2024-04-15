@@ -46,14 +46,10 @@ const AppBarNavigation = () => {
                 <View style={globalStyles.alignedRight}>
                     <View style={globalStyles.wishlistContainer}>
                         <TouchableOpacity>
-                            <Ionicons name='mail' size={24} style={globalStyles.wishlistColor} />
+                            <Ionicons name='notifications' size={24} style={globalStyles.wishlistColor} />
                         </TouchableOpacity>
                     </View>
-                    <View style={globalStyles.wishlistContainer}>
-                        <TouchableOpacity>
-                            <Fontisto name='heart' size={24} style={globalStyles.wishlistColor} />
-                        </TouchableOpacity>
-                    </View>
+                   
                     <View style={globalStyles.cartContainer}>
                         <View style={globalStyles.cartCount}>
                             <Text style={globalStyles.cartNumber}>{cartCount}</Text>

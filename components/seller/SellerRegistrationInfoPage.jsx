@@ -1,4 +1,4 @@
-import { Text, View, Image, TouchableOpacity } from "react-native";
+import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import React, { useMemo, useState } from 'react';
 import globalStyles from "../../constants/global.styles";
 import { Ionicons } from "@expo/vector-icons";
@@ -8,6 +8,7 @@ import RadioGroup from 'react-native-radio-buttons-group';
 
 const SellerRegistrationInfoPage = () => {
     const navigation = useNavigation();
+    const [shopName, setShopName] = useState([]);
 
     const radioButtons = useMemo(() => ([
         {
@@ -15,13 +16,13 @@ const SellerRegistrationInfoPage = () => {
             label: 'Individual',
             value: 'individual',
             selected: true,
-            color: COLORS.primary
+            color: COLORS.primary,
         },
         {
             id: '2',
             label: 'Business',
             value: 'business',
-            color: COLORS.primary
+            color: COLORS.primary,
         }
     ]), []);
     const [selectedId, setSelectedId] = useState();
@@ -52,8 +53,17 @@ const SellerRegistrationInfoPage = () => {
             </View>
             <View style={globalStyles.sellerTypeContainer}>
                 {selectedId == 1 && (
-                    <View>
-                        <Text>Seller Information</Text>
+                    <View style={globalStyles.sellerInputContainer}>
+                        <Text style={globalStyles.sellerInfoText}>Seller Information</Text>
+                        <View style={globalStyles.sellerGroupInput}>
+                            <Text style={globalStyles.sellerGroupInputLabel}>Shop Name</Text>
+                            <TextInput
+                                style={globalStyles.sellerShopNameInput}
+                                value={shopName}
+                                onChangeText={setShopName}
+                                placeholder="ZhouStore"
+                            />
+                        </View>
                     </View>
                 )}
                 {selectedId == 2 && (

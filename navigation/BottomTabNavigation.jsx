@@ -65,7 +65,7 @@ const BottomTabNavigation = () => {
                 component={Notification}
                 options={{
                     tabBarIcon: ({focused})=> {
-                        return <Ionicons name={focused ? "notifications" : "notifications-outline"} 
+                        return <Ionicons name={focused ? "mail" : "mail-outline"} 
                                         size={24}
                                         color={focused ? COLORS.primary : COLORS.grey2}
                                         />
