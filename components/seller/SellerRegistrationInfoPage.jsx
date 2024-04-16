@@ -64,11 +64,70 @@ const SellerRegistrationInfoPage = () => {
                                 placeholder="ZhouStore"
                             />
                         </View>
+                        <View style={globalStyles.spacer}></View>
+                        <View style={globalStyles.sellerGroupInput}>
+                            <Text style={globalStyles.sellerGroupInputLabel}>TIN</Text>
+                            <TextInput
+                                style={globalStyles.sellerShopNameInput}
+                                value={shopName}
+                                onChangeText={setShopName}
+                                placeholder="999-999-999"
+                            />
+                        </View>
+                        <View style={globalStyles.sellerFooterContainer}>
+                            <View style={globalStyles.loginSubText}>
+                                <Text style={globalStyles.signupGeneralText}>By continuing, I agree to Buudl's</Text>
+                                <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
+                                    <Text style={globalStyles.signupGprLink}> Privacy Policy</Text>
+                                </TouchableOpacity>
+                                <Text style={globalStyles.signupGeneralText}>and</Text>
+                                <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
+                                    <Text style={globalStyles.signupGprLink}> Terms of Use</Text>
+                                </TouchableOpacity>
+                            </View>
+                            <TouchableOpacity style={globalStyles.sellerContinueBtn} onPress={()=>navigation.navigate('SellerVerificationPage1')}>
+                                <Text style={globalStyles.sellerContinueBtnText}>Continue</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 )}
                 {selectedId == 2 && (
-                    <View>
-                        <Text>Seller Information</Text>
+                    <View style={globalStyles.sellerInputContainer}>
+                        <Text style={globalStyles.sellerInfoText}>Seller Information</Text>
+                        <View style={globalStyles.sellerGroupInput}>
+                            <Text style={globalStyles.sellerGroupInputLabel}>Registered Name</Text>
+                            <TextInput
+                                style={globalStyles.sellerShopNameInput}
+                                value={shopName}
+                                onChangeText={setShopName}
+                                placeholder="ZhouStore"
+                            />
+                        </View>
+                        <View style={globalStyles.spacer}></View>
+                        <View style={globalStyles.sellerGroupInput}>
+                            <Text style={globalStyles.sellerGroupInputLabel}>TIN</Text>
+                            <TextInput
+                                style={globalStyles.sellerShopNameInput}
+                                value={shopName}
+                                onChangeText={setShopName}
+                                placeholder="999-999-999"
+                            />
+                        </View>
+                        <View style={globalStyles.sellerFooterContainer}>
+                            <View style={globalStyles.loginSubText}>
+                                <Text style={globalStyles.signupGeneralText}>By continuing, I agree to Buudl's</Text>
+                                <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
+                                    <Text style={globalStyles.signupGprLink}> Privacy Policy</Text>
+                                </TouchableOpacity>
+                                <Text style={globalStyles.signupGeneralText}>and</Text>
+                                <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
+                                    <Text style={globalStyles.signupGprLink}> Terms of Use</Text>
+                                </TouchableOpacity>
+                            </View>
+                            <TouchableOpacity style={globalStyles.sellerContinueBtn} onPress={()=>navigation.navigate('SellerVerificationPage1')}>
+                                <Text style={globalStyles.sellerContinueBtnText}>Continue</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 )}
             </View>

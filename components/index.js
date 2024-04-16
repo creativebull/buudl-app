@@ -29,6 +29,11 @@ import CartPage from "./cart/CartPage";
 import AccountManagementPage from "./account-management/AccountManagementPage";
 import SellerRegisterPage from "./seller/SellerRegisterPage";
 import SellerRegistrationInfoPage from "./seller/SellerRegistrationInfoPage";
+import SellerVerificationStep1 from "./seller/SellerVerificationStep1";
+import SellerVerificationStep2 from "./seller/SellerVerificationStep2";
+import SellerVerificationStep3 from "./seller/SellerVerificationStep3";
+import SellerVerificationStep4 from "./seller/SellerVerificationStep4";
+import SellerVerificationStep5 from "./seller/SellerVerificationStep5";
 
 export { 
     LandingPage,
@@ -62,4 +67,9 @@ export {
     AccountManagementPage,
     SellerRegisterPage,
     SellerRegistrationInfoPage,
+    SellerVerificationStep1,
+    SellerVerificationStep2,
+    SellerVerificationStep3,
+    SellerVerificationStep4,
+    SellerVerificationStep5,
 }

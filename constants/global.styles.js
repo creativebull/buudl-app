@@ -1391,12 +1391,199 @@ const globalStyles = StyleSheet.create({
     sellerShopNameInput: {
         fontFamily: "nunitoregular",
         paddingHorizontal: SIZES.small,
+        width: 120
     },
     sellerGroupInput: {
         flexDirection: "row",
         justifyContent: "space-between",
         borderBottomWidth: 1,
-        borderColor: COLORS.gray
+        borderColor: COLORS.gray,
+    },
+    sellerGroupInputLabel: {
+        fontSize: 13
+    },
+    spacer: {
+        marginVertical: 10
+    },
+    sellerFooterContainer: {
+        marginTop: 60,
+        alignItems: "center"
+    },
+    sellerContinueBtn: {
+        alignItems: "center",
+        width: "90%",
+        paddingVertical: 20,
+        backgroundColor: COLORS.primary,
+        borderRadius: 10
+    },
+    sellerContinueBtnText: {
+        color: COLORS.white
+    },
+    sellerVertificationGroupHeader: {
+        flex: 1,
+        flexDirection: "row",
+    },
+    sellerVerificationHeader: {
+        marginHorizontal: 50,
+        marginTop: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: COLORS.black
+    },
+    sellerVerificationTitle: {
+        fontSize: 30,
+        fontWeight: "bold",
+        color: COLORS.secondary,
+        fontFamily: "nunitoregular"
+    },
+    sellerVerificationTitleOrange: {
+        fontSize: 30,
+        fontWeight: "bold",
+        color: COLORS.secondary,
+        fontFamily: "nunitoregular",
+        color: COLORS.primary
+    },
+    sellerVerificationSubTitle: {
+        fontSize: 14,
+        color: COLORS.secondary,
+        marginTop: 20,
+        marginBottom: 20
+    },
+    sellerVerificationBlockBB: {
+        marginTop: 30,
+        marginHorizontal: 50,
+        borderBottomWidth: 1,
+        borderBottomColor: COLORS.black
+    },
+    sellerBlockHeader: {
+        fontSize: 15,
+        fontWeight: "bold",
+        color: COLORS.secondary,
+        marginBottom: 10
+    },
+    sellerVerificationGroupBlock: {
+        flex: 1,
+        flexDirection: "row",
+        marginBottom: 10
+    },
+    sellerVerficationPointerBG: {
+        backgroundColor: COLORS.primary,
+        padding: 10,
+        borderRadius: 50,
+        width: 38,
+        alignItems: "center"
+    },
+    sellerVerficationPointerBgSmall: {
+        backgroundColor: COLORS.primary,
+        borderRadius: 20,
+        width: 15,
+        height: 15,
+        alignItems: "center",
+    },
+    SellerVerificationPointerText: {
+        marginTop: 10,
+        marginLeft: 10
+    },
+    sellerVerificationBlockBGText: {
+        color: COLORS.white
+    },
+    SellerVerificationPointerSmallText: {
+        marginLeft: 10,
+        color: COLORS.gray,
+        fontSize: 10
+    },
+    SellerVerificationContentText: {
+        fontSize: 12,
+        marginBottom: 20
+    },
+    sellerVerificationStep2Title: {
+        fontSize: 25,
+        fontWeight: "bold",
+        alignContent: "center"
+    },
+    sellerVerificationHeaderStep2: {
+        marginHorizontal: 50,
+        marginTop: 20,
+        alignItems: "center"
+    },
+    sellerVerificationStep2SubTitle: {
+        fontSize: 14,
+        color: COLORS.secondary,
+        marginTop: 20,
+        marginBottom: 20,
+        backgroundColor: COLORS.lightGreen,
+        alignItems: "center",
+        padding: 20
+    },
+    sellerVerificationInputGroup: {
+        marginHorizontal: 30,
+        marginTop: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: COLORS.sellerGoBackContainer
+    },
+    sellerVerificationInput: {
+        fontFamily: "nunitoregular",
+        marginTop: 20
+    },
+    sellerVerificationIdWrapper: {
+        marginTop: 30,
+    },
+    sellerVerificationIdContainerActive: {
+      flex: 1,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginHorizontal: 20,
+      padding: 10,
+      borderWidth: 1,
+      borderRadius: 10,
+      borderColor: COLORS.primary
+
+    },
+    sellerVerificationIdGroup: {
+        flex: 1,
+        flexDirection: "row",
+    },
+    checkmark: {
+        width: 20,
+        height: 20
+    },
+    sellerVerificationIdContainer: {
+      flex: 1,
+      flexDirection: "row",
+      marginHorizontal: 20,
+      padding: 10,
+      borderWidth: 1,
+      borderRadius: 10,
+      marginTop: 10
+    },
+    sellerVerificationTipsHeaderContainer: {
+        flex: 1,
+        flexDirection: "row",
+        marginHorizontal: 30,
+        marginTop: 20
+    },
+    sellerVerificationTipsToolTipIcon: {
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: COLORS.primary,
+        borderRadius: 50,
+        width: 30,
+        height: 30
+    },
+    sellerVerificationToolTipEx: {
+        color: COLORS.white,
+        fontWeight: "bold"
+    },
+    sellerVerificationToolTipText: {
+        justifyContent: "center",
+        marginTop: 5,
+        marginLeft: 10,
+        fontSize: 15,
+        fontWeight: "bold",
+        color: COLORS.secondary
+    },
+    sellerVerificationTips: {
+        marginHorizontal: 37,
+        marginTop: 20
     },
 });
 

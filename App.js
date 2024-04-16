@@ -13,7 +13,12 @@ import {
   Login,
   Register, 
   SellerRegistration,
-  SellerRegistrationShopInformation
+  SellerRegistrationShopInformation,
+  SellerVerificationPage1,
+  SellerVerificationPage2,
+  SellerVerificationPage3,
+  SellerVerificationPage4,
+  SellerVerificationPage5,
 } from './route';
 
 const Stack = createNativeStackNavigator();
@@ -82,6 +87,31 @@ export default function App() {
           <Stack.Screen
             name='SellerRegistrationShopInformation'
             component={SellerRegistrationShopInformation}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='SellerVerificationPage1'
+            component={SellerVerificationPage1}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='SellerVerificationPage2'
+            component={SellerVerificationPage2}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='SellerVerificationPage3'
+            component={SellerVerificationPage3}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='SellerVerificationPage4'
+            component={SellerVerificationPage4}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='SellerVerificationPage5'
+            component={SellerVerificationPage5}
             options={{headerShown:false}}
           />
         </Stack.Navigator>
