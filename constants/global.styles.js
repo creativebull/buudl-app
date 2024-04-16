@@ -1585,6 +1585,277 @@ const globalStyles = StyleSheet.create({
         marginHorizontal: 37,
         marginTop: 20
     },
+    // Notification screen specific styles
+  notificationHeaderContainer: {
+    paddingTop: 20,
+    paddingBottom: 10,
+    backgroundColor: 'white',
+  },
+  notificationHeaderTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 30,
+  },
+  notificationTabContainer: {
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderBottomColor: '#e1e1e1',
+  },
+  notificationTab: {
+    flex: 1,
+    paddingVertical: 10,
+    alignItems: 'center',
+    borderBottomWidth: 3,
+    borderBottomColor: 'transparent', // Non-active color
+  },
+  notificationActiveTab: {
+    borderBottomColor: 'orange', // Active color
+  },
+  notificationTabText: {
+    fontSize: 16,
+    color: 'grey',
+  },
+  notificationActiveTabText: {
+    color: 'orange',
+    fontWeight: 'bold',
+  },
+  notificationAvatarStyle: {
+    width: 40,
+    height: 40,
+    borderRadius: 20, // This makes it a circle
+    backgroundColor: '#95827a', // This sets the background color to blue
+    marginRight: 12,
+  },
+  notificationItem: {
+    flexDirection: 'row',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
+    alignItems: 'center',
+  },
+  notificationTextContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  notificationText: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#000',
+    flexShrink: 1,
+  },
+  notificationText2: {
+    fontSize: 12,
+    color: '#9a9a9a',
+    flexShrink: 1,
+  },
+  notificationTime: {
+    fontWeight: 'normal',
+    position: 'absolute',
+    right: 0,
+    fontSize: 10,
+    color: '#9a9a9a',
+    marginTop: 4,
+  },
+  notificationAvatarStyle: {
+    width: 40,
+    height: 40,
+    borderRadius: 20, // This makes it a circle
+    backgroundColor: '#95827a', // This sets the background color to blue
+    marginRight: 12,
+  },
+  messageItem: {
+    flexDirection: 'row',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
+    alignItems: 'center',
+  },
+  messageTextContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  messageText: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#000',
+    flexShrink: 1,
+  },
+  messageText2: {
+    fontSize: 12,
+    color: '#9a9a9a',
+    flexShrink: 1,
+  },
+  messageTime: {
+    fontWeight: 'normal',
+    position: 'absolute',
+    right: 0,
+    fontSize: 10,
+    color: '#9a9a9a',
+    marginTop: 4,
+  },
+  modalBackground: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+  modalContainer: {
+    width: '80%',
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  closeButton: {
+    alignSelf: 'flex-end',
+  },
+  modalTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginVertical: 10,
+  },
+  inputLabel: {
+    alignSelf: 'flex-start',
+    marginLeft: 20,
+    marginTop: 20,
+  },
+  input: {
+    width: '90%',
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10,
+    marginVertical: 10,
+  },
+  sendButton: {
+    backgroundColor: 'orange',
+    padding: 15,
+    borderRadius: 5,
+    marginTop: 20,
+  },
+  sendButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  disclaimerText: {
+    fontSize: 12,
+    color: 'gray',
+    marginTop: 20,
+  },
+  confirmationMessage: {
+    fontSize: 16,
+    color: 'gray',
+    textAlign: 'center',
+    marginVertical: 5,
+  },
+  //report listing style
+  reportListingCenteredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Dim background
+  },
+  reportListingModalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 20,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  reportListingCloseButton: {
+    alignSelf: 'flex-end',
+  },
+  reportListingCloseText: {
+    fontSize: 20,
+    color: '#333',
+  },
+  reportListingContent: {
+    alignItems: 'center',
+  },
+  reportListingHeader: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  reportListingCheckmarkCircle: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: 'orange', // Color for the circle background
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  reportListingCheckmark: {
+    color: 'white',
+    fontSize: 30,
+  },
+  reportListingBody: {
+    fontSize: 14,
+    color: '#333',
+    marginBottom: 15,
+    textAlign: 'center',
+  },
+  reportListingLearnMore: {
+    fontSize: 14,
+    color: 'orange',
+    textDecorationLine: 'underline',
+  },
+  //report success style
+  reportCenteredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+  },
+  reportModalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 5,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  reportCloseButton: {
+    alignSelf: 'flex-end',
+  },
+  reportContent: {
+    alignItems: 'center',
+  },
+  reportTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 10,
+    textAlign: 'center',
+  },
+  reportMessage: {
+    fontSize: 14,
+    color: '#333',
+    marginTop: 10,
+    textAlign: 'center',
+  },
+  reportCodeOfConduct: {
+    marginTop: 10,
+    color: '#007AFF',
+    textDecorationLine: 'underline',
+  }
 });
 
 export default globalStyles;

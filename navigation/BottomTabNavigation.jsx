@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Home, Profile, Search, Notification, AccountManagement } from '../route';
+import { Home, Profile, Search, Notification, AccountManagement, Message } from '../route';
 import { Ionicons } from "@expo/vector-icons"
 import { COLORS } from "../constants/index";
 
@@ -61,8 +61,8 @@ const BottomTabNavigation = () => {
                 }}
             />
             <Tab.Screen 
-                name="Notification"
-                component={Notification}
+                name="Message"
+                component={Message}
                 options={{
                     tabBarIcon: ({focused})=> {
                         return <Ionicons name={focused ? "mail" : "mail-outline"} 

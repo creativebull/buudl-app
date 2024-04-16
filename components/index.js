@@ -34,6 +34,8 @@ import SellerVerificationStep2 from "./seller/SellerVerificationStep2";
 import SellerVerificationStep3 from "./seller/SellerVerificationStep3";
 import SellerVerificationStep4 from "./seller/SellerVerificationStep4";
 import SellerVerificationStep5 from "./seller/SellerVerificationStep5";
+import NotificationItemPage from "./notifications/NotificationItem";
+import NotificationListPage from "./notifications/NotificationList";
 
 export { 
     LandingPage,
@@ -72,4 +74,6 @@ export {
     SellerVerificationStep3,
     SellerVerificationStep4,
     SellerVerificationStep5,
+    NotificationItemPage,
+    NotificationListPage,
 }

@@ -16,6 +16,7 @@ import SellerVerificationPage2 from "../screens/SellerVerificationPage2";
 import SellerVerificationPage3 from "../screens/SellerVerificationPage3";
 import SellerVerificationPage4 from "../screens/SellerVerificationPage4";
 import SellerVerificationPage5 from "../screens/SellerVerificationPage5";
+import Message from "../screens/Message";
 
 export {
     Home,
@@ -36,4 +37,5 @@ export {
     SellerVerificationPage3,
     SellerVerificationPage4,
     SellerVerificationPage5,
+    Message,
 }

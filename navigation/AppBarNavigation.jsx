@@ -45,7 +45,7 @@ const AppBarNavigation = () => {
                 </View>
                 <View style={globalStyles.alignedRight}>
                     <View style={globalStyles.wishlistContainer}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate("Notification")}>
                             <Ionicons name='notifications' size={24} style={globalStyles.wishlistColor} />
                         </TouchableOpacity>
                     </View>
