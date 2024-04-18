@@ -1701,75 +1701,75 @@ const globalStyles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.5)',
   },
   modalContainer: {
-    width: '90%', // Adjusted to make the modal wider
+    width: '90%',
     backgroundColor: 'white',
-    paddingHorizontal: 24, // Horizontal padding
-    paddingTop: 16, // Padding on the top
-    paddingBottom: 32, // Larger padding at the bottom
-    borderRadius: 12, // Smoother border radius
+    paddingHorizontal: 24,
+    paddingTop: 16,
+    paddingBottom: 32,
+    borderRadius: 12,
     alignItems: 'center',
-    shadowColor: 'black', // If shadow is needed
-    shadowOpacity: 0.1, // Subtle shadow
+    shadowColor: 'black',
+    shadowOpacity: 0.1,
     shadowRadius: 10,
     shadowOffset: { width: 0, height: 5 },
     elevation: 10,
   },
   closeButton: {
     alignSelf: 'flex-end',
-    marginRight: -10, // Adjust to properly align the close button
+    marginRight: -10,
     marginTop: -10,
   },
   modalTitle: {
-    fontSize: 24, // Adjusted for a larger title
-    fontWeight: '600', // Boldness adjusted
-    marginBottom: 16, // Spacing after title
+    fontSize: 24,
+    fontWeight: '600',
+    marginBottom: 16,
   },
   inputLabel: {
     alignSelf: 'flex-start',
-    fontSize: 16, // Adjust label font size
-    color: '#333', // Label color
-    marginBottom: 8, // Spacing before input
+    fontSize: 16,
+    color: '#333',
+    marginBottom: 8,
   },
   input: {
-    width: '100%', // Input occupies the full width of the modal
-    borderColor: '#DDD', // Subtle border color
+    width: '100%',
+    borderColor: '#DDD',
     borderWidth: 1,
-    borderRadius: 8, // Rounded corners for input
-    padding: 16, // Comfortable padding inside the input
-    fontSize: 18, // Larger font size for input
-    color: '#333', // Input text color
+    borderRadius: 8,
+    padding: 16,
+    fontSize: 18,
+    color: '#333',
   },
   sendButton: {
-    backgroundColor: '#FF9500', // Bright orange color for the button
-    paddingVertical: 16, // Vertical padding
-    paddingHorizontal: 32, // Horizontal padding
-    borderRadius: 8, // Rounded corners for button
-    width: '100%', // Button occupies the full width of the modal
-    marginTop: 16, // Spacing before the button
+    backgroundColor: '#FF9500',
+    paddingVertical: 16,
+    paddingHorizontal: 32,
+    borderRadius: 8,
+    width: '100%',
+    marginTop: 16,
   },
   sendButtonText: {
     color: 'white',
     fontWeight: 'bold',
      textAlign:'center',
-    fontSize: 18, // Increased font size for better readability
+    fontSize: 18,
   },
   makeOfferContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between', // Adjust for equal spacing
-    width: '100%', // Make offer buttons occupy the full width of the modal
-    marginVertical: 16, // Spacing before and after the offer buttons
+    justifyContent: 'space-between',
+    width: '100%',
+    marginVertical: 16,
   },
   makeOfferButton: {
     backgroundColor: 'white',
-    borderColor: '#310D00', // Darker border color
+    borderColor: '#310D00',
     borderWidth: 1,
-    borderRadius: 8, // Rounded corners for the offer buttons
-    paddingVertical: 12, // Vertical padding
-    paddingHorizontal: 24, // Horizontal padding
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 24, 
   },
   makeOfferSelectedButton: {
-    backgroundColor: '#FFF3E0', // Light orange background for selected state
-    borderColor: '#FF9500', // Orange border for selected state
+    backgroundColor: '#FFF3E0',
+    borderColor: '#FF9500', 
   },
   button: {
     backgroundColor: 'white',
@@ -1789,14 +1789,14 @@ const globalStyles = StyleSheet.create({
     borderColor: 'orange',
   },
   buttonText: {
-    color: 'black', // Adjust text color as needed
+    color: 'black', 
     textAlign: 'center',
   },
   disclaimerText: {
-    fontSize: 14, // Smaller font size for disclaimer text
-    color: '#666', // Gray color for disclaimer text
-    marginTop: 16, // Spacing after the disclaimer text
-    textAlign: 'center', // Centered disclaimer text
+    fontSize: 14,
+    color: '#666',
+    marginTop: 16, 
+    textAlign: 'center', 
   },
   confirmationMessage: {
     fontSize: 16,
@@ -1812,11 +1812,11 @@ const globalStyles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   reportListingModalView: {
-    width: '90%', // Modal takes up 90% of screen width
+    width: '90%',
     backgroundColor: 'white',
-    borderRadius: 20, // Matched to design for rounded corners
-    padding: 35, // Increased padding for a spacious layout
-    alignItems: 'flex-start', // Aligns content to the start, which is left in LTR languages
+    borderRadius: 20, 
+    padding: 35, 
+    alignItems: 'flex-start', 
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -1827,49 +1827,49 @@ const globalStyles = StyleSheet.create({
     elevation: 5,
   },
   reportListingCloseButton: {
-    position: 'absolute', // Positions the close button absolutely within the parent container
-    top: 10, // 10 pixels from the top
-    right: 10, // 10 pixels from the right
-    padding: 10, // Padding to increase the touch area
+    position: 'absolute', 
+    top: 10, 
+    right: 10, 
+    padding: 10,
   },
   reportListingCloseButtonText: {
-    fontSize: 24, // Increases the size to make it more clickable
+    fontSize: 24, 
     fontWeight: 'bold',
   },
   modalTitle: {
     fontWeight: 'bold',
     fontSize: 22,
-    marginBottom: 20, // Adds margin below the title for spacing
-    color: '#333', // Dark color for the title for contrast
-    alignSelf: 'center', // Centers the title
+    marginBottom: 20,
+    color: '#333',
+    alignSelf: 'center', 
   },
   modalInput: {
-    width: '100%', // Input takes the full width available
+    width: '100%',
     borderColor: '#CCC',
     borderWidth: 1,
     borderRadius: 10,
     padding: 15,
-    marginBottom: 20, // Adds margin below the input for spacing
+    marginBottom: 20,
     fontSize: 16,
   },
   modalInputMultiline: {
-    minHeight: 100, // Sets a minimum height for the multiline input
-    textAlignVertical: 'top', // Aligns text to the top for multiline
+    minHeight: 100, 
+    textAlignVertical: 'top',
   },
   submitButton: {
-    backgroundColor: '#310D00', // Dark color for the button
+    backgroundColor: '#310D00', 
     borderRadius: 20,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    alignSelf: 'center', // Centers the button
-    width: '100%', // Button takes the full width available
-    marginTop: 20, // Adds margin above the button for spacing
+    alignSelf: 'center', 
+    width: '100%', 
+    marginTop: 20, 
   },
   submitButtonText: {
     fontSize: 18,
     color: 'white',
     fontWeight: 'bold',
-    textAlign: 'center', // Ensures text is centered within the button
+    textAlign: 'center',
   },
   reportListingCloseText: {
     fontSize: 20,
@@ -1954,7 +1954,7 @@ const globalStyles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   buudlProtectionButton: {
-    backgroundColor: 'blue', // Adjust button styles as needed
+    backgroundColor: 'blue',
     padding: 10,
     marginVertical: 10,
     marginHorizontal: 20,

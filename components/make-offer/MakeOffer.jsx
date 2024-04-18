@@ -15,7 +15,6 @@ const OfferInput = ({ value, onChangeText }) => (
     onChangeText={onChangeText}
     keyboardType="number-pad"
     placeholder="PHP"
-    // Accessibility improvements
     accessibilityLabel="Enter your offer in PHP"
   />
 );
@@ -42,7 +41,6 @@ const applyDiscount = (percentage) => {
     Alert.alert(`Discount Applied: ${percentage}% off`);
   };
   const handleSendOffer = () => {
-    // Validate offer here
     onSendOffer(offer);
     clearInputsAndClose();
   };
