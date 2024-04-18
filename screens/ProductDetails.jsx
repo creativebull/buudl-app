@@ -1,4 +1,4 @@
-import { Text, ScrollView, View, TouchableOpacity, Image } from "react-native";
+import { Text, ScrollView, View, TouchableOpacity, Image, StyleSheet } from "react-native";
 import React, { useState } from 'react';
 import globalStyles from "../constants/global.styles";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
@@ -10,36 +10,48 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CenteredAlert from '../partials/CenteredAlert';
 import axios from "axios";
+import MakeOfferPopup from '../components/make-offer/MakeOffer';
+import BuudlPurchaseProtection from '../components/report/BuudlPurchaseProtection';
+import ReportListingModal from '../components/report/ReportListingModal';
 
 const ProductDetails = () => {
-    const hostUrl = process.env.HOST_URL
-    const apiUrl = process.env.API_URL
+    const hostUrl = process.env.HOST_URL;
+    const apiUrl = process.env.API_URL;
     const route = useRoute();
-    const {item} = route.params;
+    const { item } = route.params;
     const navigation = useNavigation();
     const insets = useSafeAreaInsets();
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');
     const [buttonLabel, setButtonLabel] = useState('');
     const [onPressAction, setOnPressAction] = useState(() => {});
-    console.log(hostUrl);
-    //change this slider image to map to loop all images
-    const slides = [
-        hostUrl + item.image,
-    ];
+    const [showMakeOfferPopup, setShowMakeOfferPopup] = useState(false);
+    const [showReportListingModal, setShowReportListingModal] = useState(false);
+    const [showBuudlPurchaseProtection, setShowBuudlPurchaseProtection] = useState(false);
+
+
+    const openBuudlPurchaseProtection = () => {
+        setShowBuudlPurchaseProtection(true);
+    };
+
+
+    const closeBuudlPurchaseProtection = () => {
+        setShowBuudlPurchaseProtection(false);
+    };
+
+    const slides = [hostUrl + item.image];
 
     const data = {
         quantity: 1,
         price: item.price
     }
 
-    const addToBag = async() => {
+    const addToBag = async () => {
         try {
             const token = await AsyncStorage.getItem('token');
             if (!token) {
-                // If not logged in, redirect to Login page
                 navigation.navigate('Login');
-                return; // Exit the function
+                return;
             }
             const response = await axios.post(
                 apiUrl + `cart/${item.id}`,
@@ -70,35 +82,34 @@ const ProductDetails = () => {
             <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 10 }}>
                 {showAlert && (
                     <CenteredAlert
-                    message={alertMessage}
-                    onClose={() => setShowAlert(false)}
-                    buttonOnPress={onPressAction}
-                    buttonLabel={buttonLabel}
+                        message={alertMessage}
+                        onClose={() => setShowAlert(false)}
+                        buttonOnPress={onPressAction}
+                        buttonLabel={buttonLabel}
                     />
                 )}
                 <View style={globalStyles.productDetailsContainer}>
-                    <View style={globalStyles.productUpperRow}> 
-                        <TouchableOpacity onPress={()=>navigation.goBack()}>
-                            <Ionicons name="chevron-back" size={30} color={COLORS.secondary}/>
+                    <View style={globalStyles.productUpperRow}>
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <Ionicons name="chevron-back" size={30} color={COLORS.secondary} />
                         </TouchableOpacity>
                         <Text style={globalStyles.productDetailHeader}>Product Details</Text>
-                        <TouchableOpacity onPress={()=>{}}>
-                            <Ionicons name="share-outline" size={30} color={COLORS.secondary}/>
+                        <TouchableOpacity onPress={() => { }}>
+                            <Ionicons name="share-outline" size={30} color={COLORS.secondary} />
                         </TouchableOpacity>
                     </View>
-                    
                 </View>
                 <View>
-                    <SliderBox 
+                    <SliderBox
                         images={slides}
                         dotColor={COLORS.primary}
                         inactiveDotColor={COLORS.secondary}
-                        ImageComponentStyle={{width: "100%", marginTop: 70}}
+                        ImageComponentStyle={{ width: "100%", marginTop: 70 }}
                         autoplay
                         circleLoop
                     />
                 </View>
-                
+
                 <View style={globalStyles.productInfoWrapper}>
                     <View style={globalStyles.productInfoTitleWrapper}>
                         <Text style={globalStyles.productInforTitle}>{item.product_name} - {item.product_code}</Text>
@@ -106,15 +117,15 @@ const ProductDetails = () => {
                         <Text style={globalStyles.productInforPrice}>P{item.price}</Text>
                     </View>
                     <View>
-                        <Ionicons name="heart-outline" size={35} color={COLORS.primary} style={globalStyles.productInforWishlist}/>
+                        <Ionicons name="heart-outline" size={35} color={COLORS.primary} style={globalStyles.productInforWishlist} />
                     </View>
                 </View>
 
                 <View style={globalStyles.ctaWrapper}>
-                    <TouchableOpacity onPress={()=>addToBag()}>
+                    <TouchableOpacity onPress={() => addToBag()}>
                         <Text style={globalStyles.ctaBtn}>Add to bag</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={globalStyles.ctaBtn}>
+                    <TouchableOpacity style={globalStyles.ctaBtn} onPress={() => setShowMakeOfferPopup(true)}>
                         <Text>Make an Offer</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={globalStyles.ctaBtnActive}>
@@ -126,8 +137,8 @@ const ProductDetails = () => {
                     {item.size ? (
                         <View style={globalStyles.productDescriptionTagWrapper}>
                             {item.size.map((size, sizeIndex) => (
-                                <TouchableOpacity>
-                                    <Text key={sizeIndex} style={globalStyles.tagDescCta}>{size}</Text>
+                                <TouchableOpacity key={sizeIndex}>
+                                    <Text style={globalStyles.tagDescCta}>{size}</Text>
                                 </TouchableOpacity>
                             ))}
                         </View>
@@ -140,13 +151,13 @@ const ProductDetails = () => {
                             </TouchableOpacity>
                         </View>
                     )}
-                    
+
                 </View>
 
                 <View style={globalStyles.productDescriptionWrapper}>
                     <Text style={globalStyles.descTitle}>Description</Text>
                     <View style={globalStyles.colorDescWrapper}>
-                        <Entypo name="drop" color={COLORS.gray} size={15}/>
+                        <Entypo name="drop" color={COLORS.gray} size={15} />
                         <Text style={globalStyles.colorText}>{item.color}</Text>
                     </View>
                     <Text style={globalStyles.descText1}>Product Brand : {item.product_brand}</Text>
@@ -162,15 +173,15 @@ const ProductDetails = () => {
                 </View>
 
                 <View style={globalStyles.listingCtaWrapper}>
-                    <TouchableOpacity onPress={()=>{}} style={globalStyles.reportListingWrapper}>
-                        <Ionicons name="warning" size={20} color={COLORS.secondary}/>
+                    <TouchableOpacity onPress={() => setShowReportListingModal(true)} style={globalStyles.reportListingWrapper}>
+                        <Ionicons name="warning" size={20} color={COLORS.secondary} />
                         <Text style={globalStyles.listingCtaText}>Report Listing</Text>
-                        <AntDesign name="right" size={20} color={COLORS.secondary} style={globalStyles.carretBtn}/>
+                        <AntDesign name="right" size={20} color={COLORS.secondary} style={globalStyles.carretBtn} />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={()=>{}} style={globalStyles.buudlPurchaseWrapper}>
-                        <AntDesign name="Safety" size={20} color={COLORS.secondary}/>
+                    <TouchableOpacity onPress={openBuudlPurchaseProtection} style={globalStyles.buudlPurchaseWrapper}>
+                        <AntDesign name="Safety" size={20} color={COLORS.secondary} />
                         <Text style={globalStyles.listingCtaText}>Buudl Purchase Protection</Text>
-                        <AntDesign name="right" size={20} color={COLORS.secondary} style={globalStyles.carretBtn}/>
+                        <AntDesign name="right" size={20} color={COLORS.secondary} style={globalStyles.carretBtn} />
                     </TouchableOpacity>
                 </View>
 
@@ -187,12 +198,12 @@ const ProductDetails = () => {
                                 <View>
                                     <Text style={globalStyles.shopTitle}>{item.shop.name}</Text>
                                     <View style={globalStyles.ratingWrapper}>
-                                        {[1,2,3,4,5].map((index) => (
-                                            <Ionicons 
+                                        {[1, 2, 3, 4, 5].map((index) => (
+                                            <Ionicons
                                                 key={index}
                                                 name="star"
                                                 color={COLORS.primary}
-                                                size={12}/>
+                                                size={12} />
                                         ))}
                                         <Text style={globalStyles.ratingText}>(item.shop.rating)</Text>
                                     </View>
@@ -204,7 +215,7 @@ const ProductDetails = () => {
                                     <Text style={globalStyles.shopLocationText}>{item.user.address}</Text>
                                 </View>
                             )}
-                            
+
                         </View>
                     </View>
                     <View style={globalStyles.shopCtaWrapper}>
@@ -234,17 +245,43 @@ const ProductDetails = () => {
                 </View>
 
                 <View style={globalStyles.moreFromSellerWrapper}>
-                    <MoreFromSellerHeading/>
-                    <MoreFromSellerRow item={item}/>
+                    <MoreFromSellerHeading />
+                    <MoreFromSellerRow item={item} />
                 </View>
 
                 <View style={globalStyles.relatedProductWrapper}>
-                    <RelatedProductsHeading/>
-                    <RelatedProductRow item={item.product_code}/>
+                    <RelatedProductsHeading />
+                    <RelatedProductRow item={item.product_code} />
                 </View>
             </ScrollView>
+
+            <MakeOfferPopup
+                visible={showMakeOfferPopup}
+                onClose={() => setShowMakeOfferPopup(false)}
+                onSendOffer={(offer) => {
+                    // Handle sending the offer here
+                    console.log("Sending offer:", offer);
+                }}
+            />
+
+            <BuudlPurchaseProtection
+                onClose={closeBuudlPurchaseProtection}
+                isVisible={showBuudlPurchaseProtection}
+                onFeedback={(feedback) => {
+                    console.log("Feedback:", feedback);
+                }}
+            />
+
+            <ReportListingModal
+                isVisible={showReportListingModal}
+                onClose={() => setShowReportListingModal(false)}
+                onReportSubmit={(reason, details) => {
+                    console.log("Report reason:", reason);
+                    console.log("Report details:", details);
+                }}
+            />
         </SafeAreaView>
     )
 }
 
-export default ProductDetails
+export default ProductDetails;

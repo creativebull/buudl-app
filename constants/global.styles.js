@@ -1607,10 +1607,10 @@ const globalStyles = StyleSheet.create({
     paddingVertical: 10,
     alignItems: 'center',
     borderBottomWidth: 3,
-    borderBottomColor: 'transparent', // Non-active color
+    borderBottomColor: 'transparent', 
   },
   notificationActiveTab: {
-    borderBottomColor: 'orange', // Active color
+    borderBottomColor: 'orange',
   },
   notificationTabText: {
     fontSize: 16,
@@ -1623,8 +1623,8 @@ const globalStyles = StyleSheet.create({
   notificationAvatarStyle: {
     width: 40,
     height: 40,
-    borderRadius: 20, // This makes it a circle
-    backgroundColor: '#95827a', // This sets the background color to blue
+    borderRadius: 20, 
+    backgroundColor: '#95827a',
     marginRight: 12,
   },
   notificationItem: {
@@ -1660,8 +1660,8 @@ const globalStyles = StyleSheet.create({
   notificationAvatarStyle: {
     width: 40,
     height: 40,
-    borderRadius: 20, // This makes it a circle
-    backgroundColor: '#95827a', // This sets the background color to blue
+    borderRadius: 20,
+    backgroundColor: '#95827a',
     marginRight: 12,
   },
   messageItem: {
@@ -1694,54 +1694,109 @@ const globalStyles = StyleSheet.create({
     color: '#9a9a9a',
     marginTop: 4,
   },
-  modalBackground: {
+   modalBackground: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0,0,0,0.5)',
   },
   modalContainer: {
-    width: '80%',
+    width: '90%', // Adjusted to make the modal wider
     backgroundColor: 'white',
-    padding: 20,
-    borderRadius: 10,
+    paddingHorizontal: 24, // Horizontal padding
+    paddingTop: 16, // Padding on the top
+    paddingBottom: 32, // Larger padding at the bottom
+    borderRadius: 12, // Smoother border radius
     alignItems: 'center',
+    shadowColor: 'black', // If shadow is needed
+    shadowOpacity: 0.1, // Subtle shadow
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 5 },
+    elevation: 10,
   },
   closeButton: {
     alignSelf: 'flex-end',
+    marginRight: -10, // Adjust to properly align the close button
+    marginTop: -10,
   },
   modalTitle: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginVertical: 10,
+    fontSize: 24, // Adjusted for a larger title
+    fontWeight: '600', // Boldness adjusted
+    marginBottom: 16, // Spacing after title
   },
   inputLabel: {
     alignSelf: 'flex-start',
-    marginLeft: 20,
-    marginTop: 20,
+    fontSize: 16, // Adjust label font size
+    color: '#333', // Label color
+    marginBottom: 8, // Spacing before input
   },
   input: {
-    width: '90%',
-    borderColor: 'gray',
+    width: '100%', // Input occupies the full width of the modal
+    borderColor: '#DDD', // Subtle border color
     borderWidth: 1,
-    borderRadius: 5,
-    padding: 10,
-    marginVertical: 10,
+    borderRadius: 8, // Rounded corners for input
+    padding: 16, // Comfortable padding inside the input
+    fontSize: 18, // Larger font size for input
+    color: '#333', // Input text color
   },
   sendButton: {
-    backgroundColor: 'orange',
-    padding: 15,
-    borderRadius: 5,
-    marginTop: 20,
+    backgroundColor: '#FF9500', // Bright orange color for the button
+    paddingVertical: 16, // Vertical padding
+    paddingHorizontal: 32, // Horizontal padding
+    borderRadius: 8, // Rounded corners for button
+    width: '100%', // Button occupies the full width of the modal
+    marginTop: 16, // Spacing before the button
   },
   sendButtonText: {
     color: 'white',
     fontWeight: 'bold',
+     textAlign:'center',
+    fontSize: 18, // Increased font size for better readability
+  },
+  makeOfferContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between', // Adjust for equal spacing
+    width: '100%', // Make offer buttons occupy the full width of the modal
+    marginVertical: 16, // Spacing before and after the offer buttons
+  },
+  makeOfferButton: {
+    backgroundColor: 'white',
+    borderColor: '#310D00', // Darker border color
+    borderWidth: 1,
+    borderRadius: 8, // Rounded corners for the offer buttons
+    paddingVertical: 12, // Vertical padding
+    paddingHorizontal: 24, // Horizontal padding
+  },
+  makeOfferSelectedButton: {
+    backgroundColor: '#FFF3E0', // Light orange background for selected state
+    borderColor: '#FF9500', // Orange border for selected state
+  },
+  button: {
+    backgroundColor: 'white',
+    borderColor: '#310D00',
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+  },
+  subText:{
+    color: '#666',
+    fontSize: 12,
+    textAlign:'left',
+    alignSelf: 'flex-start',
+  },
+  selectedButton: {
+    borderColor: 'orange',
+  },
+  buttonText: {
+    color: 'black', // Adjust text color as needed
+    textAlign: 'center',
   },
   disclaimerText: {
-    fontSize: 12,
-    color: 'gray',
-    marginTop: 20,
+    fontSize: 14, // Smaller font size for disclaimer text
+    color: '#666', // Gray color for disclaimer text
+    marginTop: 16, // Spacing after the disclaimer text
+    textAlign: 'center', // Centered disclaimer text
   },
   confirmationMessage: {
     fontSize: 16,
@@ -1754,14 +1809,14 @@ const globalStyles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Dim background
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   reportListingModalView: {
-    margin: 20,
+    width: '90%', // Modal takes up 90% of screen width
     backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 20,
-    alignItems: 'center',
+    borderRadius: 20, // Matched to design for rounded corners
+    padding: 35, // Increased padding for a spacious layout
+    alignItems: 'flex-start', // Aligns content to the start, which is left in LTR languages
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -1772,7 +1827,49 @@ const globalStyles = StyleSheet.create({
     elevation: 5,
   },
   reportListingCloseButton: {
-    alignSelf: 'flex-end',
+    position: 'absolute', // Positions the close button absolutely within the parent container
+    top: 10, // 10 pixels from the top
+    right: 10, // 10 pixels from the right
+    padding: 10, // Padding to increase the touch area
+  },
+  reportListingCloseButtonText: {
+    fontSize: 24, // Increases the size to make it more clickable
+    fontWeight: 'bold',
+  },
+  modalTitle: {
+    fontWeight: 'bold',
+    fontSize: 22,
+    marginBottom: 20, // Adds margin below the title for spacing
+    color: '#333', // Dark color for the title for contrast
+    alignSelf: 'center', // Centers the title
+  },
+  modalInput: {
+    width: '100%', // Input takes the full width available
+    borderColor: '#CCC',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 15,
+    marginBottom: 20, // Adds margin below the input for spacing
+    fontSize: 16,
+  },
+  modalInputMultiline: {
+    minHeight: 100, // Sets a minimum height for the multiline input
+    textAlignVertical: 'top', // Aligns text to the top for multiline
+  },
+  submitButton: {
+    backgroundColor: '#310D00', // Dark color for the button
+    borderRadius: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    alignSelf: 'center', // Centers the button
+    width: '100%', // Button takes the full width available
+    marginTop: 20, // Adds margin above the button for spacing
+  },
+  submitButtonText: {
+    fontSize: 18,
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center', // Ensures text is centered within the button
   },
   reportListingCloseText: {
     fontSize: 20,
@@ -1791,7 +1888,7 @@ const globalStyles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: 'orange', // Color for the circle background
+    backgroundColor: 'orange',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
@@ -1855,7 +1952,107 @@ const globalStyles = StyleSheet.create({
     marginTop: 10,
     color: '#007AFF',
     textDecorationLine: 'underline',
-  }
+  },
+  buudlProtectionButton: {
+    backgroundColor: 'blue', // Adjust button styles as needed
+    padding: 10,
+    marginVertical: 10,
+    marginHorizontal: 20,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  buudlProtectionButtonText: {
+    color: 'white',
+    fontSize: 16,
+  },
+   buudlProtectionModalContainer: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buudlProtectionContainer: {
+    width: '90%',
+    height:'90%',
+    backgroundColor: 'white',
+    borderRadius: 6,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
+  },
+  buudlProtectionScrollView: {
+    padding: 20,
+  },
+  buudlProtectionHeaderContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  buudlProtectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  buudlProtectionSubTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginTop: 20,
+    marginBottom: 10,
+  },
+  buudlProtectionDescription: {
+    fontSize: 16,
+    color: 'grey',
+    marginTop: 5,
+  },
+  buudlProtectionContentText: {
+    fontSize: 16,
+    marginTop: 5,
+  },
+  buudlProtectionListItem: {
+    fontSize: 16,
+    marginLeft: 10,
+    marginTop: 5,
+  },
+  buudlProtectionFooterNote: {
+    fontSize: 16,
+    marginTop: 5,
+    marginBottom: 10,
+    color: 'grey',
+  },
+  buudlProtectionFooter: {
+    borderTopWidth: 1,
+    borderTopColor: '#eee',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
+  buudlProtectionFooterText: {
+    fontSize: 16,
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  buudlProtectionButtonRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  buudlProtectionButton: {
+    backgroundColor: '#e7e7e7',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+    marginHorizontal: 10,
+  },
+  buudlProtectionButtonText: {
+    fontSize: 16,
+    color: '#000',
+  },
+  buudlProtectionCloseButton: {
+    padding: 10,
+  },
+ 
 });
 
 export default globalStyles;

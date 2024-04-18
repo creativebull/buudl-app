@@ -33,19 +33,22 @@ const ReportListingModal = ({ isVisible, onClose, onReportSubmit }) => {
             <Text style={globalStyles.reportListingCloseButtonText}>×</Text>
           </TouchableOpacity>
           <Text style={globalStyles.modalTitle}>Report Listing</Text>
+          <Text>Why are you reporting this listing?</Text>
+          <Text style={globalStyles.subText}>This will not be shared with the seller.</Text>
           <TextInput
             style={globalStyles.modalInput}
             onChangeText={setReason}
             value={reason}
             placeholder="Reason"
           />
+          <Text>Tell us more</Text>
           <TextInput
             style={[globalStyles.modalInput, globalStyles.modalInputMultiline]}
             onChangeText={setDetails}
             value={details}
             multiline
             numberOfLines={4}
-            placeholder="Details"
+            placeholder="Add more details about your issue. This will help us resolve your case more quickly."
           />
           <TouchableOpacity
             style={globalStyles.submitButton}
