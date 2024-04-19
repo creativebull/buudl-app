@@ -1,55 +1,99 @@
+// Message.js
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import globalStyles from '../constants/global.styles';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Offer from '../components/message/Offer';
 import Chat from '../components/message/Chat';
+import styles from '../constants/global.styles'
 
 const Message = () => {
   const [activeTab, setActiveTab] = useState('Chat');
-
+  const [activeSegment, setActiveSegment] = useState('Buying');
 
   return (
-    <View style={{ flex: 1 }}>
-      
+    <View style={styles.inboxContainer}>
+      <View style={styles.inboxHeader}>
+        <Text style={styles.inboxHeaderTitle}>Inbox</Text>
+        <View style={styles.inboxSegmentedControlContainer}>
+          {/* Buying Button */}
+          <TouchableOpacity
+            style={[
+              styles.inboxSegmentButton,
+              activeSegment === 'Buying' && styles.inboxSegmentButtonActive,
+            ]}
+            onPress={() => setActiveSegment('Buying')}
+          >
+            <Text
+              style={[
+                styles.inboxSegmentButtonText,
+                activeSegment === 'Buying' && styles.inboxSegmentButtonTextActive,
+              ]}
+            >
+              Buying
+            </Text>
+          </TouchableOpacity>
 
-      <View style={globalStyles.notificationHeaderContainer}>
-        
-        <Text style={globalStyles.notificationHeaderTitle}>Inbox</Text>
+          {/* Selling Button */}
+          <TouchableOpacity
+            style={[
+              styles.inboxSegmentButton,
+              activeSegment === 'Selling' && styles.inboxSegmentButtonActive,
+            ]}
+            onPress={() => setActiveSegment('Selling')}
+          >
+            <Text
+              style={[
+                styles.inboxSegmentButtonText,
+                activeSegment === 'Selling' && styles.inboxSegmentButtonTextActive,
+              ]}
+            >
+              Selling
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={globalStyles.notificationTabContainer}>
-        {/* Chats Tab */}
+      
+      {/* Tab Selection */}
+      <View style={styles.inboxTabsContainer}>
         <TouchableOpacity
           style={[
-            globalStyles.notificationTab,
-            activeTab === 'Chat' && globalStyles.notificationActiveTab,
+            styles.inboxTab,
+            activeTab === 'Chat' && styles.inboxActiveTab,
           ]}
           onPress={() => setActiveTab('Chat')}
         >
-          <Text style={[
-            globalStyles.notificationTabText,
-            activeTab === 'Chat' && globalStyles.notificationActiveTabText,
-          ]}>Chats</Text>
+          <Text
+            style={[
+              styles.inboxTabText,
+              activeTab === 'Chat' && styles.inboxActiveTabText,
+            ]}
+          >
+            Chats
+          </Text>
         </TouchableOpacity>
-
-        {/* Offers Tab */}
         <TouchableOpacity
           style={[
-            globalStyles.notificationTab,
-            activeTab === 'Offer' && globalStyles.notificationActiveTab,
+            styles.inboxTab,
+            activeTab === 'Offer' && styles.inboxActiveTab,
           ]}
           onPress={() => setActiveTab('Offer')}
         >
-          <Text style={[
-            globalStyles.notificationTabText,
-            activeTab === 'Offer' && globalStyles.notificationActiveTabText,
-          ]}>Offers</Text>
+          <Text
+            style={[
+              styles.inboxTabText,
+              activeTab === 'Offer' && styles.inboxActiveTabText,
+            ]}
+          >
+            Offers
+          </Text>
         </TouchableOpacity>
       </View>
 
-      {/* Active Tab */}
+      {/* Displaying active tab content */}
       {activeTab === 'Chat' ? <Chat /> : <Offer />}
     </View>
   );
 };
+
+
 
 export default Message;

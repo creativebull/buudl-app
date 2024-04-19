@@ -1,7 +1,7 @@
 import React from 'react';
-import MessageList from './MessageList';
+import MessageList from './ChatList';
 
-
+//this should be the data for hook
 const chatData = [
   { id: '1', text: 'James Arthur', text2: 'Can I be him', time: '5m ago' },
   { id: '2', text: 'John Doe', text2: 'Lorem Ipsum', time: '15m ago' },

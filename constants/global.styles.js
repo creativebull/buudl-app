@@ -1664,6 +1664,12 @@ const globalStyles = StyleSheet.create({
     backgroundColor: '#95827a',
     marginRight: 12,
   },
+  productImagePlaceholder: {
+  width: 50,
+  height: 50, 
+  backgroundColor: '#e0e0e0', 
+  borderRadius: 5, 
+},
   messageItem: {
     flexDirection: 'row',
     padding: 16,
@@ -1692,7 +1698,14 @@ const globalStyles = StyleSheet.create({
     right: 0,
     fontSize: 10,
     color: '#9a9a9a',
-    marginTop: 4,
+    marginEnd:'10%',
+  },
+  productImagePlaceholder: {
+    position: 'absolute',
+    right:0,
+    width: 50,
+    height: 50,
+    backgroundColor: '#e0e0e0',
   },
    modalBackground: {
     flex: 1,
@@ -2051,6 +2064,105 @@ const globalStyles = StyleSheet.create({
   },
   buudlProtectionCloseButton: {
     padding: 10,
+  },
+  //offer message
+  listContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  offerMessageItem: {
+    flexDirection: 'row',
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    alignItems: 'center',
+  },
+  offerProductImagePlaceholder: {
+    width: 60,
+    height: 60,
+    backgroundColor: '#e4e4e4',
+    marginRight: 10,
+  },
+  offerMessageTextContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  offerMessageText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  offerMessageText2: {
+    fontSize: 14,
+    color: '#555',
+  },
+  offerMessageTime: {
+    fontSize: 12,
+    color: '#aaa',
+    marginTop: 4,
+  },
+  //inbox style
+  inboxContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  inboxHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 10,
+    paddingHorizontal:25,
+    marginTop:60,
+  },
+  inboxHeaderTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  inboxSegmentedControlContainer: {
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 10,
+  },
+inboxSegmentButton: {
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 8,
+  },
+  inboxSegmentButtonActive: {
+    backgroundColor: '#F86F03',
+  },
+  inboxSegmentButtonText: {
+    fontSize: 14,
+    color: '#000',
+  },
+  inboxSegmentButtonTextActive: {
+    color: '#fff',
+  },
+  inboxTabsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 10,
+  },
+  inboxTab: {
+    flex: 1,
+    paddingVertical: 10,
+    alignItems: 'center',
+    borderBottomWidth: 3,
+    borderBottomColor: 'transparent', 
+    paddingHorizontal: 20,
+  },
+  inboxActiveTab: {
+    borderBottomWidth: 2,
+    borderBottomColor: '#310D00',
+  },
+  inboxTabText: {
+    fontSize: 16,
+    color: '#000',
+  },
+  inboxActiveTabText: {
+    fontWeight: 'bold',
+    color: '#310D00',
   },
  
 });
