@@ -36,6 +36,8 @@ import SellerVerificationStep4 from "./seller/SellerVerificationStep4";
 import SellerVerificationStep5 from "./seller/SellerVerificationStep5";
 import NotificationItemPage from "./notifications/NotificationItem";
 import NotificationListPage from "./notifications/NotificationList";
+import Offer from "./message/Offer";
+import Chat from "./message/Chat";
 
 export { 
     LandingPage,
@@ -76,4 +78,6 @@ export {
     SellerVerificationStep5,
     NotificationItemPage,
     NotificationListPage,
+    Offer,
+    Chat,
 }

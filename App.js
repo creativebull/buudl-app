@@ -20,6 +20,8 @@ import {
   SellerVerificationPage4,
   SellerVerificationPage5,
   Notification,
+  OfferDetails,
+  MessageDetails,
 } from './route';
 
 const Stack = createNativeStackNavigator();
@@ -53,6 +55,16 @@ export default function App() {
           <Stack.Screen
             name='ProductDetails'
             component={ProductDetails}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='OfferDetails'
+            component={OfferDetails}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='MessageDetails'
+            component={MessageDetails}
             options={{headerShown:false}}
           />
           <Stack.Screen

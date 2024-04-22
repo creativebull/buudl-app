@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native';
 import MessageItem from './OfferItem';
 import globalStyles from '../../constants/global.styles';
 
-const NotificationList = ({ data }) => {
+const OfferList = ({ data }) => {
   return (
     <ScrollView style={globalStyles.listContainer}>
       {data.map((offer) => (
@@ -18,4 +18,4 @@ const NotificationList = ({ data }) => {
   );
 };
 
-export default NotificationList;
+export default OfferList;

@@ -3,19 +3,19 @@ import { ScrollView } from 'react-native';
 import MessageItem from './ChatItem';
 import globalStyles from '../../constants/global.styles';
 
-const NotificationList = ({ data }) => {
+const ChatList = ({ data }) => {
   return (
     <ScrollView style={globalStyles.listContainer}>
-      {data.map((notification) => (
+      {data.map((message) => (
         <MessageItem
-          key={notification.id}
-          text={notification.text}
-          text2={notification.text2}
-          time={notification.time}
+          key={message.messageId}
+          text={message.text}
+          text2={message.text2}
+          time={message.time}
         />
       ))}
     </ScrollView>
   );
 };
 
-export default NotificationList;
+export default ChatList;
