@@ -18,7 +18,7 @@ const OfferDetails = ({ route }) => {
   return (
     <ScrollView style={styles.container}>
       {/* Placeholder image */}
-      {/* <Image source={require('../path-to-your-assets/folder/dummy-photo.png')} style={styles.productImage} /> */}
+      <Image source={'https://via.placeholder.com/150'} style={styles.productImage} />
        <Text style={styles.OffersSection}>Offers</Text>
       <Text style={styles.offerCount}>4 Offers</Text>
       <Text style={styles.title}>{offer.text2}</Text>
@@ -67,16 +67,15 @@ const styles = StyleSheet.create({
    OffersSection: {
     borderBottomWidth:1,
     borderColor:'#310D00',
-     marginTop:30,
      textAlign:'center',
      fontSize: 24,
       fontWeight: 'bold',
-      paddingHorizontal:50,
+      paddingHorizontal:20,
       paddingVertical:20,
   },
   productImage: {
     width: '100%',
-    height: 180,
+    height: 30,
     resizeMode: 'cover',
     marginBottom: 16,
   },
