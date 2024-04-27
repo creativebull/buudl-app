@@ -17,9 +17,9 @@ const Notifications = () => {
       <View style={globalStyles.notificationHeaderContainer}>
         <Text style={globalStyles.notificationHeaderTitle}>Notifications</Text>
       </View>
-      <TouchableOpacity onPress={()=>navigation.goBack()}>
+      {/* <TouchableOpacity onPress={()=>navigation.goBack()}>
                         <Ionicons name="chevron-back" size={30} color={COLORS.secondary}/>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
       <View style={globalStyles.notificationTabContainer}>
         {/* Orders Tab */}
         <TouchableOpacity
