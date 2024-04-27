@@ -54,7 +54,7 @@ const ProductDetails = () => {
                 return;
             }
             const response = await axios.post(
-                apiUrl + `cart/${item.id}`,
+                apiUrl + `cart/addToCart/${item.id}`,
                 data,
                 {
                     headers: {
@@ -134,24 +134,13 @@ const ProductDetails = () => {
                 </View>
 
                 <View style={globalStyles.measurementWrapper}>
-                    {item.size ? (
-                        <View style={globalStyles.productDescriptionTagWrapper}>
-                            {item.size.map((size, sizeIndex) => (
-                                <TouchableOpacity key={sizeIndex}>
-                                    <Text style={globalStyles.tagDescCta}>{size}</Text>
-                                </TouchableOpacity>
-                            ))}
-                        </View>
-                    ) : (
-                        <View>
-                            <Text style={globalStyles.measurementTitle}>Measurements</Text>
-                            <Text style={globalStyles.measurementDescription}>Let the seller know you are interested in measurement details. We'll notify you as soon as they have added.</Text>
-                            <TouchableOpacity style={globalStyles.measurementBtn}>
-                                <Text style={globalStyles.measurementBtnText}>Request Measurements</Text>
-                            </TouchableOpacity>
-                        </View>
-                    )}
-
+                    <View>
+                        <Text style={globalStyles.measurementTitle}>Measurements</Text>
+                        <Text style={globalStyles.measurementDescription}>Let the seller know you are interested in measurement details. We'll notify you as soon as they have added.</Text>
+                        <TouchableOpacity style={globalStyles.measurementBtn}>
+                            <Text style={globalStyles.measurementBtnText}>Request Measurements</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
 
                 <View style={globalStyles.productDescriptionWrapper}>

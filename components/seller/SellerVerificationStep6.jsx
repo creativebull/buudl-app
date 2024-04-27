@@ -8,7 +8,7 @@ import { Camera, CameraType } from 'expo-camera';
 import { manipulateAsync, FlipType, SaveFormat } from 'expo-image-manipulator';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const SellerVerificationStep5 = () => {
+const SellerVerificationStep6 = () => {
     const navigation = useNavigation();
 
     const [type, setType] = useState(CameraType.back);
@@ -47,15 +47,15 @@ const SellerVerificationStep5 = () => {
 
     const setSellerData = async () => {
         try {
-            await AsyncStorage.setItem('seller-registration-front-id', capturedImage);
+            await AsyncStorage.setItem('seller-registration-back-id', capturedImage);
         } catch (error) {
             console.error('Failed to check login status:', error);
         }
     };
 
     if(capturedImage){
+        navigation.navigate("SellerVerificationPage7")
         setSellerData();
-        navigation.navigate("SellerVerificationPage6")
     }
 
     return (
@@ -69,7 +69,7 @@ const SellerVerificationStep5 = () => {
                 </View>
             </View>
             <View style={globalStyles.sellerVerificationHeaderStep2}>
-                <Text style={globalStyles.sellerVerificationStep5Title}>Front of ID</Text>
+                <Text style={globalStyles.sellerVerificationStep5Title}>Back of ID</Text>
                 <Text style={globalStyles.sellerVerificationStep5SubTitle}>Postion your ID in the frame</Text>
             </View>
 
@@ -113,4 +113,4 @@ const SellerVerificationStep5 = () => {
     )
 }
 
-export default SellerVerificationStep5
+export default SellerVerificationStep6

@@ -45,6 +45,7 @@ const LoginPage = () => {
                 email,
                 password
             });
+            console.log(response.data);
 
             await AsyncStorage.setItem('token', response.data.access_token);
             if (response.data.message) {
@@ -59,7 +60,7 @@ const LoginPage = () => {
             });
             // setAlertMessage(errorMessage);
         } catch (error) {
-            console.log("Failed to fetch products", error)
+            console.log("Failed to login", error)
         } finally {
             setLoading(false); // Hide loading spinner regardless of success or failure
         }

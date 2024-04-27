@@ -16,6 +16,11 @@ import SellerVerificationPage2 from "../screens/SellerVerificationPage2";
 import SellerVerificationPage3 from "../screens/SellerVerificationPage3";
 import SellerVerificationPage4 from "../screens/SellerVerificationPage4";
 import SellerVerificationPage5 from "../screens/SellerVerificationPage5";
+import SellerVerificationPage6 from "../screens/SellerVerificationPage6";
+import SellerVerificationPage7 from "../screens/SellerVerificationPage7";
+import SellerVerificationPage8 from "../screens/SellerVerificationPage8";
+import SellerVerificationPage9 from "../screens/SellerVerificationPage9";
+import SellerVerificationPage10 from "../screens/SellerVerificationPage10";
 import Message from "../screens/Message";
 
 export {
@@ -37,5 +42,10 @@ export {
     SellerVerificationPage3,
     SellerVerificationPage4,
     SellerVerificationPage5,
+    SellerVerificationPage6,
+    SellerVerificationPage7,
+    SellerVerificationPage8,
+    SellerVerificationPage9,
+    SellerVerificationPage10,
     Message,
 }

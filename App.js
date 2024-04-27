@@ -19,6 +19,11 @@ import {
   SellerVerificationPage3,
   SellerVerificationPage4,
   SellerVerificationPage5,
+  SellerVerificationPage6,
+  SellerVerificationPage7,
+  SellerVerificationPage8,
+  SellerVerificationPage9,
+  SellerVerificationPage10,
   Notification,
 } from './route';
 
@@ -118,6 +123,31 @@ export default function App() {
           <Stack.Screen
             name='SellerVerificationPage5'
             component={SellerVerificationPage5}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='SellerVerificationPage6'
+            component={SellerVerificationPage6}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='SellerVerificationPage7'
+            component={SellerVerificationPage7}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='SellerVerificationPage8'
+            component={SellerVerificationPage8}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='SellerVerificationPage9'
+            component={SellerVerificationPage9}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name='SellerVerificationPage10'
+            component={SellerVerificationPage10}
             options={{headerShown:false}}
           />
         </Stack.Navigator>

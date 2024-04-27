@@ -18,6 +18,7 @@ const UserProfilePage = () => {
     const [buttonLabel, setButtonLabel] = useState('');
     const [onPressAction, setOnPressAction] = useState(() => {});
     const [userData, setUserData] = useState([]);
+    const [routing, setRouting] = useState([]);
 
     const Likes = () => (
         <View style={globalStyles.userSceneContainer}>
@@ -40,8 +41,8 @@ const UserProfilePage = () => {
     const [index, setIndex] = useState(0);
 
     const [routes] = useState([
-      { key: 'likes', title: 'Likes' },
-      { key: 'purchases', title: 'Purchases' },
+        { key: 'likes', title: 'Likes' },
+        { key: 'purchases', title: 'Purchases' },
     ]);
   
     const renderScene = SceneMap({
@@ -99,11 +100,13 @@ const UserProfilePage = () => {
             const token = await AsyncStorage.getItem('token');
             if (token) {
                 // Fetch cart count from backend API
-                const response = await axios.get(apiUrl + 'auth/user/profile', {
+                const response = await axios.get(apiUrl + 'user/profile', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
                 });
+                console.log(response.data.data);
+                console.log(response.data.data);
                 console.log(response.data.data);
                 setUserData(response.data.data);
             }
@@ -130,17 +133,17 @@ const UserProfilePage = () => {
                         </View>
                     </View>
                     <View style={globalStyles.userFollowing}>
-                        <Text style={globalStyles.userFollowingCounter}>123</Text>
+                        <Text style={globalStyles.userFollowingCounter}>0</Text>
                         <Text style={globalStyles.followingSubtext}>Following</Text>
                         <TouchableOpacity style={globalStyles.editProfileButton} onPress={()=>{}}>
                             <Text style={globalStyles.editProfileText}>Edit Profile</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={globalStyles.userFollowers}>
-                    <Text style={globalStyles.userFollowersCounter}>123</Text>
+                    <Text style={globalStyles.userFollowersCounter}>0</Text>
                         <Text style={globalStyles.followersSubtext}>Followers</Text>
-                        <TouchableOpacity style={globalStyles.shareProfileButton} onPress={()=>{}}>
-                            <Text style={globalStyles.shareProfileText}>Share Profile</Text>
+                        <TouchableOpacity style={globalStyles.shareProfileButton} onPress={userLogout}>
+                            <Text style={globalStyles.shareProfileText}>Logout</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

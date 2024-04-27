@@ -34,6 +34,11 @@ import SellerVerificationStep2 from "./seller/SellerVerificationStep2";
 import SellerVerificationStep3 from "./seller/SellerVerificationStep3";
 import SellerVerificationStep4 from "./seller/SellerVerificationStep4";
 import SellerVerificationStep5 from "./seller/SellerVerificationStep5";
+import SellerVerificationStep6 from "./seller/SellerVerificationStep6";
+import SellerVerificationStep7 from "./seller/SellerVerificationStep7";
+import SellerVerificationStep8 from "./seller/SellerVerificationStep8";
+import SellerVerificationStep9 from "./seller/SellerVerificationStep9";
+import SellerVerificationStep10 from "./seller/SellerVerificationStep10";
 import NotificationItemPage from "./notifications/NotificationItem";
 import NotificationListPage from "./notifications/NotificationList";
 
@@ -74,6 +79,11 @@ export {
     SellerVerificationStep3,
     SellerVerificationStep4,
     SellerVerificationStep5,
+    SellerVerificationStep6,
+    SellerVerificationStep7,
+    SellerVerificationStep8,
+    SellerVerificationStep9,
+    SellerVerificationStep10,
     NotificationItemPage,
     NotificationListPage,
 }

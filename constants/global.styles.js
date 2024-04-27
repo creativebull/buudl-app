@@ -1338,7 +1338,7 @@ const globalStyles = StyleSheet.create({
     },
     sellerRegistrationPageContainer: {
         flex: 1,
-        flexDirection: "column"
+        flexDirection: "column",
     },
     sellerRegistrationTitle: {
         fontSize: SIZES.xLarge,
@@ -1505,7 +1505,7 @@ const globalStyles = StyleSheet.create({
         marginTop: 20,
         alignItems: "center"
     },
-    sellerVerificationStep2SubTitle: {
+    sellerVerificationStepId2SubTitle: {
         fontSize: 14,
         color: COLORS.secondary,
         marginTop: 20,
@@ -1586,585 +1586,705 @@ const globalStyles = StyleSheet.create({
         marginTop: 20
     },
     // Notification screen specific styles
-  notificationHeaderContainer: {
-    paddingTop: 20,
-    paddingBottom: 10,
-    backgroundColor: 'white',
-  },
-  notificationHeaderTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 30,
-  },
-  notificationTabContainer: {
-    flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderBottomColor: '#e1e1e1',
-  },
-  notificationTab: {
-    flex: 1,
-    paddingVertical: 10,
-    alignItems: 'center',
-    borderBottomWidth: 3,
-    borderBottomColor: 'transparent', 
-  },
-  notificationActiveTab: {
-    borderBottomColor: 'orange',
-  },
-  notificationTabText: {
-    fontSize: 16,
-    color: 'grey',
-  },
-  notificationActiveTabText: {
-    color: 'orange',
-    fontWeight: 'bold',
-  },
-  notificationAvatarStyle: {
-    width: 40,
-    height: 40,
-    borderRadius: 20, 
-    backgroundColor: '#95827a',
-    marginRight: 12,
-  },
-  notificationItem: {
-    flexDirection: 'row',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-    alignItems: 'center',
-  },
-  notificationTextContainer: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  notificationText: {
-    fontWeight: 'bold',
-    fontSize: 16,
-    color: '#000',
-    flexShrink: 1,
-  },
-  notificationText2: {
-    fontSize: 12,
-    color: '#9a9a9a',
-    flexShrink: 1,
-  },
-  notificationTime: {
-    fontWeight: 'normal',
-    position: 'absolute',
-    right: 0,
-    fontSize: 10,
-    color: '#9a9a9a',
-    marginTop: 4,
-  },
-  notificationAvatarStyle: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: '#95827a',
-    marginRight: 12,
-  },
-  productImagePlaceholder: {
-  width: 50,
-  height: 50, 
-  backgroundColor: '#e0e0e0', 
-  borderRadius: 5, 
-},
-  messageItem: {
-    flexDirection: 'row',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-    alignItems: 'center',
-  },
-  messageTextContainer: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  messageText: {
-    fontWeight: 'bold',
-    fontSize: 16,
-    color: '#000',
-    flexShrink: 1,
-  },
-  messageText2: {
-    fontSize: 12,
-    color: '#9a9a9a',
-    flexShrink: 1,
-  },
-  messageTime: {
-    fontWeight: 'normal',
-    position: 'absolute',
-    right: 0,
-    fontSize: 10,
-    color: '#9a9a9a',
-    marginEnd:'10%',
-  },
-  productImagePlaceholder: {
-    position: 'absolute',
-    right:0,
+    notificationHeaderContainer: {
+        paddingTop: 20,
+        paddingBottom: 10,
+        backgroundColor: 'white',
+    },
+    notificationHeaderTitle: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginTop: 30,
+    },
+    notificationTabContainer: {
+        flexDirection: 'row',
+        borderBottomWidth: 1,
+        borderBottomColor: '#e1e1e1',
+    },
+    notificationTab: {
+        flex: 1,
+        paddingVertical: 10,
+        alignItems: 'center',
+        borderBottomWidth: 3,
+        borderBottomColor: 'transparent', 
+    },
+    notificationActiveTab: {
+        borderBottomColor: 'orange',
+    },
+    notificationTabText: {
+        fontSize: 16,
+        color: 'grey',
+    },
+    notificationActiveTabText: {
+        color: 'orange',
+        fontWeight: 'bold',
+    },
+    notificationAvatarStyle: {
+        width: 40,
+        height: 40,
+        borderRadius: 20, 
+        backgroundColor: '#95827a',
+        marginRight: 12,
+    },
+    notificationItem: {
+        flexDirection: 'row',
+        padding: 16,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
+        alignItems: 'center',
+    },
+    notificationTextContainer: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    notificationText: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        color: '#000',
+        flexShrink: 1,
+    },
+    notificationText2: {
+        fontSize: 12,
+        color: '#9a9a9a',
+        flexShrink: 1,
+    },
+    notificationTime: {
+        fontWeight: 'normal',
+        position: 'absolute',
+        right: 0,
+        fontSize: 10,
+        color: '#9a9a9a',
+        marginTop: 4,
+    },
+    notificationAvatarStyle: {
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+        backgroundColor: '#95827a',
+        marginRight: 12,
+    },
+    productImagePlaceholder: {
     width: 50,
-    height: 50,
-    backgroundColor: '#e0e0e0',
-  },
-   modalBackground: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.5)',
-  },
-  modalContainer: {
-    width: '90%',
-    backgroundColor: 'white',
-    paddingHorizontal: 24,
-    paddingTop: 16,
-    paddingBottom: 32,
-    borderRadius: 12,
-    alignItems: 'center',
-    shadowColor: 'black',
-    shadowOpacity: 0.1,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 5 },
-    elevation: 10,
-  },
-  closeButton: {
-    alignSelf: 'flex-end',
-    marginRight: -10,
-    marginTop: -10,
-  },
-  modalTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    marginBottom: 16,
-  },
-  inputLabel: {
-    alignSelf: 'flex-start',
-    fontSize: 16,
-    color: '#333',
-    marginBottom: 8,
-  },
-  input: {
-    width: '100%',
-    borderColor: '#DDD',
-    borderWidth: 1,
-    borderRadius: 8,
-    padding: 16,
-    fontSize: 18,
-    color: '#333',
-  },
-  sendButton: {
-    backgroundColor: '#FF9500',
-    paddingVertical: 16,
-    paddingHorizontal: 32,
-    borderRadius: 8,
-    width: '100%',
-    marginTop: 16,
-  },
-  sendButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-     textAlign:'center',
-    fontSize: 18,
-  },
-  makeOfferContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-    marginVertical: 16,
-  },
-  makeOfferButton: {
-    backgroundColor: 'white',
-    borderColor: '#310D00',
-    borderWidth: 1,
-    borderRadius: 8,
-    paddingVertical: 12,
-    paddingHorizontal: 24, 
-  },
-  makeOfferSelectedButton: {
-    backgroundColor: '#FFF3E0',
-    borderColor: '#FF9500', 
-  },
-  button: {
-    backgroundColor: 'white',
-    borderColor: '#310D00',
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-  },
-  subText:{
-    color: '#666',
-    fontSize: 12,
-    textAlign:'left',
-    alignSelf: 'flex-start',
-  },
-  selectedButton: {
-    borderColor: 'orange',
-  },
-  buttonText: {
-    color: 'black', 
-    textAlign: 'center',
-  },
-  disclaimerText: {
-    fontSize: 14,
-    color: '#666',
-    marginTop: 16, 
-    textAlign: 'center', 
-  },
-  confirmationMessage: {
-    fontSize: 16,
-    color: 'gray',
-    textAlign: 'center',
-    marginVertical: 5,
-  },
-  //report listing style
-  reportListingCenteredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  reportListingModalView: {
-    width: '90%',
-    backgroundColor: 'white',
-    borderRadius: 20, 
-    padding: 35, 
-    alignItems: 'flex-start', 
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
+    height: 50, 
+    backgroundColor: '#e0e0e0', 
+    borderRadius: 5, 
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  reportListingCloseButton: {
-    position: 'absolute', 
-    top: 10, 
-    right: 10, 
-    padding: 10,
-  },
-  reportListingCloseButtonText: {
-    fontSize: 24, 
-    fontWeight: 'bold',
-  },
-  modalTitle: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    marginBottom: 20,
-    color: '#333',
-    alignSelf: 'center', 
-  },
-  modalInput: {
-    width: '100%',
-    borderColor: '#CCC',
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 15,
-    marginBottom: 20,
-    fontSize: 16,
-  },
-  modalInputMultiline: {
-    minHeight: 100, 
-    textAlignVertical: 'top',
-  },
-  submitButton: {
-    backgroundColor: '#310D00', 
-    borderRadius: 20,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    alignSelf: 'center', 
-    width: '100%', 
-    marginTop: 20, 
-  },
-  submitButtonText: {
-    fontSize: 18,
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  reportListingCloseText: {
-    fontSize: 20,
-    color: '#333',
-  },
-  reportListingContent: {
-    alignItems: 'center',
-  },
-  reportListingHeader: {
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: 18,
-    marginBottom: 10,
-  },
-  reportListingCheckmarkCircle: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: 'orange',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  reportListingCheckmark: {
-    color: 'white',
-    fontSize: 30,
-  },
-  reportListingBody: {
-    fontSize: 14,
-    color: '#333',
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-  reportListingLearnMore: {
-    fontSize: 14,
-    color: 'orange',
-    textDecorationLine: 'underline',
-  },
-  //report success style
-  reportCenteredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-  },
-  reportModalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 5,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2
+    messageItem: {
+        flexDirection: 'row',
+        padding: 16,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
+        alignItems: 'center',
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5
-  },
-  reportCloseButton: {
-    alignSelf: 'flex-end',
-  },
-  reportContent: {
-    alignItems: 'center',
-  },
-  reportTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 10,
-    textAlign: 'center',
-  },
-  reportMessage: {
-    fontSize: 14,
-    color: '#333',
-    marginTop: 10,
-    textAlign: 'center',
-  },
-  reportCodeOfConduct: {
-    marginTop: 10,
-    color: '#007AFF',
-    textDecorationLine: 'underline',
-  },
-  buudlProtectionButton: {
-    backgroundColor: 'blue',
-    padding: 10,
-    marginVertical: 10,
-    marginHorizontal: 20,
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  buudlProtectionButtonText: {
-    color: 'white',
-    fontSize: 16,
-  },
-   buudlProtectionModalContainer: {
-    flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buudlProtectionContainer: {
-    width: '90%',
-    height:'90%',
-    backgroundColor: 'white',
-    borderRadius: 6,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
+    messageTextContainer: {
+        flex: 1,
+        justifyContent: 'center',
     },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
-  },
-  buudlProtectionScrollView: {
-    padding: 20,
-  },
-  buudlProtectionHeaderContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  buudlProtectionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  buudlProtectionSubTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    marginTop: 20,
-    marginBottom: 10,
-  },
-  buudlProtectionDescription: {
-    fontSize: 16,
-    color: 'grey',
-    marginTop: 5,
-  },
-  buudlProtectionContentText: {
-    fontSize: 16,
-    marginTop: 5,
-  },
-  buudlProtectionListItem: {
-    fontSize: 16,
-    marginLeft: 10,
-    marginTop: 5,
-  },
-  buudlProtectionFooterNote: {
-    fontSize: 16,
-    marginTop: 5,
-    marginBottom: 10,
-    color: 'grey',
-  },
-  buudlProtectionFooter: {
-    borderTopWidth: 1,
-    borderTopColor: '#eee',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-  },
-  buudlProtectionFooterText: {
-    fontSize: 16,
-    textAlign: 'center',
-    marginBottom: 10,
-  },
-  buudlProtectionButtonRow: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  buudlProtectionButton: {
-    backgroundColor: '#e7e7e7',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 20,
-    marginHorizontal: 10,
-  },
-  buudlProtectionButtonText: {
-    fontSize: 16,
-    color: '#000',
-  },
-  buudlProtectionCloseButton: {
-    padding: 10,
-  },
-  //offer message
-  listContainer: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  offerMessageItem: {
-    flexDirection: 'row',
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-    alignItems: 'center',
-  },
-  offerProductImagePlaceholder: {
-    width: 60,
-    height: 60,
-    backgroundColor: '#e4e4e4',
-    marginRight: 10,
-  },
-  offerMessageTextContainer: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  offerMessageText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  offerMessageText2: {
-    fontSize: 14,
-    color: '#555',
-  },
-  offerMessageTime: {
-    fontSize: 12,
-    color: '#aaa',
-    marginTop: 4,
-  },
-  //inbox style
-  inboxContainer: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  inboxHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 10,
-    paddingHorizontal:25,
-    marginTop:60,
-  },
-  inboxHeaderTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  inboxSegmentedControlContainer: {
-    flexDirection: 'row',
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 10,
-  },
-inboxSegmentButton: {
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    backgroundColor: '#f5f5f5',
-    borderRadius: 8,
-  },
-  inboxSegmentButtonActive: {
-    backgroundColor: '#F86F03',
-  },
-  inboxSegmentButtonText: {
-    fontSize: 14,
-    color: '#000',
-  },
-  inboxSegmentButtonTextActive: {
-    color: '#fff',
-  },
-  inboxTabsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    padding: 10,
-  },
-  inboxTab: {
-    flex: 1,
-    paddingVertical: 10,
-    alignItems: 'center',
-    borderBottomWidth: 3,
-    borderBottomColor: 'transparent', 
-    paddingHorizontal: 20,
-  },
-  inboxActiveTab: {
-    borderBottomWidth: 2,
-    borderBottomColor: '#310D00',
-  },
-  inboxTabText: {
-    fontSize: 16,
-    color: '#000',
-  },
-  inboxActiveTabText: {
-    fontWeight: 'bold',
-    color: '#310D00',
-  },
- 
+    messageText: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        color: '#000',
+        flexShrink: 1,
+    },
+    messageText2: {
+        fontSize: 12,
+        color: '#9a9a9a',
+        flexShrink: 1,
+    },
+    messageTime: {
+        fontWeight: 'normal',
+        position: 'absolute',
+        right: 0,
+        fontSize: 10,
+        color: '#9a9a9a',
+        marginEnd:'10%',
+    },
+    productImagePlaceholder: {
+        position: 'absolute',
+        right:0,
+        width: 50,
+        height: 50,
+        backgroundColor: '#e0e0e0',
+    },
+    modalBackground: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+    },
+    modalContainer: {
+        width: '90%',
+        backgroundColor: 'white',
+        paddingHorizontal: 24,
+        paddingTop: 16,
+        paddingBottom: 32,
+        borderRadius: 12,
+        alignItems: 'center',
+        shadowColor: 'black',
+        shadowOpacity: 0.1,
+        shadowRadius: 10,
+        shadowOffset: { width: 0, height: 5 },
+        elevation: 10,
+    },
+    closeButton: {
+        alignSelf: 'flex-end',
+        marginRight: -10,
+        marginTop: -10,
+    },
+    modalTitle: {
+        fontSize: 24,
+        fontWeight: '600',
+        marginBottom: 16,
+    },
+    inputLabel: {
+        alignSelf: 'flex-start',
+        fontSize: 16,
+        color: '#333',
+        marginBottom: 8,
+    },
+    input: {
+        width: '100%',
+        borderColor: '#DDD',
+        borderWidth: 1,
+        borderRadius: 8,
+        padding: 16,
+        fontSize: 18,
+        color: '#333',
+    },
+    sendButton: {
+        backgroundColor: '#FF9500',
+        paddingVertical: 16,
+        paddingHorizontal: 32,
+        borderRadius: 8,
+        width: '100%',
+        marginTop: 16,
+    },
+    sendButtonText: {
+        color: 'white',
+        fontWeight: 'bold',
+        textAlign:'center',
+        fontSize: 18,
+    },
+    makeOfferContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%',
+        marginVertical: 16,
+    },
+    makeOfferButton: {
+        backgroundColor: 'white',
+        borderColor: '#310D00',
+        borderWidth: 1,
+        borderRadius: 8,
+        paddingVertical: 12,
+        paddingHorizontal: 24, 
+    },
+    makeOfferSelectedButton: {
+        backgroundColor: '#FFF3E0',
+        borderColor: '#FF9500', 
+    },
+    button: {
+        backgroundColor: 'white',
+        borderColor: '#310D00',
+        borderWidth: 1,
+        borderRadius: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 30,
+    },
+    subText:{
+        color: '#666',
+        fontSize: 12,
+        textAlign:'left',
+        alignSelf: 'flex-start',
+    },
+    selectedButton: {
+        borderColor: 'orange',
+    },
+    buttonText: {
+        color: 'black', 
+        textAlign: 'center',
+    },
+    disclaimerText: {
+        fontSize: 14,
+        color: '#666',
+        marginTop: 16, 
+        textAlign: 'center', 
+    },
+    confirmationMessage: {
+        fontSize: 16,
+        color: 'gray',
+        textAlign: 'center',
+        marginVertical: 5,
+    },
+    //report listing style
+    reportListingCenteredView: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    },
+    reportListingModalView: {
+        width: '90%',
+        backgroundColor: 'white',
+        borderRadius: 20, 
+        padding: 35, 
+        alignItems: 'flex-start', 
+        shadowColor: '#000',
+        shadowOffset: {
+        width: 0,
+        height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
+    reportListingCloseButton: {
+        position: 'absolute', 
+        top: 10, 
+        right: 10, 
+        padding: 10,
+    },
+    reportListingCloseButtonText: {
+        fontSize: 24, 
+        fontWeight: 'bold',
+    },
+    modalTitle: {
+        fontWeight: 'bold',
+        fontSize: 22,
+        marginBottom: 20,
+        color: '#333',
+        alignSelf: 'center', 
+    },
+    modalInput: {
+        width: '100%',
+        borderColor: '#CCC',
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 15,
+        marginBottom: 20,
+        fontSize: 16,
+    },
+    modalInputMultiline: {
+        minHeight: 100, 
+        textAlignVertical: 'top',
+    },
+    submitButton: {
+        backgroundColor: '#310D00', 
+        borderRadius: 20,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        alignSelf: 'center', 
+        width: '100%', 
+        marginTop: 20, 
+    },
+    submitButtonText: {
+        fontSize: 18,
+        color: 'white',
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    reportListingCloseText: {
+        fontSize: 20,
+        color: '#333',
+    },
+    reportListingContent: {
+        alignItems: 'center',
+    },
+    reportListingHeader: {
+        fontWeight: 'bold',
+        textAlign: 'center',
+        fontSize: 18,
+        marginBottom: 10,
+    },
+    reportListingCheckmarkCircle: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        backgroundColor: 'orange',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    reportListingCheckmark: {
+        color: 'white',
+        fontSize: 30,
+    },
+    reportListingBody: {
+        fontSize: 14,
+        color: '#333',
+        marginBottom: 15,
+        textAlign: 'center',
+    },
+    reportListingLearnMore: {
+        fontSize: 14,
+        color: 'orange',
+        textDecorationLine: 'underline',
+    },
+    //report success style
+    reportCenteredView: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    },
+    reportModalView: {
+        margin: 20,
+        backgroundColor: 'white',
+        borderRadius: 5,
+        padding: 35,
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: {
+        width: 0,
+        height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+    },
+    reportCloseButton: {
+        alignSelf: 'flex-end',
+    },
+    reportContent: {
+        alignItems: 'center',
+    },
+    reportTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginTop: 10,
+        textAlign: 'center',
+    },
+    reportMessage: {
+        fontSize: 14,
+        color: '#333',
+        marginTop: 10,
+        textAlign: 'center',
+    },
+    reportCodeOfConduct: {
+        marginTop: 10,
+        color: '#007AFF',
+        textDecorationLine: 'underline',
+    },
+    buudlProtectionButton: {
+        backgroundColor: 'blue',
+        padding: 10,
+        marginVertical: 10,
+        marginHorizontal: 20,
+        borderRadius: 5,
+        alignItems: 'center',
+    },
+    buudlProtectionButtonText: {
+        color: 'white',
+        fontSize: 16,
+    },
+    buudlProtectionModalContainer: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    buudlProtectionContainer: {
+        width: '90%',
+        height:'90%',
+        backgroundColor: 'white',
+        borderRadius: 6,
+        shadowColor: '#000',
+        shadowOffset: {
+        width: 0,
+        height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+        elevation: 3,
+    },
+    buudlProtectionScrollView: {
+        padding: 20,
+    },
+    buudlProtectionHeaderContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    buudlProtectionTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+    buudlProtectionSubTitle: {
+        fontSize: 18,
+        fontWeight: '600',
+        marginTop: 20,
+        marginBottom: 10,
+    },
+    buudlProtectionDescription: {
+        fontSize: 16,
+        color: 'grey',
+        marginTop: 5,
+    },
+    buudlProtectionContentText: {
+        fontSize: 16,
+        marginTop: 5,
+    },
+    buudlProtectionListItem: {
+        fontSize: 16,
+        marginLeft: 10,
+        marginTop: 5,
+    },
+    buudlProtectionFooterNote: {
+        fontSize: 16,
+        marginTop: 5,
+        marginBottom: 10,
+        color: 'grey',
+    },
+    buudlProtectionFooter: {
+        borderTopWidth: 1,
+        borderTopColor: '#eee',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+    },
+    buudlProtectionFooterText: {
+        fontSize: 16,
+        textAlign: 'center',
+        marginBottom: 10,
+    },
+    buudlProtectionButtonRow: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    buudlProtectionButton: {
+        backgroundColor: '#e7e7e7',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 20,
+        marginHorizontal: 10,
+    },
+    buudlProtectionButtonText: {
+        fontSize: 16,
+        color: '#000',
+    },
+    buudlProtectionCloseButton: {
+        padding: 10,
+    },
+    //offer message
+    listContainer: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
+    offerMessageItem: {
+        flexDirection: 'row',
+        padding: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ccc',
+        alignItems: 'center',
+    },
+    offerProductImagePlaceholder: {
+        width: 60,
+        height: 60,
+        backgroundColor: '#e4e4e4',
+        marginRight: 10,
+    },
+    offerMessageTextContainer: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    offerMessageText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    offerMessageText2: {
+        fontSize: 14,
+        color: '#555',
+    },
+    offerMessageTime: {
+        fontSize: 12,
+        color: '#aaa',
+        marginTop: 4,
+    },
+    //inbox style
+    inboxContainer: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
+    inboxHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 10,
+        paddingHorizontal:25,
+        marginTop:60,
+    },
+    inboxHeaderTitle: {
+        fontSize: 24,
+        fontWeight: 'bold',
+    },
+    inboxSegmentedControlContainer: {
+        flexDirection: 'row',
+        borderWidth: 1,
+        borderColor: '#ddd',
+        borderRadius: 10,
+    },
+        inboxSegmentButton: {
+        paddingVertical: 6,
+        paddingHorizontal: 12,
+        backgroundColor: '#f5f5f5',
+        borderRadius: 8,
+    },
+    inboxSegmentButtonActive: {
+        backgroundColor: '#F86F03',
+    },
+    inboxSegmentButtonText: {
+        fontSize: 14,
+        color: '#000',
+    },
+    inboxSegmentButtonTextActive: {
+        color: '#fff',
+    },
+    inboxTabsContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        padding: 10,
+    },
+    inboxTab: {
+        flex: 1,
+        paddingVertical: 10,
+        alignItems: 'center',
+        borderBottomWidth: 3,
+        borderBottomColor: 'transparent', 
+        paddingHorizontal: 20,
+    },
+    inboxActiveTab: {
+        borderBottomWidth: 2,
+        borderBottomColor: '#310D00',
+    },
+    inboxTabText: {
+        fontSize: 16,
+        color: '#000',
+    },
+    inboxActiveTabText: {
+        fontWeight: 'bold',
+        color: '#310D00',
+    },
+    camera: {
+        flex: 1,
+        margin: 20,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: COLORS.white,
+        marginBottom: 200
+    },
+    cameraButtonContainer: {
+        padding: 20,
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: 'transparent',
+        width: 400,
+        height: 200
+    },
+    reverseCameraButton: {
+        flex: 1,
+        alignSelf: 'flex-end',
+        alignItems: "flex-end",
+    },
+    cameraContainer: {
+        flex: 1,
+        padding: 10,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: COLORS.white,
+    },
+    sellerRegistrationPageContainerBG: {
+        flex: 1,
+        flexDirection: "column",
+        backgroundColor: "rgba(49, 13, 0, .3)"
+    },
+    sellerContinueBtnBrown: {
+        alignItems: "center",
+        width: "90%",
+        paddingVertical: 20,
+        backgroundColor: COLORS.brown,
+        borderRadius: 10,
+        flexDirection: "row",
+        paddingHorizontal: 150
+    },
+    sellerFooterContainerBrn: {
+        marginTop: 60,
+        alignItems: "center",
+        marginBottom: 100
+    },
+    sellerVerificationStep5Title: {
+        fontSize: 25,
+        fontWeight: "bold",
+        alignContent: "center",
+        color: COLORS.white,
+        marginBottom: 40,
+    },
+    sellerVerificationStep5SubTitle: {
+        fontSize: 16,
+        fontWeight: "bold",
+        alignContent: "center",
+        color: COLORS.white,
+        marginBottom: 10,
+    },
+    photoTips: {
+        flex: 1,
+        margin: 20,
+        borderRadius: 20,
+        padding: 20,
+        backgroundColor: "rgba(49, 13, 0, .3)"
+    },
+    photoTipsHeaderContainer: {
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    photoTipsHeaderText: {
+        color: COLORS.white,
+        fontSize: 16
+    },
+    tipsListContainer: {
+        marginLeft: 43
+    },
+    tipsListText: {
+        color: COLORS.white,
+        fontSize: 12
+    },
+    sellerVerificationStep2SubTitle: {
+        fontSize: 15,
+        fontWeight: "bold",
+        alignContent: "center",
+        marginTop: 20,
+        marginBottom: 30,
+    },
+    selfieCameraContainer: {
+        borderRadius: 150, // Set borderRadius to half of width and height to make it a circle
+        overflow: 'hidden',
+    },
+    selfieCamera: {
+        flex: 1,
+        aspectRatio: 1,
+    },
+    applicationReviewContainer: {
+        marginTop: 50,
+        marginHorizontal: 30
+    },
+    reviewApplicationTextHeader: {
+        fontWeight: "bold"
+    },
+    informationContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginVertical: 10
+    },
+    finalizeApplicationContainer: {
+        flex: 1,
+        marginTop: 50,
+        justifyContent: "center",
+        alignContent: "center",
+        alignItems: "center"
+    },
+    dropDownStyle: {
+        borderWidth: 1,
+        borderColor: COLORS.black
+    },
 });
 
 export default globalStyles;
