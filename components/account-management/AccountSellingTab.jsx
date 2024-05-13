@@ -9,28 +9,7 @@ const AccountSellingTab = (userData) => {
     if(userData.data.is_seller){
         return (
             <View>
-                <View style={globalStyles.finalizeApplicationContainer}>
-                    <View style={globalStyles.informationContainer}>
-                    </View>
-                </View>
-
-                <View style={globalStyles.finalizeApplicationContainer}>
-                    <View style={globalStyles.informationContainer}>
-                        <Text>Looks like you don't have a listing as of the moment</Text>
-                    </View>
-                </View>
-
-                <View style={globalStyles.finalizeApplicationContainer}>
-                    <View style={globalStyles.informationContainer}>
-                        <Text>Add one now?</Text>
-                    </View>
-                </View>
-                
-                <View style={globalStyles.sellerFooterContainer}>
-                    <TouchableOpacity style={globalStyles.sellerContinueBtn} onPress={()=>navigation.navigate("AccountManagement")}>
-                        <Text style={globalStyles.sellerContinueBtnText}>Add a listing</Text>
-                    </TouchableOpacity>
-                </View>
+                <Text>This is selling</Text>
             </View>
         );
     }else{

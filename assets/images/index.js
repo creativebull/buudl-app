@@ -1,0 +1,1 @@
+export const NULLIMAGE = require("../pDefault.png")

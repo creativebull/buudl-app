@@ -1,17 +1,17 @@
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
-import { useCallback } from 'react';
-import BottomTabNavigation from './navigation/BottomTabNavigation';
-import { 
-  Cart, 
-  ProductDetails, 
-  Store, 
-  SellerShops, 
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useCallback } from "react";
+import BottomTabNavigation from "./navigation/BottomTabNavigation";
+import {
+  Cart,
+  ProductDetails,
+  Store,
+  SellerShops,
   Login,
-  Register, 
+  Register,
   SellerRegistration,
   SellerRegistrationShopInformation,
   SellerVerificationPage1,
@@ -19,15 +19,18 @@ import {
   SellerVerificationPage3,
   SellerVerificationPage4,
   SellerVerificationPage5,
-  SellerVerificationPage6,
-  SellerVerificationPage7,
-  SellerVerificationPage8,
-  SellerVerificationPage9,
-  SellerVerificationPage10,
   Notification,
   OfferDetails,
   MessageDetails,
-} from './route';
+  Checkout,
+  ShippingOptions,
+  Address,
+  SetUpAddress,
+  NewAddress,
+  PaymentScreen,
+  PaymentSuccess,
+} from "./route";
+import { MyFlashMessage } from "./components/message";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,129 +41,139 @@ export default function App() {
     nunitoregular: require("./assets/fonts/nunito-regular.ttf"),
   });
 
-  const onLayoutRootView = useCallback(async() => {
-    if(fonstLoaded){
+  const onLayoutRootView = useCallback(async () => {
+    if (fonstLoaded) {
       await SplashScreen.hideAsync();
     }
   }, [fonstLoaded]);
 
-  if(!fonstLoaded){
+  if (!fonstLoaded) {
     return null;
   }
-
   return (
     <SafeAreaProvider>
+      <MyFlashMessage />
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name='Bottom Navigation'
+            name="Bottom Navigation"
             component={BottomTabNavigation}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='ProductDetails'
+            name="ProductDetails"
             component={ProductDetails}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='OfferDetails'
+            name="Checkout"
+            component={Checkout}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OfferDetails"
             component={OfferDetails}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='MessageDetails'
+            name="MessageDetails"
             component={MessageDetails}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='Notification'
+            name="Notification"
             component={Notification}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='Store'
+            name="Store"
             component={Store}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerShops'
+            name="SellerShops"
             component={SellerShops}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='Login'
+            name="Login"
             component={Login}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='Register'
+            name="Register"
             component={Register}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='Cart'
+            name="Cart"
             component={Cart}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerRegistration'
+            name="SellerRegistration"
             component={SellerRegistration}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerRegistrationShopInformation'
+            name="SellerRegistrationShopInformation"
             component={SellerRegistrationShopInformation}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerVerificationPage1'
+            name="SellerVerificationPage1"
             component={SellerVerificationPage1}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerVerificationPage2'
+            name="SellerVerificationPage2"
             component={SellerVerificationPage2}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerVerificationPage3'
+            name="SellerVerificationPage3"
             component={SellerVerificationPage3}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerVerificationPage4'
+            name="SellerVerificationPage4"
             component={SellerVerificationPage4}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerVerificationPage5'
+            name="SellerVerificationPage5"
             component={SellerVerificationPage5}
-            options={{headerShown:false}}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerVerificationPage6'
-            component={SellerVerificationPage6}
-            options={{headerShown:false}}
+            name="ShippingOption"
+            component={ShippingOptions}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerVerificationPage7'
-            component={SellerVerificationPage7}
-            options={{headerShown:false}}
+            name="Address"
+            component={Address}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerVerificationPage8'
-            component={SellerVerificationPage8}
-            options={{headerShown:false}}
+            name="SetUpAddress"
+            component={SetUpAddress}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerVerificationPage9'
-            component={SellerVerificationPage9}
-            options={{headerShown:false}}
+            name="PaymentScreen"
+            component={PaymentScreen}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name='SellerVerificationPage10'
-            component={SellerVerificationPage10}
-            options={{headerShown:false}}
+            name="PaymentSuccess"
+            component={PaymentSuccess}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="NewAddress"
+            component={NewAddress}
+            options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>

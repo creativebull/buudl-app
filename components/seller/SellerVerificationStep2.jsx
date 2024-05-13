@@ -55,24 +55,6 @@ const SellerVerificationStep2 = () => {
         }
     }
 
-    function goToNextPage(){
-        navigation.navigate("SellerVerificationPage3")
-        setSellerData();
-    }
-
-    const setSellerData = async () => {
-        try {
-            await AsyncStorage.setItem('seller-registration-firstname', userFirstname);
-            await AsyncStorage.setItem('seller-registration-lastname', userLastname);
-            await AsyncStorage.setItem('seller-registration-birthdate', userBirthdate);
-            await AsyncStorage.setItem('seller-registration-email', userEmail);
-            await AsyncStorage.setItem('seller-registration-address', userAddress);
-            console.log()
-        } catch (error) {
-            console.error('Failed to check login status:', error);
-        }
-    };
-
     return (
         <View style={globalStyles.sellerRegistrationPageContainer}>
             <View style={globalStyles.sellerGoBackContainer}>
@@ -86,7 +68,7 @@ const SellerVerificationStep2 = () => {
             <View style={globalStyles.sellerVerificationHeaderStep2}>
                 <Text style={globalStyles.sellerVerificationStep2Title}>Identity Verification</Text>
             </View>
-            <View style={globalStyles.sellerVerificationStepId2SubTitle}>
+            <View style={globalStyles.sellerVerificationStep2SubTitle}>
                 <Text>The details should match your valid ID</Text> 
             </View>
             
@@ -124,18 +106,18 @@ const SellerVerificationStep2 = () => {
                 <Text>Email</Text>
                 <TextInput
                     style={globalStyles.sellerVerificationInput}
-                    value={userEmail}
-                    onChangeText={setUserEmail}
+                    value={userBirthdate}
+                    onChangeText={setUserBirthdate}
                     placeholder="example@example.com"
                 />
             </View>
             
             <View style={globalStyles.sellerVerificationInputGroup}>
-                <Text>Address</Text>
+                <Text>Email</Text>
                 <TextInput
                     style={globalStyles.sellerVerificationInput}
-                    value={userAddress}
-                    onChangeText={setUserAddress}
+                    value={userBirthdate}
+                    onChangeText={setUserBirthdate}
                     placeholder="123 St. New York, USA"
                 />
             </View>
@@ -151,7 +133,7 @@ const SellerVerificationStep2 = () => {
                         <Text style={globalStyles.signupGprLink}> Terms of Use</Text>
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={globalStyles.sellerContinueBtn} onPress={goToNextPage}>
+                <TouchableOpacity style={globalStyles.sellerContinueBtn} onPress={()=>navigation.navigate('SellerVerificationPage3')}>
                     <Text style={globalStyles.sellerContinueBtnText}>Next</Text>
                 </TouchableOpacity>
             </View>

@@ -15,7 +15,6 @@ const AppBarNavigation = () => {
         const interval = setInterval(() => {
             getCartCounter();
         }, 1000);
-
         return () => clearInterval(interval);
     }, []);
 
@@ -58,6 +57,7 @@ const AppBarNavigation = () => {
                             <Fontisto name='shopping-bag' size={24} style={globalStyles.cartColor} />
                         </TouchableOpacity>
                     </View>
+
                 </View>
             </View>
         </View>

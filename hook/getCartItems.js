@@ -9,8 +9,10 @@ const getCartItems = () => {
     const apiUrl = process.env.API_URL
 
     const getExploreData = async () => {
+        setIsLoading(true)
         try {
             const token = await AsyncStorage.getItem('token');
+            console.log(token)
             if (token) {
                 // Fetch cart count from backend API
                 const response = await axios.get(apiUrl + 'cart/items', {
@@ -18,12 +20,12 @@ const getCartItems = () => {
                         Authorization: `Bearer ${token}`
                     }
                 });
-                console.log('==================');
-                console.log(response.data.data);
-                console.log('==================');
-                setData(response.data.data);
+                // console.log(response.data);
+                setData(response?.data?.data);
             }
+            setIsLoading(false)
         } catch (error) {
+            setIsLoading(false)
             console.log("Failed to load bag data due to : ", error);
              setError(error);
         } finally {

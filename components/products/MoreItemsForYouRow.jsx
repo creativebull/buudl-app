@@ -15,7 +15,7 @@ const MoreItemsForYouRow = () => {
                 keyExtractor={(item) => item.id}
                 numColumns={2}
                 renderItem={({item}) => <MoreItemsForYouCardView item={item}/>}
-                contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column"}}
+                // contentContainerStyle={{columnGap: SIZES.meduim, flexDirection: "column"}}
             />
         </View>
     );

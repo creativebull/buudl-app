@@ -3,7 +3,6 @@ import React from "react";
 import globalStyles from "../../constants/global.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants";
-import ImagePlaceholder from "../../assets/images/product_placeholder.png";
 import { useNavigation } from "@react-navigation/native";
 
 const MoreFromSellerCardView = ({item}) => {
@@ -15,7 +14,7 @@ const MoreFromSellerCardView = ({item}) => {
             <View style={globalStyles.exploreStylesProductContainer}>
                 <View style={globalStyles.exploreImageWrapper}>
                     <Image
-                        source={{ uri: hostUrl + item.image }}
+                        source={{ uri: hostUrl + item?.image }}
                         style={globalStyles.exploreImage}
                     />
                     <TouchableOpacity>

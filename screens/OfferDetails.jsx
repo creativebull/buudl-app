@@ -26,7 +26,7 @@ const OfferDetails = ({ route }) => {
 
       <View style={styles.sectionContainer}>
         <Text style={styles.sectionTitle}>Active Offers</Text>
-        {activeOffers.map((activeOffer) => (
+        {activeOffers?.map((activeOffer) => (
           <View key={activeOffer.id} style={styles.activeOfferItem}>
             <Text style={styles.username}>{activeOffer.offerStatus}</Text>
             <Text style={styles.username}>{activeOffer.username}</Text>
@@ -46,7 +46,7 @@ const OfferDetails = ({ route }) => {
 
       <View style={styles.sectionContainer}>
         <Text style={styles.sectionTitle}>Past Offers</Text>
-        {pastOffers.map((pastOffer) => (
+        {pastOffers?.map((pastOffer) => (
           <View key={pastOffer.id} style={styles.pastOfferItem}>
             <Text style={styles.username}>{pastOffer.offerStatus}</Text>
             <Text style={styles.pastOfferPrice}>{pastOffer.price}</Text>

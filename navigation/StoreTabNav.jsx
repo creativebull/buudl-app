@@ -31,7 +31,7 @@ export default function Home() {
           alignItems: 'center',
           justifyContent: 'space-between',
         }}>
-        {tabs.map(tabItem => {
+        {tabs?.map(tabItem => {
           const active = tabItem.key === tab;
           return (
             <TouchableOpacity

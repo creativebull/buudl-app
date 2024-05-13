@@ -7,7 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const SellerVerificationPage1 = () => {
     const navigation = useNavigation();
-    
+
     return (
         <View style={globalStyles.sellerRegistrationPageContainer}>
             <View style={globalStyles.sellerGoBackContainer}>

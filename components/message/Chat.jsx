@@ -19,7 +19,7 @@ const Chat = () => {
 
   return (
     <ScrollView style={styles.listContainer}>
-      {chatData.map((message) => (
+      {chatData?.map((message) => (
         <TouchableOpacity key={message.messageId} onPress={() => handleSelectChat(message)}>
           <MessageItem text={message.text} text2={message.text2} time={message.time} />
         </TouchableOpacity>

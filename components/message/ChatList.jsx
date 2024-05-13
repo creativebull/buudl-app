@@ -6,7 +6,7 @@ import globalStyles from '../../constants/global.styles';
 const ChatList = ({ data }) => {
   return (
     <ScrollView style={globalStyles.listContainer}>
-      {data.map((message) => (
+      {data?.map((message) => (
         <MessageItem
           key={message.messageId}
           text={message.text}

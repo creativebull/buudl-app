@@ -26,7 +26,7 @@ const OurPicksCardView = ({item}) => {
                     <Text style={globalStyles.arrivalProductDetailsTitle} numberOfLines={1}>{item.product_name}</Text>
                     <Text style={globalStyles.arrivalProductDetailsPrice}>P{item.price}</Text>
                     <TouchableOpacity style={globalStyles.addToWishlistBtn}>
-                        <Ionicons name="heart-outline" size={35} color={COLORS.primary} />
+                        <Ionicons name="heart-outline" size={25} color={COLORS.primary} />
                     </TouchableOpacity>
                 </View>
             </View>

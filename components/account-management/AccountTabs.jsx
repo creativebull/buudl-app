@@ -16,7 +16,7 @@ const AccountTabs = ({ tabs, initialTab = 0 }) => {
   return (
     <View>
       <View style={globalStyles.accountTabContainer}>
-        {tabs.map((tab, index) => (
+        {tabs?.map((tab, index) => (
             <TouchableOpacity
                 key={index}
                 style={[globalStyles.accountTab, activeTab === index && globalStyles.accountActiveTab]}

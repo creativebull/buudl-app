@@ -10,9 +10,7 @@ const getSearchData = () => {
     const getExploreData = async () => {
         try {
             const response = await axios.get(apiUrl + 'search/searchHandle');
-            console.log('==================');
             console.log(response.data.data);
-            console.log('==================');
             const json = await response.json();
             setData(json.data);
         } catch (error) {

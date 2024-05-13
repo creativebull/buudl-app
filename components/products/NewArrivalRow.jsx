@@ -7,6 +7,7 @@ import getLandingNewArrivals from "../../hook/getLandingNewArrivals";
 
 const NewArrivalRow = () => {
     const {data, isLoading, error} = getLandingNewArrivals();
+    console.log("New Arral Data is  ===>",data)
     return (
         <View style={globalStyles.newArrivalsListed}>
             <FlatList

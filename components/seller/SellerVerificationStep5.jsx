@@ -6,7 +6,6 @@ import { COLORS } from "../../constants";
 import { useNavigation } from "@react-navigation/native";
 import { Camera, CameraType } from 'expo-camera';
 import { manipulateAsync, FlipType, SaveFormat } from 'expo-image-manipulator';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SellerVerificationStep5 = () => {
     const navigation = useNavigation();
@@ -45,72 +44,68 @@ const SellerVerificationStep5 = () => {
         }
     };
 
-    const setSellerData = async () => {
-        try {
-            await AsyncStorage.setItem('seller-registration-front-id', capturedImage);
-        } catch (error) {
-            console.error('Failed to check login status:', error);
-        }
-    };
-
-    if(capturedImage){
-        setSellerData();
-        navigation.navigate("SellerVerificationPage6")
-    }
-
     return (
-        <View style={globalStyles.sellerRegistrationPageContainerBG}>
+        <View style={globalStyles.sellerRegistrationPageContainer}>
             <View style={globalStyles.sellerGoBackContainer}>
                 <View style={globalStyles.sellerGoBackRow}> 
                     <TouchableOpacity onPress={()=>navigation.navigate('AccountManagement')}>
-                        <Ionicons name="chevron-back" size={30} color={COLORS.white}/>
+                        <Ionicons name="chevron-back" size={30} color={COLORS.secondary}/>
                     </TouchableOpacity>
                     
                 </View>
             </View>
             <View style={globalStyles.sellerVerificationHeaderStep2}>
-                <Text style={globalStyles.sellerVerificationStep5Title}>Front of ID</Text>
-                <Text style={globalStyles.sellerVerificationStep5SubTitle}>Postion your ID in the frame</Text>
+                <Text style={globalStyles.sellerVerificationStep2Title}>Front of ID</Text>
             </View>
 
-            <View class={globalStyles.cameraContainer}>
-                <Camera style={globalStyles.camera} type={type} ref={cameraRef}>
-                    <View style={globalStyles.cameraButtonContainer}>
-                        <TouchableOpacity style={globalStyles.reverseCameraButton} onPress={toggleCameraType}>
-                            <Ionicons name="camera-reverse-outline" size={30} color={COLORS.white}/>
-                        </TouchableOpacity>
-                    </View>
-                </Camera>
-            </View>
+            <Camera style={styles.camera} type={type} ref={cameraRef}>
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.button} onPress={toggleCameraType}>
+                        <Text style={styles.text}>Flip Camera</Text>
+                    </TouchableOpacity>
+                </View>
+            </Camera>
 
-            {/* {capturedImage && (
+            {capturedImage && (
                 <View style={{ flex: 1 }}>
                 <Text>Preview of Captured Image:</Text>
                 <Image source={{ uri: capturedImage }} style={{ width: 300, height: 300 }} />
                 </View>
-            )} */}
-
-            <View style={globalStyles.photoTips}>
-                <View style={globalStyles.photoTipsHeaderContainer}>
-                    <Ionicons name="alert-circle" size={30} color={COLORS.white}/>
-                    <Text style={globalStyles.photoTipsHeaderText}>   Tips for taking an ID photo: </Text>
-                </View>
-                <View style={globalStyles.tipsListContainer}>
-                    <Text style={globalStyles.tipsListText}>* ID is completely within the frame</Text>
-                    <Text style={globalStyles.tipsListText}>* ID is not expired</Text>
-                    <Text style={globalStyles.tipsListText}>* ID image is clear and in a well-lit environment</Text>
-                    <Text style={globalStyles.tipsListText}>* Use a physical ID and not a digital ID</Text>
-                </View>
-            </View>
+            )}
             
-            <View style={globalStyles.sellerFooterContainerBrn}>
-                <TouchableOpacity style={globalStyles.sellerContinueBtnBrown} onPress={takePicture}>
-                    <Ionicons name="camera" size={30} color={COLORS.white}/>
-                    <Text style={globalStyles.sellerContinueBtnText}> Take ID photo</Text>
+            <View style={globalStyles.sellerFooterContainer}>
+                <TouchableOpacity style={globalStyles.sellerContinueBtn} onPress={takePicture}>
+                    <Text style={globalStyles.sellerContinueBtnText}>Take ID photo</Text>
                 </TouchableOpacity>
             </View>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    camera: {
+        flex: 1,
+    },
+    buttonContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: 'transparent',
+        margin: 64,
+    },
+    button: {
+        flex: 1,
+        alignSelf: 'flex-end',
+        alignItems: 'center',
+    },
+    text: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: 'white',
+    },
+});
 
 export default SellerVerificationStep5

@@ -18,7 +18,7 @@ const Offer = () => {
 
   return (
     <ScrollView style={styles.listContainer}>
-      {offerData.map((offer) => (
+      {offerData?.map((offer) => (
         <TouchableOpacity key={offer.id} onPress={() => handleSelectOffer(offer)}>
           <MessageItem text={offer.text} text2={offer.text2} time={offer.time} />
         </TouchableOpacity>

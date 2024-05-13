@@ -1,16 +1,14 @@
 import { Text, View, TouchableOpacity, TextInput } from "react-native";
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState } from 'react';
 import globalStyles from "../../constants/global.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants";
 import { useNavigation } from "@react-navigation/native";
 import RadioGroup from 'react-native-radio-buttons-group';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SellerRegistrationInfoPage = () => {
     const navigation = useNavigation();
-    const [shopName, setShopName] = useState();
-    const [shopTin, setShopTin] = useState();
+    const [shopName, setShopName] = useState([]);
 
     const radioButtons = useMemo(() => ([
         {
@@ -28,20 +26,6 @@ const SellerRegistrationInfoPage = () => {
         }
     ]), []);
     const [selectedId, setSelectedId] = useState();
-
-    const setSellerData = async () => {
-        try {
-            await AsyncStorage.setItem('seller-registration-shop-name', shopName);
-            await AsyncStorage.setItem('seller-registration-tin-id', shopTin);
-        } catch (error) {
-            console.error('Failed to check login status:', error);
-        }
-    };
-
-    function goToNextPage(){
-        navigation.navigate("SellerVerificationPage1")
-        setSellerData();
-    }
 
     return (
         <View style={globalStyles.sellerRegistrationPageContainer}>
@@ -85,8 +69,8 @@ const SellerRegistrationInfoPage = () => {
                             <Text style={globalStyles.sellerGroupInputLabel}>TIN</Text>
                             <TextInput
                                 style={globalStyles.sellerShopNameInput}
-                                value={shopTin}
-                                onChangeText={setShopTin}
+                                value={shopName}
+                                onChangeText={setShopName}
                                 placeholder="999-999-999"
                             />
                         </View>
@@ -140,7 +124,7 @@ const SellerRegistrationInfoPage = () => {
                                     <Text style={globalStyles.signupGprLink}> Terms of Use</Text>
                                 </TouchableOpacity>
                             </View>
-                            <TouchableOpacity style={globalStyles.sellerContinueBtn} onPress={goToNextPage}>
+                            <TouchableOpacity style={globalStyles.sellerContinueBtn} onPress={()=>navigation.navigate('SellerVerificationPage1')}>
                                 <Text style={globalStyles.sellerContinueBtnText}>Continue</Text>
                             </TouchableOpacity>
                         </View>

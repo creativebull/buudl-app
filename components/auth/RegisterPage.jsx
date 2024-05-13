@@ -9,7 +9,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from "axios";
 import DateTimePicker from '@react-native-community/datetimepicker';
 import CenteredAlert from '../../partials/CenteredAlert';
-import {Picker} from '@react-native-picker/picker';
 
 const RegisterPage = () => {
     const navigation = useNavigation();
@@ -89,7 +88,7 @@ const RegisterPage = () => {
                 const response = await axios.post(apiUrl + `auth/registrationEmailCheck`, {
                     email,
                 });
-                console.log(response.data);
+                console.log("Response is======>",response)
     
                 if(response.data.message === 'Does not exist'){
                     setStep(step + 1);
@@ -138,7 +137,6 @@ const RegisterPage = () => {
             if (response.data.data) {
                 errorMessage = response.data.message;
             }
-            console.log(response.data.data);
             setShowAlert(true);
             setButtonLabel('Login');
             setOnPressAction(() => () => {
@@ -221,16 +219,12 @@ const RegisterPage = () => {
                         placeholder="Last Name"
                     />
                 </View>
-                <Picker
-                    selectedValue={gender}
-                    onValueChange={(itemValue, itemIndex) =>
-                        setGender(itemValue)
-                    }
-                    style={globalStyles.dropDownStyle}
-                >
-                    <Picker.Item label="Male" value="male" />
-                    <Picker.Item label="Female" value="female" />
-                </Picker>
+                <TextInput
+                    style={globalStyles.loginInput}
+                    placeholder="Gender"
+                    value={gender}
+                    onChange={setGender}
+                />
                 {showPicker && (
                     <DateTimePicker
                         mode="date"

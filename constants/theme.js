@@ -17,7 +17,6 @@ const COLORS = {
     lightYellow: "#F5EDD0",
     lightBrown: "#701D00",
     lightGreen: "#CCCE6D",
-    brown: "#310D00",
 
     pink: "#FB9EBB",
     violet: "#CBB3F8",

@@ -1,32 +1,14 @@
 import { Text, View, TouchableOpacity, Image } from "react-native";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import globalStyles from "../../constants/global.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants";
 import { useNavigation } from "@react-navigation/native";
 import IdIcon from "../../assets/images/icons/idicon.png";
 import CheckMark from "../../assets/images/icons/Ok.png";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SellerVerificationStep3 = () => {
     const navigation = useNavigation();
-
-    // const [userAddress, s] = useState();
-    const idSelect = 'Philippine Passport'
-
-    const setSellerData = async () => {
-        try {
-            await AsyncStorage.setItem('seller-registration-id-select', idSelect);
-            console.log()
-        } catch (error) {
-            console.error('Failed to check login status:', error);
-        }
-    };
-
-    function goToNextPage(){
-        navigation.navigate("SellerVerificationPage4")
-        setSellerData();
-    }
 
     return (
         <View style={globalStyles.sellerRegistrationPageContainer}>
@@ -125,7 +107,7 @@ const SellerVerificationStep3 = () => {
             </View>
             
             <View style={globalStyles.sellerFooterContainer}>
-                <TouchableOpacity style={globalStyles.sellerContinueBtn} onPress={goToNextPage}>
+                <TouchableOpacity style={globalStyles.sellerContinueBtn} onPress={()=>navigation.navigate('SellerVerificationPage4')}>
                     <Text style={globalStyles.sellerContinueBtnText}>Next</Text>
                 </TouchableOpacity>
             </View>
